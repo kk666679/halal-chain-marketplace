@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "mhp"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "mhp-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

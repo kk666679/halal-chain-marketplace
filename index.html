@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HalalChain - Ethical Halal Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">
+            <h1><a href="#home">HalalChain</a></h1>
+        </div>
+        <div id="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+            <div id="cart-dropdown"></div>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search products...">
+            <div id="search-results"></div>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#features"><i class="fas fa-star"></i> Features</a>
+            <a href="#vendor-register"><i class="fas fa-store"></i> Vendors</a>
+            <a href="#login"><i class="fas fa-user"></i> Account</a>
+        </div>
+        <div id="user-auth" class="auth-buttons">
+            <button id="login-btn" class="hidden"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <button id="logout-btn" class="hidden"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <button id="vendor-register-btn"><i class="fas fa-handshake"></i> Become a Vendor</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="product-detail" class="section"></section>
+        <section id="checkout" class="section">
+          <h2>Checkout</h2>
+          <div id="checkout-container"></div>
+        </section>
+    <div class="container">
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="features-header">
+                <h1>What is HalalChain?</h1>
+                <p class="subtitle">Learn more about the platform that powers success for ethical halal businesses</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Halal Payments</h3>
+                    <p>Accept sharia-compliant payments and manage transactions right from your dashboard with HalalPay</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Certified Shipping</h3>
+                    <p>Save time with our Halal-certified shipping partners that understand your requirements</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>No-code Customization</h3>
+                    <p>Create exactly the store you want without touching a line of code</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>For Developers</h3>
+                    <p>Build powerful halal ecommerce solutions with our open API platform</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Optimized Checkout</h3>
+                    <p>Increase conversion with a customized halal-compliant checkout experience</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Halal Marketing</h3>
+                    <p>Build your brand with ethical marketing tools, SEO, and halal-certified promotions</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App</h3>
+                    <p>Manage your halal business on the go with our dedicated mobile application</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>For Enterprise</h3>
+                    <p>Next-level customization and advanced features for established halal merchants</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Multi-channel</h3>
+                    <p>Expand your reach by selling across multiple halal-certified channels</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Your existing sections (admin, home, vendor, login) -->
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><a href="#home">HalalChain</a></h3>
+                <p>World's leading ethical halal marketplace platform</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
+                    <li><a href="#vendor-register"><i class="fas fa-chevron-right"></i> Vendors</a></li>
+                    <li><a href="#login"><i class="fas fa-chevron-right"></i> Account</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Jalan Halal , Kuala Lumpur, Malaysia</li>
+                    <li><i class="fas fa-phone"></i> +60123456789</li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:contact@halalchain.com">contact@halal-chain.com</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="newsletter-note">Get updates on halal ecommerce trends</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 HalalChain. All rights reserved. <span class="footer-links">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Halal Certification</a>
+            </span></p>
+            <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Firebase and main.js scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
