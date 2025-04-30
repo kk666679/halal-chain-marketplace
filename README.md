@@ -142,3 +142,48 @@ This project is licensed under the **Halal Open Source License** - see [LICENSE.
 9. **Contact Info**: Multiple channels
 
 
+## 🤖 E-commerce Multi-Agent System
+
+This project now incorporates a sophisticated multi-agent system designed to automate and optimize various e-commerce operations. This system leverages specialized AI agents, each responsible for a specific set of tasks, working collaboratively to enhance the efficiency and intelligence of the platform.
+
+### Directory Structure: `agents/`
+
+The `agents/` directory is introduced to house all the code related to the multi-agent system. This directory contains several subdirectories, each dedicated to a specific area of responsibility.
+
+-   **`inventory/`**
+    -   **`inventory_agent.js`**: This agent monitors the inventory levels and generates alerts for low stock. It contains the function `monitorInventory`.
+
+-   **`order_processing/`**
+    -   **`order_agent.js`**: This agent handles the processing of new orders and updates the inventory accordingly. It contains the function `processOrder`.
+
+-   **`supplier_analysis/`**
+    -   **`supplier_agent.js`**: This agent is responsible for analyzing supplier performance metrics. It contains the function `analyzeSupplier`.
+
+-   **`demand_forecasting/`**
+    -   **`forecasting_agent.js`**: This agent generates demand forecasts for the products. It contains the function `forecastDemand`.
+
+-   **`customer_interaction/`**
+    -   **`recommendation_agent.js`**: This agent analyzes customer browsing history to provide product recommendations. It contains the function `recommendProducts`.
+
+    -   **`chatbot_agent.js`**: This agent assists customers in finding products via a chatbot interface. It contains the function `assistCustomer`.
+
+-   **`stock_management/`**
+    -   **`stock_agent.js`**: This agent updates stock levels after an order is placed. It contains the function `updateStock`.
+
+-   **`logistics/`**
+    -   **`dispatch_agent.js`**: This agent coordinates with logistics partners to dispatch orders. It contains the function `dispatchOrder`.
+
+    -   **`routing_agent.js`**: This agent calculates optimal delivery routes and manages delivery status updates. It contains the function `planRoute`.
+
+-   **`payment/`**
+    -   **`payment_agent.js`**: This agent handles the processing and verification of payments. It contains the function `processPayment`.
+    
+-   **`index.js`**
+    -   **`agents/index.js`:** This file is the entry point for the multi-agent system. It imports all the agent modules and includes a function that calls each agent's function.
+
+### Usage of Agents in `index.js`
+
+The main `index.js` file now integrates the multi-agent system to start the agents. Here's how it's done:
+
+<CODE_BLOCK>
+

@@ -1,3 +1,6 @@
+// Import agents
+const agents = require('./agents');
+
 // Firebase Configuration - REPLACE WITH YOUR ACTUAL CONFIG
 const firebaseConfig = {
     apiKey: "YOUR_API_KEY",
@@ -373,6 +376,8 @@ window.verifyProduct = async function(productId) {
 
 // Initialize
 window.onload = () => {
+    agents.callAllAgents();
+    
     loadProducts();
     
     // Show features section by default if on home page
