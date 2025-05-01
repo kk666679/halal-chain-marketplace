@@ -127,7 +127,7 @@ This project is licensed under the **Halal Open Source License** - see [LICENSE.
 
 ## 🌟 Live Demo
 [View Live Demo](https://demo.halalchain.com) | [Vendor Portal](https://vendors.halalchain.com)
-```
+
 
 ### Key Sections Included:
 
