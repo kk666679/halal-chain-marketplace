@@ -4,7 +4,7 @@
 let
   nodejs = pkgs.nodejs-18_x;
   yarn = pkgs.yarn;
-  openssl = pkgs.openssl.bin;
+
   nodePackages = with pkgs.nodePackages; [
     dom
     jest-dom
@@ -41,16 +41,15 @@ in pkgs.mkShell {
   buildInputs = [
     nodejs
     yarn
-    openssl
     pkgs.git
     pkgs.jq
     pkgs.curl
     pkgs.openssl.bin
-    pkgs.sudo
   ] ++ nodePackages;
 
   shellHook = ''
-    export NODE_PATH="${pkgs.lib.makeNodePath nodePackages}"
-    echo "Environment ready!"
+    echo "Environment ready with:"
+    echo "- Node.js $(node --version)"
+    echo "- OpenSSL $(openssl version)"
   '';
 }

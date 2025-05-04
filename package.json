@@ -17,6 +17,7 @@
     "@firebase/auth": "^1.10.1",
     "@firebase/firestore": "^4.7.11",
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
-    "firebase": "^11.6.1"
+    "firebase": "^11.6.1",
+    "socket.io": "^4.8.1"
   }
 }
