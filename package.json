@@ -1,23 +1,30 @@
 {
-  "name": "frontend",
-  "version": "2.0.0",
-  "description": "",
+  "name": "halal-chain-marketplace",
+  "version": "1.0.0",
+  "description": "![HalalChain Banner](https://via.placeholder.com/1200x400/2a7f62/FFFFFF?text=HalalChain+Marketplace)",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "generate": "your-build-command-here",
-    "build": "vite build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "deploy": "firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kk666679/halal-chain-marketplace.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@firebase/app": "^0.11.5",
-    "@firebase/auth": "^1.10.1",
-    "@firebase/firestore": "^4.7.11",
-    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
-    "firebase": "^11.6.1",
-    "socket.io": "^4.8.1"
-  }
+  "bugs": {
+    "url": "https://github.com/kk666679/halal-chain-marketplace/issues"
+  },
+  "homepage": "https://github.com/kk666679/halal-chain-marketplace#readme"
 }

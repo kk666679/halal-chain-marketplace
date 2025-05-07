@@ -181,9 +181,60 @@ The `agents/` directory is introduced to house all the code related to the multi
 -   **`index.js`**
     -   **`agents/index.js`:** This file is the entry point for the multi-agent system. It imports all the agent modules and includes a function that calls each agent's function.
 
-### Usage of Agents in `index.js`
+---   
 
-The main `index.js` file now integrates the multi-agent system to start the agents. Here's how it's done:
+# InnovateHub by HalalChain – Developers Collaboration Platform
 
-<CODE_BLOCK>
+**Where developers collaborate with halal agencies to boost the halal industry.**
 
+InnovateHub is a public sector innovation platform that connects halal government agencies with developers to solve real-world challenges using blockchain and emerging technologies. It focuses on driving digital transformation within the halal ecosystem through open collaboration, traceability, and regulatory innovation.
+
+---
+
+## 🌐 Live Demo
+
+> [Visit InnovateHub](https://yourdomain.com) — *(Update this with your live deployment URL)*
+
+---
+
+## 🚀 Key Features
+
+### 💡 Innovation Collaboration
+- **Projects Hub** – Explore ongoing halal-compliant tech initiatives backed by government agencies.
+- **Challenge Briefs** – Submit solutions to real-world halal sector challenges.
+- **Smart Contract Builder** – Rapidly deploy sharia-compliant blockchain contracts.
+- **Gov-Dev Chat** – Real-time secure collaboration between developers and halal certification bodies.
+
+### 🔍 Project Filtering
+- Filter by **Industry Domain**: Food Supply, Smart Logistics, Clean Energy, Digital Healthcare.
+- Filter by **Status**: Planning, Development, Pilot Testing, Deployment.
+
+---
+
+## 💼 Sample Project (Latest 2025 Highlight)
+
+### 🟢 Halal Supply Chain Transparency System
+- **Overview**: A blockchain-based solution ensuring halal certification traceability across the entire supply network—from farm to fork.
+- **Technology Stack**: Ethereum, IPFS, React, QR Trace
+- **Funding**: $300,000 Public Grant
+- **Contributors**: 15
+- **Status**: In Development
+
+---
+
+## 📢 Active Challenge
+
+### 🔴 Smart City Traffic Management
+- **Overview**: AI + IoT-powered traffic flow optimization for urban halal hubs.
+- **Funding**: $500,000 from the Urban Development Authority
+- **Submission Deadline**: 2025-09-30
+
+---
+
+## 🧰 Developer Tools & Resources
+
+- **Smart Contract Builder** – No-code halal contract templates
+- **Secure Data Sandbox** – Pre-anonymized datasets for secure development
+- **Developer Portal** – Submit proposals, track progress, and communicate directly with halal agencies
+
+---
