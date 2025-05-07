@@ -1,0 +1,21 @@
+[debug] [2025-05-07T07:00:13.835Z] ----------------------------------------------------------------------
+[debug] [2025-05-07T07:00:13.837Z] Command:       /home/gitpod/.nvm/versions/node/v22.13.1/bin/node /home/gitpod/.nvm/versions/node/v22.13.1/bin/firebase init
+[debug] [2025-05-07T07:00:13.837Z] CLI Version:   14.2.2
+[debug] [2025-05-07T07:00:13.837Z] Platform:      linux
+[debug] [2025-05-07T07:00:13.838Z] Node Version:  v22.13.1
+[debug] [2025-05-07T07:00:13.838Z] Time:          Wed May 07 2025 07:00:13 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-05-07T07:00:13.838Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-07T07:00:13.840Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-05-07T07:00:14.114Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-07T07:00:14.226Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-05-07T07:00:14.227Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-05-07T07:57:47.323Z] ----------------------------------------------------------------------
+[debug] [2025-05-07T07:57:47.325Z] Command:       /home/gitpod/.nvm/versions/node/v22.13.1/bin/node /home/gitpod/.nvm/versions/node/v22.13.1/bin/firebase init
+[debug] [2025-05-07T07:57:47.325Z] CLI Version:   14.2.2
+[debug] [2025-05-07T07:57:47.325Z] Platform:      linux
+[debug] [2025-05-07T07:57:47.325Z] Node Version:  v22.13.1
+[debug] [2025-05-07T07:57:47.326Z] Time:          Wed May 07 2025 07:57:47 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-05-07T07:57:47.326Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-07T07:57:47.513Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
