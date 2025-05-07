@@ -1,6 +1,6 @@
 {
   "name": "halal-chain-marketplace",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "![HalalChain Banner](https://via.placeholder.com/1200x400/2a7f62/FFFFFF?text=HalalChain+Marketplace)",
   "main": "index.js",
   "scripts": {
