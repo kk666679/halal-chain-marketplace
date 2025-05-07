@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovateHub - Government Tech Collaboration</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-brand">
+            <a href="/"><img src="/logo.png" alt="InnovateHub Logo"></a>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="/innovatehub.html" class="active"><i class="fas fa-lightbulb"></i> Projects</a>
+            <a href="/challenges.html"><i class="fas fa-bullseye"></i> Challenges</a>
+            <a href="/sandbox.html"><i class="fas fa-flask"></i> Sandbox</a>
+            <a href="/grants.html"><i class="fas fa-hand-holding-usd"></i> Grants</a>
+            <a href="/collab.html"><i class="fas fa-users-cog"></i> Collaboration</a>
+        </div>
+        
+        <div class="auth-buttons">
+            <button id="govLogin" class="auth-btn"><i class="fas fa-landmark"></i> Government Login</button>
+            <button id="devLogin" class="auth-btn"><i class="fas fa-code"></i> Developer Portal</button>
+        </div>
+    </nav>
+
+    <main class="innovatehub">
+        <!-- Collaboration Header -->
+        <section class="hub-hero">
+            <div class="hero-content">
+                <h1>Public Sector Innovation Platform</h1>
+                <p>Where government challenges meet developer solutions through blockchain-powered collaboration</p>
+                <div class="hero-ctas">
+                    <button class="cta-btn" id="postChallenge"><i class="fas fa-bullhorn"></i> Post Challenge</button>
+                    <button class="cta-btn" id="joinProject"><i class="fas fa-hands-helping"></i> Join Project</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Active Projects Grid -->
+        <section class="projects-section">
+            <h2><i class="fas fa-rocket"></i> Active Government Projects</h2>
+            <div class="project-filters">
+                <div class="filter-group">
+                    <label>Domain:</label>
+                    <select id="domainFilter">
+                        <option value="all">All Domains</option>
+                        <option value="health">Digital Health</option>
+                        <option value="transport">Smart Transport</option>
+                        <option value="energy">Clean Energy</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Status:</label>
+                    <select id="statusFilter">
+                        <option value="all">All Statuses</option>
+                        <option value="planning">Planning</option>
+                        <option value="development">Development</option>
+                        <option value="testing">Testing</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="project-grid" id="projectGrid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="badge health-badge">Health</span>
+                        <h3>National Vaccine Tracking System</h3>
+                        <div class="agency-tag">
+                            <i class="fas fa-shield-alt"></i> Ministry of Health
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="project-desc">Blockchain-based solution for vaccine distribution monitoring</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>12 Contributors</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-coins"></i>
+                                <span>$250k Grant</span>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Hyperledger</span>
+                            <span class="tech-tag">IPFS</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="action-btn view-details"><i class="fas fa-info-circle"></i> Details</button>
+                        <button class="action-btn contribute"><i class="fas fa-handshake"></i> Contribute</button>
+                    </div>
+                </div>
+
+                <!-- Add more project cards -->
+            </div>
+        </section>
+
+        <!-- Government Challenge Briefs -->
+        <section class="challenge-section">
+            <h2><i class="fas fa-exclamation-circle"></i> Active Challenges</h2>
+            <div class="challenge-tabs">
+                <button class="tab-btn active" data-tab="current">Current Challenges</button>
+                <button class="tab-btn" data-tab="upcoming">Upcoming</button>
+                <button class="tab-btn" data-tab="completed">Completed</button>
+            </div>
+            
+            <div class="challenge-list">
+                <!-- Challenge Item -->
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <h3>Smart City Traffic Management</h3>
+                        <span class="deadline"><i class="fas fa-clock"></i> Deadline: 2025-09-30</span>
+                    </div>
+                    <div class="challenge-body">
+                        <p class="challenge-desc">Develop AI-powered traffic flow optimization system integrated with IoT infrastructure</p>
+                        <div class="challenge-meta">
+                            <span class="budget"><i class="fas fa-money-bill-wave"></i> $500,000 Funding</span>
+                            <span class="agency"><i class="fas fa-university"></i> Urban Development Authority</span>
+                        </div>
+                        <div class="action-btns">
+                            <button class="btn outline"><i class="fas fa-file-alt"></i> Brief</button>
+                            <button class="btn primary"><i class="fas fa-file-signature"></i> Submit Proposal</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more challenge cards -->
+            </div>
+        </section>
+
+        <!-- Collaboration Tools Section -->
+        <section class="collab-tools">
+            <h2><i class="fas fa-tools"></i> Collaboration Workspace</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Smart Contract Builder</h3>
+                    <p>Create compliant government contracts with blockchain templates</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Secure Data Sandbox</h3>
+                    <p>Access anonymized government datasets for solution development</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Gov-Dev Chat</h3>
+                    <p>Real-time communication channel with agency representatives</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="halal-footer">
+        <!-- Maintain previous footer structure -->
+        <div class="footer-section">
+            <h3>Innovation Resources</h3>
+            <ul class="footer-links">
+                <li><a href="/api-docs"><i class="fas fa-code"></i> API Documentation</li>
+                <li><a href="/compliance"><i class="fas fa-shield-alt"></i> Compliance Guide</li>
+                <li><a href="/data-standards"><i class="fas fa-database"></i> Data Standards</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/innovatehub.js"></script>
+</body>
+</html>

@@ -1,43 +1,747 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+    <!-- Domain Verification Meta Tags -->
+    <meta name="ahrefs-site-verification" content="80d9515695f129481333a9341f8e59b72e7643a5304d1ed30ffb12eb18e1d43b">
+    <meta name="google-site-verification" content="Wb39U-a16tW1lS-yV-zB8l0Lz203xH0dI5x61aV8J_A" />
+    <meta name="msvalidate.01" content="6E5B22A53C44E701901025D8E58D96D1" />
+    <link rel="canonical" href="https://halal-chain.com" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <!-- Basic Meta Tags -->
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HalalChain - Ethical Halal Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --halal-green: #2a7f62;
+            --dark-green: #1a5e48;
+            --light-green: #e8f5f0;
+            --gold-accent: #d4af37;
+            --text-dark: #333;
+            --text-light: #777;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Navigation Styles */
+        .main-nav {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .nav-scrolled {
+            padding: 10px 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .nav-brand h1 {
+            color: var(--halal-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-brand h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--halal-green);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--halal-green);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .auth-btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        #login-btn {
+            background: transparent;
+            color: var(--text-dark);
+            border: 1px solid #ddd;
+        }
+        
+        #login-btn:hover {
+            background: #f5f5f5;
+            border-color: #ccc;
+        }
+        
+        #vendor-register-btn {
+            background: var(--halal-green);
+            color: white;
+        }
+        
+        #vendor-register-btn:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42, 127, 98, 0.3);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--halal-green);
+            cursor: pointer;
+        }
+        
+        /* Hero Section Styles */
+        .hero-section {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            margin-top: 70px; /* Account for fixed nav */
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--halal-green);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .hero-cta:hover {
+            background: transparent;
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .hero-cta.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+        
+        .hero-cta.secondary:hover {
+            background: white;
+            color: var(--halal-green);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .auth-buttons {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-cta {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+            }
+        }
+        body {
+            background: var(--light-green);
+            position: relative;
+            min-height: 150vh; /* For demo purposes */
+        }
+        
+        .halal-footer {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--halal-green) 100%);
+            color: white;
+            padding: 70px 0 30px;
+            position: relative;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-logo p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 18px;
+        }
+        
+        .social-links a:hover {
+            background: white;
+            color: var(--halal-green);
+            transform: translateY(-3px);
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 5px 0;
+            font-weight: 300;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(8px);
+        }
+        
+        .footer-links a:before {
+            content: '→';
+            position: absolute;
+            left: -15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover:before {
+            opacity: 1;
+            left: -10px;
+        }
+        
+        .contact-info {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 12px;
+            margin-top: 3px;
+            font-size: 16px;
+        }
+        
+        .newsletter-form {
+            margin-top: 25px;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.9);
+            transition: var(--transition);
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+            background: white;
+        }
+        
+        .newsletter-form button {
+            background: white;
+            color: var(--halal-green);
+            border: none;
+            padding: 14px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+        
+        .newsletter-form button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .newsletter-note {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 14px;
+            font-weight: 300;
+            position: relative;
+        }
+        
+        .legal-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background: white;
+            bottom: -2px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .legal-links a:hover {
+            color: white;
+        }
+        
+        .legal-links a:hover:after {
+            width: 100%;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--halal-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--dark-green);
+            transform: translateY(-5px);
+        }
+        
+        .back-to-top i {
+            font-size: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .footer-section h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links {
+                display: inline-block;
+                text-align: left;
+            }
+            
+            .footer-links a:hover {
+                transform: none;
+                padding-left: 10px;
+            }
+            
+            .footer-links a:before {
+                display: none;
+            }
+            
+            .contact-info p {
+                justify-content: center;
+            }
+            
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-brand"> 
+        <a href="#"> <img src="https://jmp.sh/s/IuRo5Iwh7K6FVcYxKRfc" alt="HalalChain Logo" style="height: 40px;"> </a> 
+         </div>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-store-alt"></i> Marketplace</a>
+            <a href="#"><i class="fas fa-store"></i> Vendors</a>
+            <a href="#"><i class="fas fa-user"></i> Account</a>
+            <a href="#"><i class="fas fa-certificate"></i> Certification</a>
+            <a href="#"><i class="fas fa-question-circle"></i> About</a>
+        </div>
+        
+        <div class="auth-buttons">
+            <button id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <button id="vendor-register-btn"><i class="fas fa-handshake"></i> Become Vendor</button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Blockchain-Powered Halal Marketplace</h1>
+            <p>Discover certified halal products from trusted vendors worldwide. Our platform ensures complete transparency from farm to table using blockchain technology.</p>
+            <a href="#" class="hero-cta"><i class="fas fa-store"></i> Explore Marketplace</a>
+            <a href="#" class="hero-cta secondary"><i class="fas fa-video"></i> Watch Demo</a>
+        </div>
+    </section>
+    
+    <main>
+      <h2>This is a Deploy Preview.</h2>
+    </main>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        <footer class="halal-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>HalalChain</h2>
+                <p>World's leading ethical halal marketplace platform connecting buyers with certified vendors worldwide.</p>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>HalalChain</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Vendors</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Certification</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Seller Dashboard</a></li>
+                    <li><a href="#">Halal Guidelines</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Jalan Halal, Kuala Lumpur, Malaysia</p>
+                    <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                    <p><i class="fas fa-envelope"></i> contact@halal-chain.com</p>
+                    <p><i class="fas fa-headset"></i> support@halal-chain.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe Now</button>
+                </form>
+                <p class="newsletter-note">Subscribe to receive updates on halal ecommerce trends, new vendors, and special offers.</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 HalalChain. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Halal Certification</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+        <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-times');
+            this.querySelector('i').classList.toggle('fa-bars');
+        });
+        
+        // Navbar Scroll Effect
+        const mainNav = document.getElementById('mainNav');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                mainNav.classList.add('nav-scrolled');
+            } else {
+                mainNav.classList.remove('nav-scrolled');
+            }
+        });
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
 </html>

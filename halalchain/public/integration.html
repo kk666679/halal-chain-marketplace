@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Hub - HalalChain</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <!-- Same navigation as index.html -->
+    </nav>
+
+    <main class="integration-hub">
+        <section class="integration-hero">
+            <h1>Seamless Blockchain Integration</h1>
+            <p>Connect your systems with HalalChain's decentralized infrastructure</p>
+        </section>
+
+        <div class="integration-grid">
+            <!-- API Integration -->
+            <div class="integration-card">
+                <div class="integration-header">
+                    <i class="fas fa-plug"></i>
+                    <h2>API Integration</h2>
+                </div>
+                <div class="integration-content">
+                    <h3>REST API Endpoints</h3>
+                    <div class="code-block">
+                        <pre><code class="javascript">
+// Get product certifications
+GET https://api.halalchain.com/v1/products/{id}/certification
+
+// Verify vendor status
+POST https://api.halalchain.com/v1/verify/vendor
+                        </code></pre>
+                    </div>
+                    <button class="api-key-btn" id="generateApiKey">
+                        <i class="fas fa-key"></i> Generate API Key
+                    </button>
+                </div>
+            </div>
+
+            <!-- Smart Contract Integration -->
+            <div class="integration-card">
+                <div class="integration-header">
+                    <i class="fas fa-file-contract"></i>
+                    <h2>Smart Contracts</h2>
+                </div>
+                <div class="integration-content">
+                    <div class="contract-info">
+                        <h3>Core Contracts</h3>
+                        <ul class="contract-list">
+                            <li>
+                                <span>HalalCertification</span>
+                                <code>0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7</code>
+                            </li>
+                            <li>
+                                <span>SupplyChain</span>
+                                <code>0xFE3C4B7aB7B1083E054A9C5236B5FcC459C98Fd4</code>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code-block">
+                        <pre><code class="solidity">
+// Sample contract interaction
+IHalalCertification certification = IHalalCertification(
+    0x89205A3A3b2A69De6Dbf7f01ED13B2108B2c43e7
+);
+
+bool isHalal = certification.verifyProduct(productId);
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web3 Integration -->
+            <div class="integration-card">
+                <div class="integration-header">
+                    <i class="fab fa-ethereum"></i>
+                    <h2>Web3 Integration</h2>
+                </div>
+                <div class="integration-content">
+                    <h3>Quick Connect</h3>
+                    <div class="web3-connection">
+                        <button class="web3-btn" id="connectWeb3">
+                            <i class="fas fa-link"></i> Connect Wallet
+                        </button>
+                        <div class="network-status" id="networkStatus"></div>
+                    </div>
+                    <div class="code-block">
+                        <pre><code class="javascript">
+// Initialize Web3 provider
+const provider = new ethers.providers.Web3Provider(
+    window.ethereum
+);
+const signer = provider.getSigner();
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="halal-footer">
+        <!-- Same footer content -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    <script src="/js/integration.js"></script>
+</body>
+</html>
