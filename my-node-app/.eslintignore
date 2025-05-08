@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Coverage
+coverage/
+
+# Configs
+.eslintrc.js
+.vscode/
+.idea/
+*.config.js
+
+# Static assets
+public/
+
+# Docs
+*.md
+*.json
+
+# Docker
+Dockerfile*
+docker-compose*
+node_modules/

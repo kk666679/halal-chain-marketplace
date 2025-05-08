@@ -1,0 +1,29 @@
+# Git
+.git
+.gitignore
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+
+# Docker
+Dockerfile*
+docker-compose*
+
+# Ignore files
+.vercelignore
+.eslintignore
+.eslintrc*
+
+# Local config
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+logs/
+coverage/
+node_modules/
