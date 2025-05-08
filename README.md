@@ -91,7 +91,7 @@ halalchain-marketplace/
 ```
 
 ## 🔗 API Documentation
-[View API Docs](https://api.halalchain.com/docs)
+[View API Docs](https://api.halal-chain.com/docs)
 
 Endpoints:
 - `/api/v1/products` - Product listings
@@ -117,7 +117,7 @@ InnovateHub is a public sector innovation platform that connects halal governmen
 
 ## 🌐 Live Demo
 
-> [Visit InnovateHub](https://yourdomain.com) — *(Update this with your live deployment URL)*
+> [Visit Marketplace - InnovateHub](https://yourdomain.com) — *(Update this with your live deployment URL)*
 
 ---
 
@@ -219,12 +219,20 @@ The **`agents/`** directory is introduced to house all the code related to the m
 5. Open a Pull Request
 
 ## 📬 Contact
+<<<<<<< HEAD
 - **Email**: dev@halalchain.com
+=======
+- **Email**: dev@halal-chain.com
+>>>>>>> 7c893e3 (Remove obsolete files)
 - **Twitter**: [@HalalChain](https://twitter.com/HalalChain)
 - **Telegram**: [HalalChain Dev](https://t.me/HalalChainDev)
 
 ## 🌟 Live Demo
+<<<<<<< HEAD
 [View Live Demo](https://demo.halalchain.com) | [Vendor Portal](https://vendors.halalchain.com)
+=======
+[View Live Demo](https://demo.halal-chain.com) | [Vendor Portal](https://vendors.halal-chain.com)
+>>>>>>> 7c893e3 (Remove obsolete files)
 
 
 ### Key Sections Included:
@@ -246,4 +254,7 @@ The **`agents/`** directory is introduced to house all the code related to the m
 This project is licensed under the **Halal Open Source License** - see [LICENSE.md](LICENSE.md) for details.
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c893e3 (Remove obsolete files)
