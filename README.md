@@ -111,7 +111,7 @@ firebase deploy
 
 **Where developers collaborate with halal agencies to boost the halal industry.**
 
-InnovateHub is a public sector innovation platform that connects halal government agencies with developers to solve real-world challenges using blockchain and emerging technologies. It focuses on driving digital transformation within the halal ecosystem through open collaboration, traceability, and regulatory innovation.
+**InnovateHub** is a public sector innovation platform that connects halal government agencies with developers to solve real-world challenges using blockchain and emerging technologies. It focuses on driving digital transformation within the halal ecosystem through open collaboration, traceability, and regulatory innovation.
 
 ---
 
@@ -219,20 +219,17 @@ The **`agents/`** directory is introduced to house all the code related to the m
 5. Open a Pull Request
 
 ## 📬 Contact
-<<<<<<< HEAD
+
 - **Email**: dev@halalchain.com
-=======
 - **Email**: dev@halal-chain.com
->>>>>>> 7c893e3 (Remove obsolete files)
 - **Twitter**: [@HalalChain](https://twitter.com/HalalChain)
 - **Telegram**: [HalalChain Dev](https://t.me/HalalChainDev)
 
 ## 🌟 Live Demo
-<<<<<<< HEAD
+
 [View Live Demo](https://demo.halalchain.com) | [Vendor Portal](https://vendors.halalchain.com)
-=======
 [View Live Demo](https://demo.halal-chain.com) | [Vendor Portal](https://vendors.halal-chain.com)
->>>>>>> 7c893e3 (Remove obsolete files)
+
 
 
 ### Key Sections Included:
@@ -252,9 +249,3 @@ The **`agents/`** directory is introduced to house all the code related to the m
 
 ## 📜 License
 This project is licensed under the **Halal Open Source License** - see [LICENSE.md](LICENSE.md) for details.
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7c893e3 (Remove obsolete files)
