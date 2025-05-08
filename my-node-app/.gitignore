@@ -1,0 +1,10 @@
+.env
+...
+
+# .vercelignore
+.git
+...
+
+# .eslintignore
+...
+node_modules/
