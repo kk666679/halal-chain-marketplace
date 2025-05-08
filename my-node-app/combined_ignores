@@ -1,0 +1,12 @@
+]633;E;echo '# .gitignore\x0anode_modules/\x0a.env\x0a...';e3ef7293-4dd4-4b42-8974-995cc741d925]633;C# .gitignore
+node_modules/
+.env
+...
+
+# .vercelignore
+.git
+...
+
+# .eslintignore
+node_modules/
+...
