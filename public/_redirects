@@ -1,0 +1,9 @@
+# Redirect domain aliases to primary domain
+https://halal-chain-marketplace.vercel.app/* https://halal-chain.com/:splat 301!
+https://www.halal-chain.com/* https://halal-chain.com/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://halal-chain-marketplace.netlify.app/* https://halal-chain.com/:splat 301!
+
+# Handle 404s
+/* /index.html 200

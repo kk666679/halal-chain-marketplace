@@ -22,6 +22,20 @@ const nextConfig = {
       },
     ];
   },
+  // Domain configuration
+  async headers() {
+    return [
+      {
+        source: '/.well-known/acme-challenge/:path*',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain',
+          },
+        ],
+      },
+    ];
+  },
   env: {
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://halal-chain.com',
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'https://api.halal-chain.com',
