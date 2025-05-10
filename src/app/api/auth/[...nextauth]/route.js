@@ -3,7 +3,17 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 import GithubProvider from 'next-auth/providers/github';
 
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic';
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002';
+
+// Add default environment variables if they don't exist
+const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET || 'a-very-secure-secret-for-halal-chain-marketplace';
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
+const GITHUB_ID = process.env.GITHUB_ID || '';
+const GITHUB_SECRET = process.env.GITHUB_SECRET || '';
 
 const handler = NextAuth({
   providers: [
@@ -15,6 +25,21 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         try {
+          // For development/testing, allow a mock user
+          if (process.env.NODE_ENV === 'development' && 
+              credentials?.email === 'test@example.com' && 
+              credentials?.password === 'password') {
+            return {
+              id: '1',
+              name: 'Test User',
+              email: 'test@example.com',
+              role: 'customer',
+              company: 'Test Company',
+              image: 'https://via.placeholder.com/150',
+              token: 'mock-jwt-token',
+            };
+          }
+
           const res = await fetch(`${API_URL}/api/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -40,17 +65,18 @@ const handler = NextAuth({
           
           throw new Error(data.message || 'Invalid credentials');
         } catch (error) {
+          console.error('Auth error:', error);
           throw new Error(error.message || 'Authentication failed');
         }
       },
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: GOOGLE_CLIENT_ID,
+      clientSecret: GOOGLE_CLIENT_SECRET,
     }),
     GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientId: GITHUB_ID,
+      clientSecret: GITHUB_SECRET,
     }),
   ],
   pages: {
@@ -75,6 +101,7 @@ const handler = NextAuth({
     },
     async session({ session, token }) {
       if (token) {
+        session.user = session.user || {};
         session.user.id = token.id;
         session.user.role = token.role;
         session.user.company = token.company;
@@ -84,8 +111,16 @@ const handler = NextAuth({
     },
     async signIn({ user, account, profile }) {
       // For OAuth providers, we need to create or update the user in our database
-      if (account.provider === 'google' || account.provider === 'github') {
+      if (account && (account.provider === 'google' || account.provider === 'github')) {
         try {
+          // For development/testing, allow OAuth without backend
+          if (process.env.NODE_ENV === 'development') {
+            user.id = user.id || profile.sub || profile.id;
+            user.role = 'customer';
+            user.company = 'OAuth User';
+            return true;
+          }
+
           const res = await fetch(`${API_URL}/api/auth/oauth`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -121,7 +156,7 @@ const handler = NextAuth({
     strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === 'development',
 });
 
