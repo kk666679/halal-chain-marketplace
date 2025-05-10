@@ -3,14 +3,18 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, Calendar, CheckCircle, XCircle, Clock, AlertTriangle, ExternalLink } from 'lucide-react';
+import { Award, Calendar, CheckCircle, XCircle, Clock, AlertTriangle, ExternalLink, Share2, QrCode } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { formatDate } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 export default function CertificationCard({
   certification,
   className,
   showActions = true,
+  interactive = true,
+  onQrCodeClick,
+  onShareClick,
   ...props
 }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -71,17 +75,47 @@ export default function CertificationCard({
   
   // Check if certification is verified on blockchain
   const isBlockchainVerified = !!blockchainTxHash;
+  
+  // Handle QR code click
+  const handleQrCodeClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onQrCodeClick) {
+      onQrCodeClick(certification);
+    }
+  };
+  
+  // Handle share click
+  const handleShareClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onShareClick) {
+      onShareClick(certification);
+    } else {
+      // Default share behavior
+      if (navigator.share) {
+        navigator.share({
+          title: `HalalChain Certification: ${product?.name || 'Product'}`,
+          text: `Check out this halal certification for ${product?.name || 'a product'} by ${vendor?.name || 'a vendor'}`,
+          url: window.location.origin + `/certification/${id}`,
+        });
+      }
+    }
+  };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      whileHover={interactive ? { y: -5, transition: { duration: 0.2 } } : {}}
       className={cn(
         "bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 border",
         currentStatus.borderColor,
-        isHovered ? "shadow-lg transform -translate-y-1" : "",
         className
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => interactive && setIsHovered(true)}
+      onMouseLeave={() => interactive && setIsHovered(false)}
       {...props}
     >
       {/* Header with status */}
@@ -133,25 +167,37 @@ export default function CertificationCard({
         {/* Certification details */}
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
-            <span className="text-gray-500 dark:text-gray-400">Certifier:</span>
+            <span className="text-gray-500 dark:text-gray-400 flex items-center">
+              <Award className="h-3.5 w-3.5 mr-1" />
+              Certifier:
+            </span>
             <span className="text-gray-900 dark:text-white font-medium">{certifier?.name || 'Certifier Name'}</span>
           </div>
           
           <div className="flex justify-between">
-            <span className="text-gray-500 dark:text-gray-400">Vendor:</span>
+            <span className="text-gray-500 dark:text-gray-400 flex items-center">
+              <Award className="h-3.5 w-3.5 mr-1" />
+              Vendor:
+            </span>
             <span className="text-gray-900 dark:text-white font-medium">{vendor?.name || 'Vendor Name'}</span>
           </div>
           
           {issuedDate && (
             <div className="flex justify-between">
-              <span className="text-gray-500 dark:text-gray-400">Issued:</span>
+              <span className="text-gray-500 dark:text-gray-400 flex items-center">
+                <Calendar className="h-3.5 w-3.5 mr-1" />
+                Issued:
+              </span>
               <span className="text-gray-900 dark:text-white">{formatDate(issuedDate)}</span>
             </div>
           )}
           
           {expiryDate && (
             <div className="flex justify-between">
-              <span className="text-gray-500 dark:text-gray-400">Expires:</span>
+              <span className="text-gray-500 dark:text-gray-400 flex items-center">
+                <Calendar className="h-3.5 w-3.5 mr-1" />
+                Expires:
+              </span>
               <span className="text-gray-900 dark:text-white">{formatDate(expiryDate)}</span>
             </div>
           )}
@@ -177,20 +223,38 @@ export default function CertificationCard({
               <ExternalLink className="ml-1 h-4 w-4" />
             </Link>
             
-            {isBlockchainVerified && (
-              <a
-                href={`https://etherscan.io/tx/${blockchainTxHash}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-emerald-600 hover:text-emerald-500 dark:text-emerald-500 dark:hover:text-emerald-400 flex items-center"
+            <div className="flex space-x-2">
+              <button
+                onClick={handleQrCodeClick}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                aria-label="Show QR Code"
               >
-                View on Etherscan
-                <ExternalLink className="ml-1 h-4 w-4" />
-              </a>
-            )}
+                <QrCode className="h-5 w-5" />
+              </button>
+              
+              <button
+                onClick={handleShareClick}
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                aria-label="Share"
+              >
+                <Share2 className="h-5 w-5" />
+              </button>
+              
+              {isBlockchainVerified && (
+                <a
+                  href={`https://etherscan.io/tx/${blockchainTxHash}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-emerald-600 hover:text-emerald-500 dark:text-emerald-500 dark:hover:text-emerald-400 flex items-center"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              )}
+            </div>
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
