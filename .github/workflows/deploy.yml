@@ -2,41 +2,64 @@ name: Deploy HalalChain Marketplace
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
+    # Step 1: Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v3
-      
+
+    # Step 2: Set up Node.js environment
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
         cache: 'npm'
-        
+
+    # Step 3: Install dependencies
     - name: Install dependencies
       run: npm ci
-      
+
+    # Step 4: Verify environment variables
+    - name: Verify environment variables
+      run: |
+        echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}"
+        echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}"
+      env:
+        NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+        NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+
+    # Step 5: Create .env file
     - name: Create .env file
       run: |
-        echo "NEXT_PUBLIC_SITE_URL=https://halal-chain.com" > .env
-        echo "NEXT_PUBLIC_API_URL=https://api.halal-chain.com" >> .env
+        echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}" > .env
+        echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}" >> .env
 
-    # Add Testcontainers Cloud setup
-    - name: Setup Testcontainers Cloud Client
-      uses: atomicjar/testcontainers-cloud-setup-action@v1
-      with:
-        token: ${{ secrets.TC_CLOUD_TOKEN }}
-      
-    - name: Build
+    # Step 6: Build the project
+    - name: Build the project
       run: npm run build
-      
+
+    # Step 7: Deploy to Vercel
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        vercel-args: '--prod'
+        working-directory: ./
+
+    # Step 8: Post-deployment verification
+    - name: Verify deployment
+      run: curl -I https://halal-chain.com
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v20
       with:
