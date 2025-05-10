@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const webpack = require('webpack');
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -34,7 +36,7 @@ const nextConfig = {
 
     // Add polyfills for web3 and other blockchain libraries
     config.plugins.push(
-      new config.webpack.ProvidePlugin({
+      new webpack.ProvidePlugin({
         process: 'process/browser',
         Buffer: ['buffer', 'Buffer'],
       })
