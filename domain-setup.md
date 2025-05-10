@@ -3,6 +3,7 @@
 ## Domain Settings
 
 The HalalChain Marketplace is configured to use the following domains:
+
 - Primary domain: `halal-chain.com`
 - Secondary domain: `www.halal-chain.com`
 
@@ -13,7 +14,8 @@ The HalalChain Marketplace is configured to use the following domains:
 1. Log in to your domain registrar (e.g., GoDaddy, Namecheap, etc.)
 2. Add the following DNS records:
 
-#### For apex domain (halal-chain.com):
+#### For apex domain (halal-chain.com)
+
 ```
 Type: A
 Name: @
@@ -21,7 +23,8 @@ Value: 76.76.21.21
 TTL: 3600 (or Auto)
 ```
 
-#### For www subdomain:
+#### For www subdomain
+
 ```
 Type: CNAME
 Name: www
@@ -34,7 +37,8 @@ TTL: 3600 (or Auto)
 1. Log in to your domain registrar
 2. Add the following DNS records:
 
-#### For apex domain:
+#### For apex domain
+
 ```
 Type: A
 Name: @
@@ -42,7 +46,8 @@ Value: 75.2.60.5
 TTL: 3600 (or Auto)
 ```
 
-#### For www subdomain:
+#### For www subdomain
+
 ```
 Type: CNAME
 Name: www
@@ -80,6 +85,7 @@ For Let's Encrypt SSL certificate verification, we've included the `.well-known/
 ## Redirects
 
 We've configured redirects to ensure:
+
 - All traffic is directed to the primary domain (`halal-chain.com`)
 - All traffic uses HTTPS
 - Default hosting subdomains redirect to the primary domain

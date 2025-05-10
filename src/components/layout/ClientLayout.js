@@ -2,6 +2,7 @@
 
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ChatbotWidget from '../ChatbotWidget';
 
 export default function ClientLayout({ children }) {
   return (
@@ -9,6 +10,7 @@ export default function ClientLayout({ children }) {
       <Navbar />
       {children}
       <Footer />
+      <ChatbotWidget />
     </>
   );
 }
