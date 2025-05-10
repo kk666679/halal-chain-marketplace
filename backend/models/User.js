@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const { USER_ROLES } = require('../config/constants');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -16,48 +16,39 @@ const UserSchema = new mongoose.Schema({
     match: [
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       'Please provide a valid email'
-    ]
+    ],
+    lowercase: true
   },
   password: {
     type: String,
     required: [true, 'Please provide a password'],
-    minlength: [6, 'Password must be at least 6 characters'],
+    minlength: [8, 'Password must be at least 8 characters'],
     select: false
   },
   role: {
     type: String,
-    enum: ['user', 'vendor', 'admin', 'certifier', 'government'],
-    default: 'user'
+    enum: Object.values(USER_ROLES),
+    default: USER_ROLES.CONSUMER
+  },
+  company: {
+    type: String,
+    trim: true
   },
   walletAddress: {
     type: String,
-    trim: true
+    match: [/^0x[a-fA-F0-9]{40}$/, 'Please provide a valid Ethereum address']
   },
   profileImage: {
-    type: String,
-    default: 'default-profile.jpg'
+    type: String
   },
-  phoneNumber: {
-    type: String,
-    trim: true
-  },
-  address: {
-    street: String,
-    city: String,
-    state: String,
-    country: String,
-    zipCode: String
-  },
-  isVerified: {
+  isEmailVerified: {
     type: Boolean,
     default: false
   },
-  isActive: {
-    type: Boolean,
-    default: true
-  },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
+  emailVerificationToken: String,
+  emailVerificationExpire: Date,
   createdAt: {
     type: Date,
     default: Date.now
@@ -66,6 +57,8 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+}, {
+  timestamps: true
 });
 
 // Encrypt password using bcrypt
@@ -73,30 +66,49 @@ UserSchema.pre('save', async function(next) {
   if (!this.isModified('password')) {
     next();
   }
-  
+
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 
-// Update the updatedAt field
-UserSchema.pre('save', function(next) {
-  this.updatedAt = Date.now();
-  next();
-});
-
-// Sign JWT and return
-UserSchema.methods.getSignedJwtToken = function() {
-  return jwt.sign(
-    { id: this._id, role: this.role },
-    process.env.JWT_SECRET,
-    { expiresIn: process.env.JWT_EXPIRES_IN }
-  );
-};
-
 // Match user entered password to hashed password in database
 UserSchema.methods.matchPassword = async function(enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
+};
+
+// Generate email verification token
+UserSchema.methods.getEmailVerificationToken = function() {
+  // Generate token
+  const verificationToken = crypto.randomBytes(20).toString('hex');
+
+  // Hash token and set to emailVerificationToken field
+  this.emailVerificationToken = crypto
+    .createHash('sha256')
+    .update(verificationToken)
+    .digest('hex');
+
+  // Set expire
+  this.emailVerificationExpire = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
+
+  return verificationToken;
+};
+
+// Generate and hash password token
+UserSchema.methods.getResetPasswordToken = function() {
+  // Generate token
+  const resetToken = crypto.randomBytes(20).toString('hex');
+
+  // Hash token and set to resetPasswordToken field
+  this.resetPasswordToken = crypto
+    .createHash('sha256')
+    .update(resetToken)
+    .digest('hex');
+
+  // Set expire
+  this.resetPasswordExpire = Date.now() + 10 * 60 * 1000; // 10 minutes
+
+  return resetToken;
 };
 
 module.exports = mongoose.model('User', UserSchema);

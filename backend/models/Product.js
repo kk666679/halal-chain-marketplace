@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { PRODUCT_CATEGORIES } = require('../config/constants');
 
 const ProductSchema = new mongoose.Schema({
   name: {
@@ -10,75 +11,32 @@ const ProductSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, 'Please provide a product description'],
-    maxlength: [2000, 'Description cannot be more than 2000 characters']
-  },
-  vendor: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Vendor',
-    required: true
+    maxlength: [1000, 'Description cannot be more than 1000 characters']
   },
   category: {
     type: String,
-    required: [true, 'Please provide a category'],
-    enum: [
-      'food', 'beverages', 'meat', 'dairy', 'bakery', 'snacks', 
-      'condiments', 'frozen', 'canned', 'health', 'beauty', 
-      'household', 'clothing', 'other'
-    ]
+    required: [true, 'Please select a category'],
+    enum: PRODUCT_CATEGORIES
   },
-  subCategory: {
-    type: String
-  },
-  price: {
-    type: Number,
-    required: [true, 'Please provide a price']
-  },
-  discountPrice: {
-    type: Number
-  },
-  currency: {
-    type: String,
-    default: 'USD'
-  },
-  stock: {
-    type: Number,
-    required: [true, 'Please provide stock quantity'],
-    min: [0, 'Stock cannot be negative']
-  },
-  unit: {
-    type: String,
-    required: [true, 'Please provide a unit'],
-    enum: ['kg', 'g', 'l', 'ml', 'pcs', 'box', 'pack', 'other']
-  },
-  weight: {
-    value: Number,
-    unit: {
-      type: String,
-      enum: ['kg', 'g', 'lb', 'oz']
-    }
-  },
-  dimensions: {
-    length: Number,
-    width: Number,
-    height: Number,
-    unit: {
-      type: String,
-      enum: ['cm', 'in', 'm']
-    }
+  vendor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   },
   images: [{
-    url: String,
-    isMain: {
-      type: Boolean,
-      default: false
-    }
-  }],
-  tags: [{
     type: String
   }],
+  mainImage: {
+    type: String
+  },
   ingredients: [{
-    name: String,
-    source: String,
+    name: {
+      type: String,
+      required: true
+    },
+    source: {
+      type: String
+    },
     isHalal: {
       type: Boolean,
       default: true
@@ -89,106 +47,26 @@ const ProductSchema = new mongoose.Schema({
     protein: Number,
     carbohydrates: Number,
     fat: Number,
-    fiber: Number,
     sugar: Number,
     sodium: Number
   },
-  allergens: [{
-    type: String
-  }],
-  storageInstructions: {
-    type: String
-  },
-  shelfLife: {
-    value: Number,
-    unit: {
-      type: String,
-      enum: ['days', 'months', 'years']
-    }
-  },
-  manufacturingDate: {
-    type: Date
-  },
-  expiryDate: {
-    type: Date
-  },
-  batchNumber: {
-    type: String
-  },
-  barcode: {
-    type: String
-  },
-  qrCode: {
-    type: String
-  },
-  halalCertification: {
-    isCertified: {
-      type: Boolean,
-      default: false
-    },
-    certificationId: {
-      type: String
-    },
-    certifiedBy: {
-      type: String
-    },
-    certificationDate: {
-      type: Date
-    },
-    expiryDate: {
-      type: Date
-    },
-    documentUrl: {
-      type: String
-    },
-    blockchainReference: {
-      type: String
-    }
-  },
-  supplyChain: {
-    origin: {
-      country: String,
-      region: String,
-      facility: String
-    },
-    processingLocations: [{
-      name: String,
-      location: String,
-      date: Date,
-      process: String
-    }],
-    distributionPath: [{
-      location: String,
-      date: Date,
-      handler: String
-    }],
-    blockchainReferences: [{
-      transactionId: String,
-      timestamp: Date,
-      eventType: String
-    }]
-  },
-  rating: {
+  price: {
     type: Number,
-    min: 0,
-    max: 5,
-    default: 0
+    min: [0, 'Price must be above 0']
   },
-  reviewCount: {
-    type: Number,
-    default: 0
-  },
-  salesCount: {
-    type: Number,
-    default: 0
-  },
-  isActive: {
+  isAvailable: {
     type: Boolean,
     default: true
   },
   isFeatured: {
     type: Boolean,
     default: false
+  },
+  blockchainId: {
+    type: String
+  },
+  metadataURI: {
+    type: String
   },
   createdAt: {
     type: Date,
@@ -199,31 +77,28 @@ const ProductSchema = new mongoose.Schema({
     default: Date.now
   }
 }, {
+  timestamps: true,
   toJSON: { virtuals: true },
   toObject: { virtuals: true }
 });
 
-// Virtual for reviews
-ProductSchema.virtual('reviews', {
-  ref: 'Review',
+// Virtual for certifications
+ProductSchema.virtual('certifications', {
+  ref: 'Certification',
   localField: '_id',
   foreignField: 'product',
   justOne: false
 });
 
-// Update the updatedAt field
-ProductSchema.pre('save', function(next) {
-  this.updatedAt = Date.now();
-  next();
+// Virtual for supply chain events
+ProductSchema.virtual('supplyChainEvents', {
+  ref: 'SupplyChainEvent',
+  localField: '_id',
+  foreignField: 'product',
+  justOne: false
 });
 
-// Create indexes for better query performance
-ProductSchema.index({ name: 'text', description: 'text', tags: 'text' });
-ProductSchema.index({ category: 1 });
-ProductSchema.index({ vendor: 1 });
-ProductSchema.index({ 'halalCertification.isCertified': 1 });
-ProductSchema.index({ price: 1 });
-ProductSchema.index({ rating: -1 });
-ProductSchema.index({ salesCount: -1 });
+// Index for search
+ProductSchema.index({ name: 'text', description: 'text', category: 'text' });
 
 module.exports = mongoose.model('Product', ProductSchema);

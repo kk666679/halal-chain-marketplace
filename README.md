@@ -18,16 +18,19 @@ HalalChain Marketplace is a comprehensive blockchain-powered platform for halal 
 ## Core Modules
 
 ### Vendor Management
+
 - Vendor Registration with quantum-secure identity verification
 - Real-time inventory tracking with IoT sensor integration
 - Predictive sales analytics with 18-month forecasting
 
 ### Blockchain Verification
+
 - Quantum-resistant certification tracking
 - End-to-end supply chain transparency
 - Smart contracts with AI-driven compliance verification
 
 ### Multi-Portal Access
+
 - Government regulatory portal with real-time compliance monitoring
 - Developer hub with neural interface SDKs
 - Vendor marketplace dashboard with predictive analytics
@@ -36,6 +39,7 @@ HalalChain Marketplace is a comprehensive blockchain-powered platform for halal 
 - Global standards portal with regulatory updates
 
 ### AI Agent System
+
 - Inventory agent with quantum ML algorithms
 - Payment agent with quantum-resistant encryption
 - Recommendation agent with neural networks
@@ -46,18 +50,21 @@ HalalChain Marketplace is a comprehensive blockchain-powered platform for halal 
 - Security agent with advanced threat detection
 
 ### Neural Interface System
+
 - Consumer neural interface for sensory product sampling
 - Vendor command center with thought-based controls
 - Inspector interface with enhanced sensory perception
 - Non-invasive quantum-entangled photonic sensors
 
 ### Metaverse Integration
+
 - Virtual marketplace with holographic product displays
 - Halal education center with interactive courses
 - Global halal summit for virtual conferences
 - Digital twin facilities for remote monitoring
 
 ### Sustainability Features
+
 - Carbon-negative operations with direct air capture
 - 100% renewable energy usage
 - Water conservation with 85% reduction
@@ -77,6 +84,7 @@ HalalChain Marketplace is a comprehensive blockchain-powered platform for halal 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js v18.0.0 or higher
 - MongoDB
 - Hardhat for blockchain development
@@ -85,33 +93,39 @@ HalalChain Marketplace is a comprehensive blockchain-powered platform for halal 
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/your-username/halal-chain-marketplace.git
 cd halal-chain-marketplace
 ```
 
-2. Install dependencies
+1. Install dependencies
+
 ```bash
 npm install
 ```
 
 3. Set up environment variables
+
 ```bash
 cp .env.example .env
 # Edit .env with your configuration
 ```
 
 4. Compile smart contracts
+
 ```bash
 npm run contracts:compile
 ```
 
 5. Start the development server
+
 ```bash
 npm run dev
 ```
 
 6. Start the backend server
+
 ```bash
 npm run backend:dev
 ```
@@ -140,7 +154,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 - Website: [https://halal-chain.com](https://halal-chain.com)
-- Email: info@halal-chain.com
+- Email: <info@halal-chain.com>
 - Twitter: [@HalalChain](https://twitter.com/halalchain)
 - Metaverse: [halal-chain.metaverse.io](https://halal-chain.metaverse.io)
 
