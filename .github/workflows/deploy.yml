@@ -28,11 +28,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    # Step 4: Install additional UI dependencies
-    - name: Install UI dependencies
-      run: npm install lucide-react @tanstack/react-query next-themes @radix-ui/react-toast class-variance-authority clsx tailwind-merge
-
-    # Step 5: Verify environment variables
+    # Step 4: Verify environment variables
     - name: Verify environment variables
       run: |
         echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}"
@@ -41,28 +37,29 @@ jobs:
         NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
         NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
 
-    # Step 6: Create .env file
+    # Step 5: Create .env file
     - name: Create .env file
       run: |
         echo "NEXT_PUBLIC_SITE_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}" > .env
         echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}" >> .env
-        echo "NEXT_PUBLIC_HALAL_CERTIFICATION_CONTRACT=${{ secrets.NEXT_PUBLIC_HALAL_CERTIFICATION_CONTRACT }}" >> .env
-        echo "NEXT_PUBLIC_SUPPLY_CHAIN_CONTRACT=${{ secrets.NEXT_PUBLIC_SUPPLY_CHAIN_CONTRACT }}" >> .env
-        echo "NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }}" >> .env
-        echo "NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }}" >> .env
 
-    # Step 7: Build the project
+    # Step 6: Build the project
     - name: Build the project
       run: npm run build
-      env:
-        NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-        NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-        NEXT_PUBLIC_HALAL_CERTIFICATION_CONTRACT: ${{ secrets.NEXT_PUBLIC_HALAL_CERTIFICATION_CONTRACT }}
-        NEXT_PUBLIC_SUPPLY_CHAIN_CONTRACT: ${{ secrets.NEXT_PUBLIC_SUPPLY_CHAIN_CONTRACT }}
-        NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-        NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
 
-    # Step 8: Deploy to Vercel
+    # Step 7: Deploy to Vercel
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        vercel-args: '--prod'
+        working-directory: ./
+
+    # Step 8: Post-deployment verification
+    - name: Verify deployment
+      run: curl -I https://halal-chain.com
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v20
       with:
