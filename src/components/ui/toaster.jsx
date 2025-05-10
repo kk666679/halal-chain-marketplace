@@ -1,35 +1,72 @@
-"use client"
+'use client';
 
-import {
-  Toast,
-  ToastClose,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
-} from "@/components/ui/toast"
-import { useToast } from "@/components/ui/use-toast"
+import { useEffect, useState } from 'react';
+import { Toast, ToastClose, ToastTitle, ToastDescription } from './toast';
 
 export function Toaster() {
-  const { toasts } = useToast()
+  const [toasts, setToasts] = useState([]);
+
+  useEffect(() => {
+    // Listen for toast events
+    const handleToast = (event) => {
+      const { title, description, variant = 'default', duration = 5000 } = event.detail;
+      
+      const id = Math.random().toString(36).substring(2, 9);
+      const newToast = { id, title, description, variant, duration };
+      
+      setToasts((prevToasts) => [...prevToasts, newToast]);
+      
+      // Auto dismiss after duration
+      setTimeout(() => {
+        setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
+      }, duration);
+    };
+    
+    window.addEventListener('toast', handleToast);
+    
+    return () => {
+      window.removeEventListener('toast', handleToast);
+    };
+  }, []);
+  
+  const removeToast = (id) => {
+    setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
+  };
 
   return (
-    <ToastProvider>
-      {toasts.map(function ({ id, title, description, action, ...props }) {
-        return (
-          <Toast key={id} {...props}>
-            <div className="grid gap-1">
-              {title && <ToastTitle>{title}</ToastTitle>}
-              {description && (
-                <ToastDescription>{description}</ToastDescription>
-              )}
-            </div>
-            {action}
-            <ToastClose />
-          </Toast>
-        )
-      })}
-      <ToastViewport />
-    </ToastProvider>
-  )
+    <div className="fixed top-0 right-0 z-50 flex flex-col gap-2 p-4 max-w-md w-full">
+      {toasts.map((toast) => (
+        <Toast key={toast.id} variant={toast.variant} className="animate-in slide-in-from-right">
+          <div className="flex flex-col gap-1">
+            {toast.title && <ToastTitle>{toast.title}</ToastTitle>}
+            {toast.description && <ToastDescription>{toast.description}</ToastDescription>}
+          </div>
+          <ToastClose onClick={() => removeToast(toast.id)} />
+        </Toast>
+      ))}
+    </div>
+  );
+}
+
+export function useToast() {
+  const toast = ({ title, description, variant, duration }) => {
+    const event = new CustomEvent('toast', {
+      detail: {
+        title,
+        description,
+        variant,
+        duration,
+      },
+    });
+    
+    window.dispatchEvent(event);
+  };
+  
+  return {
+    toast,
+    success: (props) => toast({ ...props, variant: 'success' }),
+    error: (props) => toast({ ...props, variant: 'error' }),
+    warning: (props) => toast({ ...props, variant: 'warning' }),
+    info: (props) => toast({ ...props, variant: 'info' }),
+  };
 }

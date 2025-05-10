@@ -1746,3 +1746,385 @@ Chatbot API error: AuthenticationError: 401 You didn't provide an API key. You n
  ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
  ✓ Ready in 1426ms
  ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/integrations/page.js and src/app/integrations/page.jsx resolve to /integrations
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/integrations/page.js and src/app/integrations/page.jsx resolve to /integrations
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/integrations/page.js and src/app/integrations/page.jsx resolve to /integrations
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/integrations/page.js and src/app/integrations/page.jsx resolve to /integrations
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/integrations/page.js and src/app/integrations/page.jsx resolve to /integrations
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/integrations/page.js and src/app/integrations/page.jsx resolve to /integrations
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ○ Compiling / ...
+ ✓ Compiled / in 10.4s (1193 modules)
+ GET / 200 in 11098ms
+ ○ Compiling /_not-found ...
+ ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
+ ✓ Compiled /_not-found in 6.1s (1173 modules)
+ GET /images/halal-chain-hero.png 404 in 4668ms
+ ⨯ The requested resource isn't a valid image for /images/halal-chain-hero.png received text/html; charset=utf-8
+ImageError: The requested resource isn't a valid image.
+    at imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/image-optimizer.js:672:19)
+    at DevServer.imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:655:20)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at listOnTimeout (node:internal/timers:545:9)
+    at process.processTimers (node:internal/timers:519:7)
+    at async cacheEntry.imageResponseCache.get.incrementalCache (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:182:65)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/response-cache/index.js:90:36
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/lib/batcher.js:45:32 {
+  statusCode: 400
+}
+ GET /images/partner1.png 404 in 5687ms
+ GET /images/partner5.png 404 in 4941ms
+ GET /images/user1.png 404 in 4932ms
+ GET /images/partner3.png 404 in 4771ms
+ GET /images/partner4.png 404 in 4644ms
+ GET /images/partner2.png 404 in 4592ms
+ GET /images/user3.png 404 in 4591ms
+ GET /images/user2.png 404 in 4633ms
+ GET /images/sustainability-carbon.png 404 in 119ms
+ ⨯ The requested resource isn't a valid image for /images/sustainability-carbon.png received text/html; charset=utf-8
+ GET /images/consumer-neural.png 404 in 118ms
+ ⨯ The requested resource isn't a valid image for /images/consumer-neural.png received text/html; charset=utf-8
+ GET /images/halal-certified-badge.png 404 in 87ms
+ ⨯ The requested resource isn't a valid image for /images/halal-certified-badge.png received text/html; charset=utf-8
+ GET /images/pattern.svg 404 in 153ms
+ ○ Compiling /api/auth/[...nextauth] ...
+ ✓ Compiled /api/auth/[...nextauth] in 849ms (827 modules)
+[next-auth][warn][NEXTAUTH_URL] 
+https://next-auth.js.org/warnings#nextauth_url
+[next-auth][warn][NO_SECRET] 
+https://next-auth.js.org/warnings#no_secret
+[next-auth][warn][DEBUG_ENABLED] 
+https://next-auth.js.org/warnings#debug_enabled
+ GET /api/auth/session 200 in 1333ms
+ GET /api/auth/session 200 in 24ms
+ ○ Compiling /vendor/register ...
+ ✓ Compiled /vendor/register in 762ms (1176 modules)
+ ✓ Compiled /_not-found in 219ms (1179 modules)
+ GET /images/logo.png 404 in 457ms
+ ⨯ The requested resource isn't a valid image for /images/logo.png received text/html; charset=utf-8
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1267ms (1207 modules)
+ GET /images/logo.svg 404 in 162ms
+ GET /?id=2956df23-0fbb-4258-91e5-112bdb4a02b9&vscodeBrowserReqId=1746897196170 200 in 255ms
+ ○ Compiling /api/auth/[...nextauth] ...
+ ✓ Compiled /api/auth/[...nextauth] in 645ms (846 modules)
+[next-auth][warn][NEXTAUTH_URL] 
+https://next-auth.js.org/warnings#nextauth_url
+[next-auth][warn][NO_SECRET] 
+https://next-auth.js.org/warnings#no_secret
+[next-auth][warn][DEBUG_ENABLED] 
+https://next-auth.js.org/warnings#debug_enabled
+ GET /api/auth/providers 200 in 1045ms
+ GET /images/halal-chain-hero.png 404 in 262ms
+ ⨯ The requested resource isn't a valid image for /images/halal-chain-hero.png received text/html; charset=utf-8
+ImageError: The requested resource isn't a valid image.
+    at imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/image-optimizer.js:672:19)
+    at DevServer.imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:655:20)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:454:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async cacheEntry.imageResponseCache.get.incrementalCache (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:182:65)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/response-cache/index.js:90:36
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/lib/batcher.js:45:32 {
+  statusCode: 400
+}
+ GET /api/auth/csrf 200 in 114ms
+ GET /images/user1.png 404 in 105ms
+ GET /images/user2.png 404 in 103ms
+ GET /images/pattern.svg 404 in 96ms
+ GET /images/user3.png 404 in 81ms
+ POST /api/auth/callback/credentials 401 in 375ms
+ GET /images/partner1.png 404 in 30ms
+ GET /images/partner2.png 404 in 27ms
+ GET /images/partner3.png 404 in 53ms
+ GET /images/partner4.png 404 in 36ms
+ GET /images/partner5.png 404 in 27ms
+ GET /api/auth/providers 200 in 29ms
+ GET /api/auth/csrf 200 in 17ms
+ POST /api/auth/callback/credentials 401 in 1542ms
+ GET /api/auth/providers 200 in 27ms
+ GET /api/auth/csrf 200 in 8ms
+ POST /api/auth/callback/credentials 401 in 336ms
+ GET /api/auth/providers 200 in 26ms
+ GET /api/auth/csrf 200 in 11ms
+ POST /api/auth/callback/credentials 401 in 186ms
+ GET /api/auth/providers 200 in 30ms
+ GET /api/auth/csrf 200 in 7ms
+ POST /api/auth/callback/credentials 401 in 16ms
+ GET /api/auth/providers 200 in 8ms
+ GET /api/auth/csrf 200 in 25ms
+ POST /api/auth/callback/credentials 401 in 18ms
+ GET /api/auth/providers 200 in 10ms
+ GET /api/auth/csrf 200 in 7ms
+ POST /api/auth/callback/credentials 401 in 34ms
+ GET /api/auth/providers 200 in 27ms
+ GET /api/auth/csrf 200 in 12ms
+ POST /api/auth/callback/credentials 401 in 22ms
+ GET /images/consumer-neural.png 404 in 28ms
+ ⨯ The requested resource isn't a valid image for /images/consumer-neural.png received text/html; charset=utf-8
+ GET /images/sustainability-carbon.png 404 in 24ms
+ ⨯ The requested resource isn't a valid image for /images/sustainability-carbon.png received text/html; charset=utf-8
+ GET /images/halal-certified-badge.png 404 in 23ms
+ ⨯ The requested resource isn't a valid image for /images/halal-certified-badge.png received text/html; charset=utf-8
+ GET /api/auth/session 200 in 35ms
+ GET /api/auth/session 200 in 32ms
+ GET /api/auth/session 200 in 8ms
+ GET /?id=2956df23-0fbb-4258-91e5-112bdb4a02b9&vscodeBrowserReqId=1746897240653 200 in 64ms
+ GET /images/partner4.png 404 in 24ms
+ GET /images/partner3.png 404 in 135ms
+ GET /images/user2.png 404 in 149ms
+ GET /images/partner2.png 404 in 150ms
+ GET /images/user3.png 404 in 150ms
+ GET /images/user1.png 404 in 148ms
+ GET /images/partner1.png 404 in 146ms
+ GET /images/partner5.png 404 in 147ms
+ GET /images/pattern.svg 404 in 31ms
+ GET /vendor/register 200 in 39ms
+ GET /images/logo.png 404 in 19ms
+ ⨯ The requested resource isn't a valid image for /images/logo.png received text/html; charset=utf-8
+ GET /api/auth/session 200 in 40ms
+ GET /api/auth/session 200 in 35ms
+ GET /api/auth/session 200 in 9ms
+ GET /api/auth/session 200 in 25ms
+ GET /images/logo.svg 404 in 28ms
+ GET /images/user1.png 404 in 24ms
+ GET /images/partner3.png 404 in 155ms
+ GET /images/partner2.png 404 in 155ms
+ GET /images/user3.png 404 in 108ms
+ GET /images/pattern.svg 404 in 111ms
+ GET /images/partner4.png 404 in 116ms
+ GET /images/partner5.png 404 in 113ms
+ GET /images/user2.png 404 in 111ms
+ GET /images/partner1.png 404 in 108ms
+ GET /images/consumer-neural.png 404 in 24ms
+ ⨯ The requested resource isn't a valid image for /images/consumer-neural.png received text/html; charset=utf-8
+ GET /images/sustainability-carbon.png 404 in 17ms
+ ⨯ The requested resource isn't a valid image for /images/sustainability-carbon.png received text/html; charset=utf-8
+ GET /images/halal-certified-badge.png 404 in 23ms
+ ⨯ The requested resource isn't a valid image for /images/halal-certified-badge.png received text/html; charset=utf-8
+ GET /images/sustainability-carbon.png 404 in 41ms
+ ⨯ The requested resource isn't a valid image for /images/sustainability-carbon.png received text/html; charset=utf-8
+ GET /images/halal-chain-hero.png 404 in 58ms
+ ⨯ The requested resource isn't a valid image for /images/halal-chain-hero.png received text/html; charset=utf-8
+ImageError: The requested resource isn't a valid image.
+    at imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/image-optimizer.js:672:19)
+    at DevServer.imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:655:20)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at listOnTimeout (node:internal/timers:545:9)
+    at process.processTimers (node:internal/timers:519:7)
+    at async cacheEntry.imageResponseCache.get.incrementalCache (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:182:65)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/response-cache/index.js:90:36
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/lib/batcher.js:45:32 {
+  statusCode: 400
+}
+ GET /images/halal-chain-hero.png 404 in 40ms
+ ⨯ The requested resource isn't a valid image for /images/halal-chain-hero.png received text/html; charset=utf-8
+ GET /images/sustainability-carbon.png 404 in 38ms
+ ⨯ The requested resource isn't a valid image for /images/sustainability-carbon.png received text/html; charset=utf-8
+ImageError: The requested resource isn't a valid image.
+    at imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/image-optimizer.js:672:19)
+    at DevServer.imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:655:20)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:454:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async cacheEntry.imageResponseCache.get.incrementalCache (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:182:65)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/response-cache/index.js:90:36
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/lib/batcher.js:45:32 {
+  statusCode: 400
+}
+ ○ Compiling /api/chatbot ...
+ ✓ Compiled /api/chatbot in 1169ms (780 modules)
+Chatbot API error: AuthenticationError: 401 You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.
+    at APIError.generate (webpack-internal:///(rsc)/./node_modules/openai/error.mjs:63:20)
+    at OpenAI.makeStatusError (webpack-internal:///(rsc)/./node_modules/openai/core.mjs:333:65)
+    at OpenAI.makeRequest (webpack-internal:///(rsc)/./node_modules/openai/core.mjs:377:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chatbot/route.js:91:32)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57228
+    at async eT.execute (/workspaces/halal-chain-marketplace/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46851)
+    at async eT.handle (/workspaces/halal-chain-marketplace/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:58760)
+    at async doRender (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderPageComponent (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:818:17)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/workspaces/halal-chain-marketplace/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/router-server.js:178:21)
+    at async handleRequest (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/router-server.js:355:24)
+    at async requestHandlerImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/router-server.js:379:13)
+    at async Server.requestListener (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  status: 401,
+  headers: {
+    'alt-svc': 'h3=":443"; ma=86400',
+    'cf-cache-status': 'DYNAMIC',
+    'cf-ray': '93db15d1897ffdba-SIN',
+    connection: 'keep-alive',
+    'content-length': '496',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Sat, 10 May 2025 17:16:35 GMT',
+    server: 'cloudflare',
+    'set-cookie': '__cf_bm=IgSXRkVqn7lkUx3i7DoQLZis6JoB2q2B7aQIbkVfjtg-1746897395-1.0.1.1-f1PzTNC.0jAIhf3XINGQPw1u4hN2jWWcZTX5W9z49SCBA.nXvP5EgQWeH8qcagrMxf4d.av15wBKLOCxOPjRAWA8tpZ7QBwRu17BvuQb2YA; path=/; expires=Sat, 10-May-25 17:46:35 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=.Pz4uLGlH69bncrQixdLyNxUfO7FsZh91WWDc.5mk7Y-1746897395672-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    vary: 'Origin',
+    'x-content-type-options': 'nosniff',
+    'x-request-id': 'req_b21432f39668581112c80eee67b75f72'
+  },
+  request_id: 'req_b21432f39668581112c80eee67b75f72',
+  error: {
+    message: "You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.",
+    type: 'invalid_request_error',
+    param: null,
+    code: null
+  },
+  code: null,
+  param: null,
+  type: 'invalid_request_error'
+}
+ POST /api/chatbot 500 in 1551ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 789ms (1207 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1445ms (1433 modules)
+ GET /images/sustainability-carbon.png 404 in 2504ms
+ ⨯ The requested resource isn't a valid image for /images/sustainability-carbon.png received text/html; charset=utf-8
+ GET /images/halal-chain-hero.png 404 in 2114ms
+ ⨯ The requested resource isn't a valid image for /images/halal-chain-hero.png received text/html; charset=utf-8
+ GET /images/halal-chain-hero.png 404 in 1989ms
+ ⨯ The requested resource isn't a valid image for /images/halal-chain-hero.png received text/html; charset=utf-8
+ GET /images/sustainability-carbon.png 404 in 1988ms
+ ⨯ The requested resource isn't a valid image for /images/sustainability-carbon.png received text/html; charset=utf-8
+ImageError: The requested resource isn't a valid image.
+    at imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/image-optimizer.js:672:19)
+    at DevServer.imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:655:20)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:454:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async cacheEntry.imageResponseCache.get.incrementalCache (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:182:65)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/response-cache/index.js:90:36
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/lib/batcher.js:45:32 {
+  statusCode: 400
+}
+ImageError: The requested resource isn't a valid image.
+    at imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/image-optimizer.js:672:19)
+    at DevServer.imageOptimizer (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:655:20)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at process.processImmediate (node:internal/timers:454:9)
+    at process.callbackTrampoline (node:internal/async_hooks:130:17)
+    at async cacheEntry.imageResponseCache.get.incrementalCache (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:182:65)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/response-cache/index.js:90:36
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/lib/batcher.js:45:32 {
+  statusCode: 400
+}
+ GET / 404 in 21ms
+ GET /?id=2956df23-0fbb-4258-91e5-112bdb4a02b9&vscodeBrowserReqId=1746897542257 404 in 18ms
+ GET /?id=2956df23-0fbb-4258-91e5-112bdb4a02b9&vscodeBrowserReqId=1746897544681 404 in 19ms
+ GET /?id=2956df23-0fbb-4258-91e5-112bdb4a02b9&vscodeBrowserReqId=1746897546365 404 in 19ms
+ GET /?id=2956df23-0fbb-4258-91e5-112bdb4a02b9&vscodeBrowserReqId=1746897546503 404 in 17ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@tanstack.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/@tanstack' in /workspaces/halal-chain-marketplace/.next/server for build dependencies doesn't lead to expected result '/workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@tanstack.js', but to 'Error: Can't resolve './vendor-chunks/@tanstack' in '/workspaces/halal-chain-marketplace/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/@tanstack (expected /workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@tanstack.js)
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/@adraffy' in /workspaces/halal-chain-marketplace/.next/server for build dependencies doesn't lead to expected result '/workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@adraffy.js', but to 'Error: Can't resolve './vendor-chunks/@adraffy' in '/workspaces/halal-chain-marketplace/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/@adraffy (expected /workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@adraffy.js)
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/tailwind-merge' in /workspaces/halal-chain-marketplace/.next/server for build dependencies doesn't lead to expected result '/workspaces/halal-chain-marketplace/.next/server/vendor-chunks/tailwind-merge.js', but to 'Error: Can't resolve './vendor-chunks/tailwind-merge' in '/workspaces/halal-chain-marketplace/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/tailwind-merge (expected /workspaces/halal-chain-marketplace/.next/server/vendor-chunks/tailwind-merge.js)
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/@radix-ui' in /workspaces/halal-chain-marketplace/.next/server for build dependencies doesn't lead to expected result '/workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@radix-ui.js', but to 'Error: Can't resolve './vendor-chunks/@radix-ui' in '/workspaces/halal-chain-marketplace/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/@radix-ui (expected /workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@radix-ui.js)
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/@noble' in /workspaces/halal-chain-marketplace/.next/server for build dependencies doesn't lead to expected result '/workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@noble.js', but to 'Error: Can't resolve './vendor-chunks/@noble' in '/workspaces/halal-chain-marketplace/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/@noble (expected /workspaces/halal-chain-marketplace/.next/server/vendor-chunks/@noble.js)
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/ethers' in /workspaces/halal-chain-marketplace/.next/server for build dependencies doesn't lead to expected result '/workspaces/halal-chain-marketplace/.next/server/vendor-chunks/ethers.js', but to 'Error: Can't resolve './vendor-chunks/ethers' in '/workspaces/halal-chain-marketplace/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/ethers (expected /workspaces/halal-chain-marketplace/.next/server/vendor-chunks/ethers.js)
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/webpack-runtime.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file /workspaces/halal-chain-marketplace/.next/server/pages/_app.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/require.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /workspaces/halal-chain-marketplace/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
