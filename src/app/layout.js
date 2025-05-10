@@ -3,6 +3,7 @@ import './globals.css';
 import ClientLayout from '@/components/layout/ClientLayout';
 import { Providers } from './providers';
 import Script from 'next/script';
+import ChatbotWidget from '@/components/ChatbotWidget';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
           <ClientLayout>
             {children}
           </ClientLayout>
+          <ChatbotWidget />
         </Providers>
         
         {/* Google Analytics */}
