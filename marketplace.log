@@ -1736,3 +1736,13 @@ Chatbot API error: AuthenticationError: 401 You didn't provide an API key. You n
  POST /api/chatbot 500 in 874ms
  ✓ Compiled in 550ms (1600 modules)
  ✓ Compiled in 1513ms (1591 modules)
+ ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+  ▲ Next.js 14.2.28
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ✓ Ready in 1426ms
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
