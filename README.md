@@ -1,99 +1,46 @@
 # HalalChain Marketplace
 
-A blockchain-powered halal certification and supply chain platform with AI-powered multi-agent system for transparent and authentic halal products.
+A blockchain-based marketplace for halal-certified products with transparent supply chain tracking.
 
-## Features
+## Logo Setup
 
-- Blockchain-based certification verification
-- Supply chain tracking and transparency
-- AI multi-agent system for optimization
-- Integration with major e-commerce and social media platforms
-- Neural interface capabilities for enhanced product experiences
-- Vendor, customer, and developer portals
+The application uses the HalalChain logo. To set up the logo:
 
-## Integration Support
+1. Place the `HalalChain.png` file in the `/public/images/` directory.
+2. The recommended logo dimensions are 150px width by 50px height.
 
-The platform supports integration with:
+## Components
 
-### Social Media Platforms
-- Facebook
-- Instagram
-- TikTok
-- X (Twitter)
-- LinkedIn
+### Icons
 
-### E-Commerce Platforms
-- Shopify
-- WooCommerce
-- Amazon
-- eBay
-- TikTok Shop
-- Facebook Marketplace
-- Instagram Shop
+The application includes a comprehensive set of icons in the `src/components/icons` directory:
+
+- `IconSet.jsx`: Contains SVG icons for various UI elements
+- `HalalChainLogo.jsx`: Component for displaying the HalalChain logo
+- `index.js`: Exports all icon components
+
+### UI Components
+
+- `Logo.jsx`: A wrapper component that displays the HalalChain logo with a link to the homepage
 
 ## Getting Started
 
-### Prerequisites
+1. Install dependencies:
+   ```
+   npm install
+   ```
 
-- Node.js 18.x or higher
-- npm or yarn
-- MongoDB
-- Ethereum wallet (MetaMask recommended)
+2. Run the development server:
+   ```
+   npm run dev
+   ```
 
-### Installation
+3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/halal-chain-marketplace.git
-cd halal-chain-marketplace
-```
+## Features
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
-
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
-Edit the `.env.local` file with your configuration.
-
-4. Run the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Project Structure
-
-```
-halal-chain-marketplace/
-├── ai_multi-agent/        # AI agent system
-├── apps/                  # Microservices
-├── backend/               # Backend API
-├── contracts/             # Smart contracts
-├── public/                # Static assets
-├── src/                   # Frontend code
-│   ├── app/               # Next.js app router
-│   ├── components/        # React components
-│   ├── contracts/         # Contract ABIs
-│   └── lib/               # Utility functions
-```
-
-## API Documentation
-
-API documentation is available at `/docs/api` when running the development server.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Blockchain-based product verification
+- Halal certification tracking
+- Transparent supply chain
+- User authentication and profiles
+- Product marketplace
