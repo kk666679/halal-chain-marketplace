@@ -4,7 +4,7 @@
 
 HalalChain Marketplace is a comprehensive blockchain-powered platform for halal certification and supply chain management, ensuring authenticity and transparency in halal products through quantum-secure blockchain verification and neural-symbolic AI agents.
 
-![HalalChain Platform](public/images/halal-chain-hero.png)
+![HalalChain Platform](public/images/halalchain.png)
 
 ## 2025 Platform Highlights
 
