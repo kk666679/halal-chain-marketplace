@@ -1,6 +1,6 @@
 {
   "name": "halal-chain-marketplace",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A blockchain-powered halal certification and supply chain platform",
   "private": true,
   "scripts": {
