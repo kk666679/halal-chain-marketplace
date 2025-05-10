@@ -1,6 +1,6 @@
 {
   "name": "halal-chain-marketplace",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A blockchain-powered halal certification and supply chain platform",
   "private": true,
   "scripts": {
@@ -32,6 +32,7 @@
     "dotenv": "^16.3.1",
     "ethers": "^6.14.0",
     "express": "^4.18.2",
+    "framer-motion": "^12.10.5",
     "ipfs-http-client": "^60.0.1",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.358.0",
