@@ -1,188 +1,246 @@
-"use client";
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaBars, FaTimes, FaUser, FaShoppingCart, FaSearch } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
+import { FaSearch, FaBars, FaTimes, FaChevronDown, FaChevronRight } from 'react-icons/fa';
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(null);
+  const pathname = usePathname();
+  
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+  
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { 
+      name: 'Solutions', 
+      href: '#',
+      dropdown: [
+        { name: 'Certification', href: '/certification' },
+        { name: 'Supply Chain', href: '/supply-chain' },
+        { name: 'Marketplace', href: '/marketplace' },
+        { name: 'Neural Interface', href: '/neural-interface' },
+        { name: 'Quantum Security', href: '/quantum-security' }
+      ]
+    },
+    { 
+      name: 'Portals', 
+      href: '#',
+      dropdown: [
+        { name: 'Government', href: '/portals/government' },
+        { name: 'Developer', href: '/portals/developer' },
+        { name: 'Vendor', href: '/portals/vendor' },
+        { name: 'Education', href: '/portals/education' },
+        { name: 'Research', href: '/portals/research' },
+        { name: 'Standards', href: '/portals/standards' }
+      ]
+    },
+    { name: 'Integrations', href: '/integrations' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'About', href: '/about' }
+  ];
+  
+  const isActive = (path) => {
+    if (path === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(path);
+  };
+  
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+    <header 
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-10 h-10">
-              <Image 
-                src="/images/halal-chain-logo.png" 
-                alt="HalalChain Logo" 
+          <Link href="/" className="flex items-center">
+            <div className="relative h-10 w-40">
+              <Image
+                src={scrolled ? "/images/logo.png" : "/images/logo-white.png"}
+                alt="HalalChain"
                 fill
                 style={{objectFit: "contain"}}
+                priority
               />
             </div>
-            <span className="text-xl font-bold text-green-700">HalalChain</span>
           </Link>
-
+          
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/marketplace" className="text-gray-700 hover:text-green-600 transition duration-300">
-              Marketplace
-            </Link>
-            <Link href="/vendors" className="text-gray-700 hover:text-green-600 transition duration-300">
-              Vendors
-            </Link>
-            <Link href="/certification" className="text-gray-700 hover:text-green-600 transition duration-300">
-              Certification
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-green-600 transition duration-300">
-              About
-            </Link>
-            <div className="relative group">
-              <button 
-                className="text-gray-700 hover:text-green-600 transition duration-300"
-                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-              >
-                Portals
-              </button>
-              <div className={`absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 ${isUserMenuOpen ? 'block' : 'hidden'}`}>
-                <Link href="/portals/government" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50">
-                  Government Portal
-                </Link>
-                <Link href="/portals/developer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50">
-                  Developer Hub
-                </Link>
-                <Link href="/portals/vendor" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50">
-                  Vendor Dashboard
-                </Link>
+          <nav className="hidden lg:flex items-center space-x-1">
+            {navLinks.map((link, index) => (
+              <div key={index} className="relative group">
+                {link.dropdown ? (
+                  <button
+                    className={`px-4 py-2 rounded-lg flex items-center ${
+                      isActive(link.href) 
+                        ? 'text-green-600 font-medium' 
+                        : scrolled ? 'text-gray-700 hover:text-green-600' : 'text-white hover:text-green-200'
+                    }`}
+                    onClick={() => setDropdownOpen(dropdownOpen === index ? null : index)}
+                    onMouseEnter={() => setDropdownOpen(index)}
+                    onMouseLeave={() => setDropdownOpen(null)}
+                  >
+                    {link.name}
+                    <FaChevronDown className="ml-1 h-3 w-3" />
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={`px-4 py-2 rounded-lg ${
+                      isActive(link.href) 
+                        ? 'text-green-600 font-medium' 
+                        : scrolled ? 'text-gray-700 hover:text-green-600' : 'text-white hover:text-green-200'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+                
+                {/* Dropdown */}
+                {link.dropdown && (
+                  <div
+                    className={`absolute left-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-300 ${
+                      dropdownOpen === index ? 'opacity-100 visible' : 'opacity-0 invisible'
+                    }`}
+                    onMouseEnter={() => setDropdownOpen(index)}
+                    onMouseLeave={() => setDropdownOpen(null)}
+                  >
+                    <div className="py-1">
+                      {link.dropdown.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          href={item.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-green-600"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          </div>
-
-          {/* Search Bar */}
-          <div className="hidden md:flex items-center relative w-64">
-            <input 
-              type="text" 
-              placeholder="Search products..." 
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500"
-            />
-            <FaSearch className="absolute left-3 text-gray-400" />
-          </div>
-
-          {/* User Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/cart" className="text-gray-700 hover:text-green-600 transition duration-300 relative">
-              <FaShoppingCart size={20} />
-              <span className="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
-              </span>
-            </Link>
-            <Link href="/login" className="text-gray-700 hover:text-green-600 transition duration-300">
-              <FaUser size={20} />
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-green-600 focus:outline-none"
+            ))}
+          </nav>
+          
+          {/* Search and Login */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <button className={`p-2 rounded-full ${scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white hover:bg-opacity-10'}`}>
+              <FaSearch />
+            </button>
+            <Link
+              href="/login"
+              className={`px-4 py-2 rounded-lg ${
+                scrolled 
+                  ? 'text-gray-700 hover:bg-gray-100' 
+                  : 'text-white hover:bg-white hover:bg-opacity-10'
+              }`}
             >
-              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              Login
+            </Link>
+            <Link
+              href="/vendor/register"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300"
+            >
+              Get Started
+            </Link>
+          </div>
+          
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-lg ${
+                scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white hover:bg-opacity-10'
+              }`}
+            >
+              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
-            <div className="flex items-center relative mb-4">
-              <input 
-                type="text" 
-                placeholder="Search products..." 
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              <FaSearch className="absolute left-3 text-gray-400" />
-            </div>
-            <div className="flex flex-col space-y-3">
-              <Link 
-                href="/marketplace" 
-                className="text-gray-700 hover:text-green-600 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Marketplace
-              </Link>
-              <Link 
-                href="/vendors" 
-                className="text-gray-700 hover:text-green-600 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Vendors
-              </Link>
-              <Link 
-                href="/certification" 
-                className="text-gray-700 hover:text-green-600 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Certification
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-gray-700 hover:text-green-600 transition duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <div className="py-2">
-                <p className="font-semibold mb-2">Portals</p>
-                <div className="pl-4 flex flex-col space-y-2">
-                  <Link 
-                    href="/portals/government" 
-                    className="text-gray-700 hover:text-green-600 transition duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Government Portal
-                  </Link>
-                  <Link 
-                    href="/portals/developer" 
-                    className="text-gray-700 hover:text-green-600 transition duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Developer Hub
-                  </Link>
-                  <Link 
-                    href="/portals/vendor" 
-                    className="text-gray-700 hover:text-green-600 transition duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Vendor Dashboard
-                  </Link>
-                </div>
-              </div>
-              <div className="flex space-x-4 pt-2">
-                <Link 
-                  href="/cart" 
-                  className="text-gray-700 hover:text-green-600 transition duration-300 flex items-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <FaShoppingCart size={20} className="mr-2" />
-                  <span>Cart (0)</span>
-                </Link>
-                <Link 
-                  href="/login" 
-                  className="text-gray-700 hover:text-green-600 transition duration-300 flex items-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <FaUser size={20} className="mr-2" />
-                  <span>Login</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
-    </nav>
+      
+      {/* Mobile menu */}
+      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
+          {navLinks.map((link, index) => (
+            <div key={index}>
+              {link.dropdown ? (
+                <div>
+                  <button
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-lg ${
+                      isActive(link.href) ? 'text-green-600 bg-green-50 font-medium' : 'text-gray-700 hover:bg-gray-50'
+                    }`}
+                    onClick={() => setDropdownOpen(dropdownOpen === index ? null : index)}
+                  >
+                    <span>{link.name}</span>
+                    {dropdownOpen === index ? <FaChevronDown /> : <FaChevronRight />}
+                  </button>
+                  
+                  {dropdownOpen === index && (
+                    <div className="ml-4 mt-2 space-y-1">
+                      {link.dropdown.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          href={item.href}
+                          className="block px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-green-600"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  href={link.href}
+                  className={`block px-3 py-2 rounded-lg ${
+                    isActive(link.href) ? 'text-green-600 bg-green-50 font-medium' : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )}
+            </div>
+          ))}
+          
+          <div className="pt-4 pb-3 border-t border-gray-200">
+            <Link
+              href="/login"
+              className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50"
+            >
+              Login
+            </Link>
+            <Link
+              href="/vendor/register"
+              className="block px-3 py-2 mt-1 rounded-lg bg-green-600 text-white hover:bg-green-700"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 }

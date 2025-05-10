@@ -1,147 +1,177 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaLinkedin, FaInstagram, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  
+  const solutions = [
+    { name: 'Certification', href: '/certification' },
+    { name: 'Supply Chain', href: '/supply-chain' },
+    { name: 'Marketplace', href: '/marketplace' },
+    { name: 'Neural Interface', href: '/neural-interface' },
+    { name: 'Quantum Security', href: '/quantum-security' }
+  ];
+  
+  const portals = [
+    { name: 'Government', href: '/portals/government' },
+    { name: 'Developer', href: '/portals/developer' },
+    { name: 'Vendor', href: '/portals/vendor' },
+    { name: 'Education', href: '/portals/education' },
+    { name: 'Research', href: '/portals/research' },
+    { name: 'Standards', href: '/portals/standards' }
+  ];
+  
+  const company = [
+    { name: 'About Us', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Press', href: '/press' },
+    { name: 'Contact', href: '/contact' }
+  ];
+  
+  const legal = [
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Cookie Policy', href: '/cookies' },
+    { name: 'Compliance', href: '/compliance' }
+  ];
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="relative w-10 h-10">
-                <Image 
-                  src="/images/halal-chain-logo-white.png" 
-                  alt="HalalChain Logo" 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <div className="relative h-10 w-40">
+                <Image
+                  src="/images/logo-white.png"
+                  alt="HalalChain"
                   fill
                   style={{objectFit: "contain"}}
                 />
               </div>
-              <span className="text-xl font-bold text-white">HalalChain</span>
             </Link>
-            <p className="text-gray-400 mb-4">
-              A blockchain-powered halal certification and supply chain platform ensuring authenticity and transparency.
+            <p className="text-gray-400 mb-6">
+              HalalChain is revolutionizing halal certification and supply chain transparency through 
+              quantum-secure blockchain technology, neural interfaces, and AI-powered verification.
             </p>
             <div className="flex space-x-4">
-              <a href="https://twitter.com/halalchain" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <FaTwitter size={20} />
               </a>
-              <a href="https://facebook.com/halalchain" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <FaFacebook size={20} />
               </a>
-              <a href="https://instagram.com/halalchain" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-                <FaInstagram size={20} />
-              </a>
-              <a href="https://linkedin.com/company/halalchain" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <FaLinkedin size={20} />
               </a>
-              <a href="https://github.com/halalchain" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-300">
-                <FaGithub size={20} />
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <FaInstagram size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <FaYoutube size={20} />
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4 text-green-400">Quick Links</h3>
+          
+          {/* Solutions */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/marketplace" className="text-gray-400 hover:text-white transition duration-300">
-                  Marketplace
-                </Link>
-              </li>
-              <li>
-                <Link href="/vendors" className="text-gray-400 hover:text-white transition duration-300">
-                  Vendors
-                </Link>
-              </li>
-              <li>
-                <Link href="/certification" className="text-gray-400 hover:text-white transition duration-300">
-                  Certification
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition duration-300">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition duration-300">
-                  Contact
-                </Link>
-              </li>
+              {solutions.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors duration-300">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-
+          
           {/* Portals */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4 text-green-400">Portals</h3>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Portals</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/portals/government" className="text-gray-400 hover:text-white transition duration-300">
-                  Government Portal
-                </Link>
-              </li>
-              <li>
-                <Link href="/portals/developer" className="text-gray-400 hover:text-white transition duration-300">
-                  Developer Hub
-                </Link>
-              </li>
-              <li>
-                <Link href="/portals/vendor" className="text-gray-400 hover:text-white transition duration-300">
-                  Vendor Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link href="/docs/api" className="text-gray-400 hover:text-white transition duration-300">
-                  API Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="/blockchain/explorer" className="text-gray-400 hover:text-white transition duration-300">
-                  Blockchain Explorer
-                </Link>
-              </li>
+              {portals.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors duration-300">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-
-          {/* Contact */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4 text-green-400">Contact Us</h3>
+          
+          {/* Company & Legal */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">
-                <span className="block">Chemmara Enterprise</span>
-                <span className="block">Jalan Halal 1, Seri Kembangan</span>
-                <span className="block">Kuala Lumpur, Malaysia</span>
-              </li>
-              <li className="text-gray-400">
-                <span className="block">Email: info@halal-chain.com</span>
-                <span className="block">Phone: +60104351747</span>
-              </li>
+              {company.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors duration-300">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-            <div className="mt-4">
-              <Link href="/contact" className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
-                Send Message
-              </Link>
+            
+            <h3 className="text-lg font-semibold mt-6 mb-4">Legal</h3>
+            <ul className="space-y-2">
+              {legal.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors duration-300">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        
+        {/* Contact Info */}
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex items-center">
+              <FaMapMarkerAlt className="text-green-500 mr-3" size={20} />
+              <span className="text-gray-400">Kuala Lumpur, Malaysia</span>
+            </div>
+            <div className="flex items-center">
+              <FaPhone className="text-green-500 mr-3" size={20} />
+              <span className="text-gray-400">+60104351747</span>
+            </div>
+            <div className="flex items-center">
+              <FaEnvelope className="text-green-500 mr-3" size={20} />
+              <span className="text-gray-400">info@halal-chain.com</span>
             </div>
           </div>
         </div>
-
+        
+        {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} HalalChain. All rights reserved.
+          <p className="text-gray-400 text-sm">
+            &copy; {currentYear} HalalChain. All rights reserved.
           </p>
-          <div className="flex space-x-4">
-            <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition duration-300">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition duration-300">
-              Terms of Service
-            </Link>
-            <Link href="/cookies" className="text-gray-400 hover:text-white text-sm transition duration-300">
-              Cookie Policy
-            </Link>
+          <div className="mt-4 md:mt-0 flex items-center">
+            <div className="flex items-center mr-6">
+              <span className="text-gray-400 text-sm mr-2">Language:</span>
+              <select className="bg-gray-800 text-gray-400 text-sm rounded-md border-none focus:ring-0">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+                <option value="ms">Bahasa Melayu</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="tr">Türkçe</option>
+              </select>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/images/halal-certified-badge.png"
+                alt="Halal Certified"
+                width={60}
+                height={60}
+              />
+            </div>
           </div>
         </div>
       </div>
