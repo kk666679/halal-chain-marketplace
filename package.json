@@ -1,6 +1,6 @@
 {
   "name": "halal-chain-marketplace",
-  "version": "1.0.3",
+  "version": "1.5.4",
   "description": "A blockchain-powered halal certification and supply chain platform",
   "private": true,
   "scripts": {
@@ -43,6 +43,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
+    "react-markdown": "^9.1.0",
     "tailwind-merge": "^2.2.1",
     "web3": "^4.3.0",
     "web3modal": "^1.9.12"
