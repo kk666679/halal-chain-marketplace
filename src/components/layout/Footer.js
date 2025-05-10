@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaTwitter, FaFacebook, FaLinkedin, FaInstagram, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
@@ -135,11 +137,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex items-center">
               <FaMapMarkerAlt className="text-green-500 mr-3" size={20} />
-              <span className="text-gray-400">Kuala Lumpur, Malaysia</span>
+              <span className="text-gray-400">Dubai Digital Park, Dubai Silicon Oasis, UAE</span>
             </div>
             <div className="flex items-center">
               <FaPhone className="text-green-500 mr-3" size={20} />
-              <span className="text-gray-400">+60104351747</span>
+              <span className="text-gray-400">+971 4 123 4567</span>
             </div>
             <div className="flex items-center">
               <FaEnvelope className="text-green-500 mr-3" size={20} />
