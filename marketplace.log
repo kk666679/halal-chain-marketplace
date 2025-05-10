@@ -1,0 +1,1738 @@
+
+> halal-chain-marketplace@1.0.3 dev
+> next dev
+
+  ▲ Next.js 14.2.28
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ⚠ Duplicate page detected. src/app/login/page.js and src/app/login/page.jsx resolve to /login
+ ✓ Ready in 1781ms
+ ○ Compiling / ...
+ ✓ Compiled / in 6.3s (1174 modules)
+ GET / 200 in 6953ms
+ ✓ Compiled in 776ms (576 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1931ms (1163 modules)
+ GET /images/halal-chain-hero.png 404 in 2241ms
+ GET /images/user2.png 404 in 27ms
+ GET /images/user1.png 404 in 29ms
+ GET /images/user3.png 404 in 59ms
+ GET /images/pattern.svg 404 in 59ms
+ GET /images/partner1.png 404 in 31ms
+ GET /images/partner3.png 404 in 27ms
+ GET /images/partner2.png 404 in 40ms
+ GET /images/partner4.png 404 in 40ms
+ GET /images/partner5.png 404 in 22ms
+ GET /images/sustainability-carbon.png 404 in 51ms
+ GET /images/consumer-neural.png 404 in 48ms
+ GET /images/halal-certified-badge.png 404 in 23ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ○ Compiling /_error ...
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled /_error in 958ms (1396 modules)
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ GET /?id=1c4d5da8-a907-402f-815e-7e946ff39913&vscodeBrowserReqId=1746886733204 200 in 224ms
+ GET /images/partner4.png 404 in 39ms
+ GET /images/halal-chain-hero.png 404 in 148ms
+ GET /images/user2.png 404 in 195ms
+ GET /images/user1.png 404 in 195ms
+ GET /images/partner1.png 404 in 191ms
+ GET /images/partner2.png 404 in 191ms
+ GET /images/user3.png 404 in 191ms
+ GET /images/partner3.png 404 in 191ms
+ GET /images/partner5.png 404 in 186ms
+ GET /images/pattern.svg 404 in 113ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ GET /images/pattern.svg 404 in 33ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 795ms (1424 modules)
+ GET /images/logo.svg 404 in 205ms
+ GET /_next/static/webpack/ea70be948e4a6fac.webpack.hot-update.json 404 in 22ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /?id=1c4d5da8-a907-402f-815e-7e946ff39913&vscodeBrowserReqId=1746886733204 200 in 68ms
+ GET /images/user1.png 404 in 22ms
+ GET /images/user2.png 404 in 54ms
+ GET /images/user3.png 404 in 48ms
+ GET /images/halal-chain-hero.png 404 in 41ms
+ GET /images/partner1.png 404 in 39ms
+ GET /images/pattern.svg 404 in 38ms
+ GET /images/partner2.png 404 in 36ms
+ GET /images/partner3.png 404 in 35ms
+ GET /images/partner4.png 404 in 35ms
+ GET /images/partner5.png 404 in 40ms
+ GET /images/consumer-neural.png 404 in 18ms
+ GET /images/sustainability-carbon.png 404 in 22ms
+ GET /images/halal-certified-badge.png 404 in 19ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled /_error in 293ms (1426 modules)
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/providers Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/error Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 640ms (1448 modules)
+ GET /portals/government 404 in 199ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ GET /images/partner3.png 404 in 95ms
+ GET /images/partner5.png 404 in 95ms
+ GET /images/partner4.png 404 in 99ms
+ GET /images/user3.png 404 in 42ms
+ GET /images/user1.png 404 in 26ms
+ GET /images/partner2.png 404 in 95ms
+ GET /images/user2.png 404 in 114ms
+ GET /images/partner1.png 404 in 112ms
+ GET /images/halal-chain-hero.png 404 in 102ms
+ GET /images/pattern.svg 404 in 56ms
+ GET /images/user3.png 404 in 123ms
+ GET /images/partner4.png 404 in 122ms
+ GET /images/partner5.png 404 in 109ms
+ GET /images/partner3.png 404 in 115ms
+ ✓ Compiled in 1790ms (792 modules)
+ ✓ Compiled /_not-found in 477ms (1434 modules)
+ GET /portals/government 404 in 163ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled /_error in 233ms (1436 modules)
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 833ms (795 modules)
+ GET /portals/government 404 in 152ms
+ ✓ Compiled in 463ms (795 modules)
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 891ms (795 modules)
+ GET /portals/government 404 in 31ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 773ms (795 modules)
+ GET /portals/government 404 in 31ms
+ GET /images/halal-certified-badge.png 404 in 26ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 937ms (795 modules)
+ GET /portals/government 404 in 33ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/workspaces/halal-chain-marketplace/.next/cache/webpack/client-development/0.pack.gz_' -> '/workspaces/halal-chain-marketplace/.next/cache/webpack/client-development/0.pack.gz'
+ GET /images/halal-certified-badge.png 404 in 25ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 696ms (792 modules)
+ ✓ Compiled /_not-found in 468ms (1434 modules)
+ GET /portals/government 404 in 191ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled /_error in 246ms (1436 modules)
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 474ms (795 modules)
+ GET /portals/government 404 in 153ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 668ms (795 modules)
+ GET /portals/government 404 in 41ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 741ms (795 modules)
+ GET /portals/government 404 in 27ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 731ms (795 modules)
+ GET /portals/government 404 in 25ms
+ GET /images/halal-certified-badge.png 404 in 34ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 1126ms (1436 modules)
+ GET /portals/government 404 in 202ms
+ GET /images/halal-certified-badge.png 404 in 26ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 594ms (795 modules)
+ GET /portals/government 404 in 28ms
+ GET /images/halal-certified-badge.png 404 in 34ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 905ms (795 modules)
+ GET /portals/government 404 in 34ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 791ms (792 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 517ms (1434 modules)
+ GET /portals/government 404 in 202ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled /_error in 195ms (1436 modules)
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled in 883ms (792 modules)
+ ✓ Compiled /_not-found in 419ms (1434 modules)
+ GET /portals/government 404 in 178ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled /_error in 210ms (1436 modules)
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ GET / 200 in 259ms
+ GET /images/partner2.png 404 in 45ms
+ GET /images/partner3.png 404 in 44ms
+ GET /images/partner4.png 404 in 166ms
+ GET /images/partner5.png 404 in 291ms
+ GET /images/user2.png 404 in 305ms
+ GET /images/halal-chain-hero.png 404 in 310ms
+ GET /images/partner1.png 404 in 314ms
+ GET /images/user1.png 404 in 222ms
+ GET /images/user3.png 404 in 228ms
+ GET /images/pattern.svg 404 in 63ms
+ GET /apple-touch-icon.png 404 in 36ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ GET /images/consumer-neural.png 404 in 24ms
+ GET /images/sustainability-carbon.png 404 in 24ms
+ GET /images/halal-certified-badge.png 404 in 30ms
+ ○ Compiling /vendor/register ...
+ ✓ Compiled /vendor/register in 792ms (1442 modules)
+ GET /_next/static/webpack/57d95be3df843ed0.webpack.hot-update.json 404 in 188ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 98ms
+ GET /images/user3.png 404 in 136ms
+ GET /images/partner1.png 404 in 199ms
+ GET /images/user1.png 404 in 222ms
+ GET /images/partner2.png 404 in 239ms
+ GET /images/partner4.png 404 in 236ms
+ GET /images/halal-chain-hero.png 404 in 184ms
+ GET /images/user2.png 404 in 161ms
+ GET /images/partner5.png 404 in 146ms
+ GET /images/partner3.png 404 in 65ms
+ GET /images/pattern.svg 404 in 38ms
+ GET /images/halal-certified-badge.png 404 in 26ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ GET /images/logo.svg 404 in 22ms
+ GET /register 404 in 24ms
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/session Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Failed to proxy https://api.halal-chain.com/api/auth/_log Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+Error: getaddrinfo ENOTFOUND api.halal-chain.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'api.halal-chain.com'
+}
+ ✓ Compiled /api/chatbot in 463ms (817 modules)
+Chatbot API error: AuthenticationError: 401 You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.
+    at APIError.generate (webpack-internal:///(rsc)/./node_modules/openai/error.mjs:63:20)
+    at OpenAI.makeStatusError (webpack-internal:///(rsc)/./node_modules/openai/core.mjs:333:65)
+    at OpenAI.makeRequest (webpack-internal:///(rsc)/./node_modules/openai/core.mjs:377:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async POST (webpack-internal:///(rsc)/./src/app/api/chatbot/route.js:91:32)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:57228
+    at async eT.execute (/workspaces/halal-chain-marketplace/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46851)
+    at async eT.handle (/workspaces/halal-chain-marketplace/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:58760)
+    at async doRender (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1496:28)
+    at async DevServer.renderPageComponent (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/base-server.js:818:17)
+    at async /workspaces/halal-chain-marketplace/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/workspaces/halal-chain-marketplace/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/router-server.js:178:21)
+    at async handleRequest (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/router-server.js:355:24)
+    at async requestHandlerImpl (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/router-server.js:379:13)
+    at async Server.requestListener (/workspaces/halal-chain-marketplace/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  status: 401,
+  headers: {
+    'alt-svc': 'h3=":443"; ma=86400',
+    'cf-cache-status': 'DYNAMIC',
+    'cf-ray': '93da7e1fcb1b5f5a-SIN',
+    connection: 'keep-alive',
+    'content-length': '496',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Sat, 10 May 2025 15:33:02 GMT',
+    server: 'cloudflare',
+    'set-cookie': '__cf_bm=O5l.pPhTpMSUrLZrwxHvCvnwrpzTh4ai0hFRZLSnFks-1746891182-1.0.1.1-r4QiQZy0.LbB6fK9vXYU706hnQqRLg_CjiYpAyk1b1GSv0jKhlZwGSEzpHd1fGYAA2303egbn.ZcOaaPl9lstlkIRuW6uqCXHBPOnbwrzts; path=/; expires=Sat, 10-May-25 16:03:02 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=68jaLKcBNm3SpOYFlJhmpyqIqpmZLeY5njvEX4n4.fk-1746891182279-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    vary: 'Origin',
+    'x-content-type-options': 'nosniff',
+    'x-request-id': 'req_96304b469e4782f55f8f392c2180e625'
+  },
+  request_id: 'req_96304b469e4782f55f8f392c2180e625',
+  error: {
+    message: "You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.",
+    type: 'invalid_request_error',
+    param: null,
+    code: null
+  },
+  code: null,
+  param: null,
+  type: 'invalid_request_error'
+}
+ POST /api/chatbot 500 in 874ms
+ ✓ Compiled in 550ms (1600 modules)
+ ✓ Compiled in 1513ms (1591 modules)
