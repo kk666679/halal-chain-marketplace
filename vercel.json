@@ -16,10 +16,6 @@
     "NEXT_PUBLIC_SITE_URL": "https://halal-chain.com",
     "NEXT_PUBLIC_API_URL": "https://api.halal-chain.com"
   },
-  "domains": [
-    "halal-chain.com",
-    "www.halal-chain.com"
-  ],
   "github": {
     "enabled": true,
     "silent": false
