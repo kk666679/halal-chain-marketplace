@@ -7,17 +7,17 @@ import { FaCheckCircle, FaUsers, FaGlobeAsia, FaAward, FaHandshake } from 'react
 export default function About() {
   const milestones = [
     {
-      year: 2022,
+      year: 2024,
       title: "Foundation",
       description: "HalalChain was founded with a vision to revolutionize halal certification through blockchain technology."
     },
     {
-      year: 2023,
+      year: 2025,
       title: "Initial Platform Launch",
       description: "Launched the first version of our blockchain-based certification platform with basic supply chain tracking."
     },
     {
-      year: 2024,
+      year: 2025,
       title: "AI Integration",
       description: "Introduced our multi-agent AI system to optimize supply chain operations and enhance fraud detection."
     },
@@ -30,27 +30,27 @@ export default function About() {
   
   const team = [
     {
-      name: "Ahmad Khan",
+      name: "Kurnia Kadir",
       title: "CEO & Founder",
-      image: "/images/team/ahmad-khan.jpg",
+      image: "/images/team/kurnia-kadir.jpg",
       bio: "Former tech executive with 15+ years in supply chain management and blockchain technology."
     },
     {
-      name: "Dr. Aisha Rahman",
+      name: "Vacant",
       title: "Chief Technology Officer",
-      image: "/images/team/aisha-rahman.jpg",
+      image: "/images/team/vacafdj.jpg",
       bio: "Quantum computing expert with a Ph.D. in Computer Science and 10+ years in cryptographic security."
     },
     {
-      name: "Mohammed Al-Farsi",
+      name: "Vacant",
       title: "Head of Neural Interface Research",
-      image: "/images/team/mohammed-al-farsi.jpg",
+      image: "/images/team/vacanbt.jpg",
       bio: "Neuroscientist and AI researcher specializing in human-computer interaction and sensory interfaces."
     },
     {
-      name: "Fatima Zaidi",
+      name: "Vacant",
       title: "Chief Compliance Officer",
-      image: "/images/team/fatima-zaidi.jpg",
+      image: "/images/team/Vacant.jpg",
       bio: "Expert in international halal standards with 20+ years of experience in certification and compliance."
     }
   ];
@@ -221,6 +221,78 @@ export default function About() {
       {/* Our Team */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
+              <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-md transition-transform hover:transform hover:scale-105">
+                <div className="relative h-64 w-full">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    style={{objectFit: "cover"}}
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                  <p className="text-green-600 font-medium mb-3">{member.title}</p>
+                  <p className="text-gray-600 text-sm">{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Our Partners */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-4">Our Partners</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            We collaborate with leading organizations across the globe to build a robust halal certification ecosystem.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {partners.map((partner, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-md flex flex-col items-center">
+                <div className="relative h-24 w-full mb-4">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    style={{objectFit: "contain"}}
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-center mb-1">{partner.name}</h3>
+                <p className="text-green-600 text-sm text-center">{partner.type}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Join Us */}
+      <section className="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-6">Join the HalalChain Revolution</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Whether you're a producer, retailer, certifier, or consumer, become part of our mission to transform 
+            the halal industry through technology and transparency.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/vendor/register" className="bg-white text-green-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition duration-300">
+              Become a Vendor
+            </Link>
+            <Link href="/contact" className="bg-transparent hover:bg-green-700 border-2 border-white font-bold py-3 px-8 rounded-lg transition duration-300">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+} className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-4">Leadership Team</h2>
           <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
             Our diverse team of experts brings together decades of experience in blockchain technology, 

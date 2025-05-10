@@ -48,7 +48,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-6">
               <div className="relative h-10 w-40">
                 <Image
-                  src="/images/logo-white.png"
+                  src="/images/halalchain.png"
                   alt="HalalChain"
                   fill
                   style={{objectFit: "contain"}}
@@ -140,7 +140,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex items-center">
               <FaMapMarkerAlt className="text-green-500 mr-3" size={20} />
-              <span className="text-gray-400">Jalan 18/34, Kuala Lumpur, Malaysia</span>
+              <span className="text-gray-400">35, Jalan 18/34, Taman Sri Serdang, Seri Kembangan, Selangor, Malaysia</span>
             </div>
             <div className="flex items-center">
               <FaPhone className="text-green-500 mr-3" size={20} />
@@ -148,7 +148,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center">
               <FaEnvelope className="text-green-500 mr-3" size={20} />
-              <span className="text-gray-400">info@halal-chain.com</span>
+              <span className="text-gray-400">admin@chemmara.com</span>
             </div>
           </div>
         </div>

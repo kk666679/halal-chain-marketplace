@@ -80,7 +80,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <div className="relative h-10 w-40">
               <Image
-                src={scrolled ? "/images/logo.png" : "/images/logo-white.png"}
+                src={scrolled ? "/images/halalchain.svg" : "/images/halalchain.svg"}
                 alt="HalalChain"
                 fill
                 style={{objectFit: "contain"}}

@@ -1,115 +1,83 @@
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 /**
- * Combines multiple class names with Tailwind CSS
+ * Combines multiple class names using clsx and tailwind-merge
+ * @param {...string} inputs - Class names to combine
+ * @returns {string} - Combined class names
  */
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
 /**
- * Format address for display (0x1234...5678)
+ * Formats an Ethereum address to a shortened form
+ * @param {string} address - The Ethereum address to format
+ * @param {number} chars - Number of characters to show at start and end
+ * @returns {string} - Formatted address
  */
 export function formatAddress(address, chars = 4) {
-  if (!address) return "";
-  return `${address.substring(0, chars + 2)}...${address.substring(
-    address.length - chars
-  )}`;
+  if (!address) return '';
+  return `${address.substring(0, chars)}...${address.substring(address.length - chars)}`;
 }
 
 /**
- * Format date for display
+ * Formats a date string to a localized date format
+ * @param {string|Date} date - Date to format
+ * @param {Object} options - Intl.DateTimeFormat options
+ * @returns {string} - Formatted date string
  */
-export function formatDate(date) {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+export function formatDate(date, options = {}) {
+  const defaultOptions = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  };
+  
+  const mergedOptions = { ...defaultOptions, ...options };
+  
+  return new Date(date).toLocaleDateString(undefined, mergedOptions);
 }
 
 /**
- * Format currency for display
+ * Formats a number as currency
+ * @param {number} amount - Amount to format
+ * @param {string} currency - Currency code
+ * @returns {string} - Formatted currency string
  */
-export function formatCurrency(amount, currency = "USD") {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
+export function formatCurrency(amount, currency = 'USD') {
+  return new Intl.NumberFormat(undefined, {
+    style: 'currency',
     currency,
   }).format(amount);
 }
 
 /**
- * Truncate text with ellipsis
+ * Truncates text to a specified length
+ * @param {string} text - Text to truncate
+ * @param {number} length - Maximum length
+ * @returns {string} - Truncated text
  */
-export function truncateText(text, maxLength) {
-  if (!text) return "";
-  if (text.length <= maxLength) return text;
-  return `${text.substring(0, maxLength)}...`;
+export function truncateText(text, length = 100) {
+  if (!text || text.length <= length) return text;
+  return `${text.substring(0, length)}...`;
 }
 
 /**
- * Get initials from name
+ * Generates a random ID
+ * @returns {string} - Random ID
  */
-export function getInitials(name) {
-  if (!name) return "";
-  return name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase();
+export function generateId() {
+  return Math.random().toString(36).substring(2, 9);
 }
 
 /**
- * Delay execution (sleep)
+ * Debounces a function
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} - Debounced function
  */
-export function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-/**
- * Check if object is empty
- */
-export function isEmpty(obj) {
-  return Object.keys(obj).length === 0;
-}
-
-/**
- * Generate random ID
- */
-export function generateId(length = 8) {
-  return Math.random().toString(36).substring(2, length + 2);
-}
-
-/**
- * Deep clone object
- */
-export function deepClone(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
-
-/**
- * Check if running on client side
- */
-export const isClient = typeof window !== "undefined";
-
-/**
- * Check if running on server side
- */
-export const isServer = typeof window === "undefined";
-
-/**
- * Get query params from URL
- */
-export function getQueryParams() {
-  if (!isClient) return {};
-  return Object.fromEntries(new URLSearchParams(window.location.search));
-}
-
-/**
- * Debounce function
- */
-export function debounce(func, wait) {
+export function debounce(func, wait = 300) {
   let timeout;
   return function executedFunction(...args) {
     const later = () => {
@@ -119,4 +87,40 @@ export function debounce(func, wait) {
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
   };
+}
+
+/**
+ * Checks if an object is empty
+ * @param {Object} obj - Object to check
+ * @returns {boolean} - True if empty
+ */
+export function isEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}
+
+/**
+ * Converts a file to a data URL
+ * @param {File} file - File to convert
+ * @returns {Promise<string>} - Data URL
+ */
+export function fileToDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+/**
+ * Formats a file size in bytes to a human-readable string
+ * @param {number} bytes - File size in bytes
+ * @returns {string} - Formatted file size
+ */
+export function formatFileSize(bytes) {
+  if (bytes === 0) return '0 Bytes';
+  const k = 1024;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
