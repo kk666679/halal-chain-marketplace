@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -12,9 +12,16 @@ import {
   X,
   Filter,
   Download,
-  Loader2
+  Loader2,
+  SlidersHorizontal,
+  RefreshCw,
+  Eye,
+  EyeOff,
+  Check
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Button from '../buttons/Button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function DataTable({
   columns,
@@ -22,7 +29,7 @@ export default function DataTable({
   isLoading = false,
   pagination = true,
   pageSize = 10,
-  pageSizeOptions = [5, 10, 25, 50],
+  pageSizeOptions = [5, 10, 25, 50, 100],
   currentPage: controlledCurrentPage,
   totalItems: controlledTotalItems,
   onPageChange,
@@ -37,6 +44,10 @@ export default function DataTable({
   exportable = false,
   exportOptions = ['csv', 'excel', 'pdf'],
   onExport,
+  refreshable = false,
+  onRefresh,
+  selectable = false,
+  onRowSelect,
   emptyMessage = 'No data available',
   className,
   ...props
@@ -47,6 +58,26 @@ export default function DataTable({
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilters, setActiveFilters] = useState({});
   const [selectedPageSize, setSelectedPageSize] = useState(pageSize);
+  const [showFilters, setShowFilters] = useState(false);
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [isAllSelected, setIsAllSelected] = useState(false);
+  const [isExportMenuOpen, setIsExportMenuOpen] = useState(false);
+  const [columnVisibility, setColumnVisibility] = useState({});
+  const [showColumnSelector, setShowColumnSelector] = useState(false);
+  
+  // Initialize column visibility
+  useEffect(() => {
+    const initialVisibility = {};
+    columns.forEach(column => {
+      initialVisibility[column.key] = column.defaultVisible !== false;
+    });
+    setColumnVisibility(initialVisibility);
+  }, [columns]);
+  
+  // Visible columns
+  const visibleColumns = useMemo(() => {
+    return columns.filter(column => columnVisibility[column.key] !== false);
+  }, [columns, columnVisibility]);
   
   // Use controlled or uncontrolled pagination
   const effectiveCurrentPage = controlledCurrentPage !== undefined ? controlledCurrentPage : currentPage;
@@ -141,9 +172,75 @@ export default function DataTable({
   
   // Handle export
   const handleExport = (format) => {
+    setIsExportMenuOpen(false);
+    
     if (onExport) {
-      onExport(format);
+      onExport(format, selectedRows.length > 0 ? selectedRows : null);
     }
+  };
+  
+  // Handle refresh
+  const handleRefresh = () => {
+    if (onRefresh) {
+      onRefresh();
+    }
+  };
+  
+  // Handle row selection
+  const handleRowSelection = (rowId) => {
+    if (!selectable) return;
+    
+    setSelectedRows(prev => {
+      const isSelected = prev.includes(rowId);
+      const newSelection = isSelected
+        ? prev.filter(id => id !== rowId)
+        : [...prev, rowId];
+      
+      if (onRowSelect) {
+        onRowSelect(newSelection);
+      }
+      
+      return newSelection;
+    });
+  };
+  
+  // Handle select all rows
+  const handleSelectAll = () => {
+    if (!selectable) return;
+    
+    if (isAllSelected) {
+      setSelectedRows([]);
+      setIsAllSelected(false);
+      
+      if (onRowSelect) {
+        onRowSelect([]);
+      }
+    } else {
+      const allRowIds = currentData.map(row => row.id || row._id);
+      setSelectedRows(allRowIds);
+      setIsAllSelected(true);
+      
+      if (onRowSelect) {
+        onRowSelect(allRowIds);
+      }
+    }
+  };
+  
+  // Update isAllSelected when selectedRows changes
+  useEffect(() => {
+    if (currentData.length > 0 && selectedRows.length === currentData.length) {
+      setIsAllSelected(true);
+    } else {
+      setIsAllSelected(false);
+    }
+  }, [selectedRows, currentData]);
+  
+  // Toggle column visibility
+  const toggleColumnVisibility = (key) => {
+    setColumnVisibility(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
   };
   
   // Sort data if not controlled
@@ -156,82 +253,203 @@ export default function DataTable({
   return (
     <div className={cn("bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden", className)} {...props}>
       {/* Table toolbar */}
-      {(searchable || filterable || exportable) && (
-        <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-1 items-center space-x-2">
-            {searchable && (
-              <div className="relative flex-1 max-w-md">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-4 w-4 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={handleSearch}
-                  placeholder={searchPlaceholder}
-                  className="block w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
-                />
-                {searchTerm && (
-                  <button
-                    onClick={clearSearch}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center"
-                  >
-                    <X className="h-4 w-4 text-gray-400 hover:text-gray-500" />
-                  </button>
-                )}
-              </div>
-            )}
-            
-            {filterable && filters.length > 0 && (
-              <div className="flex items-center space-x-2">
-                <Filter className="h-4 w-4 text-gray-400" />
-                <div className="flex flex-wrap gap-2">
-                  {filters.map((filter) => (
-                    <select
-                      key={filter.id}
-                      value={activeFilters[filter.id] || ''}
-                      onChange={(e) => handleFilterChange(filter.id, e.target.value)}
-                      className="block border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
-                    >
-                      <option value="">{filter.label}</option>
-                      {filter.options.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-          
-          {exportable && (
-            <div className="flex items-center">
-              <div className="relative">
-                <button
-                  type="button"
-                  className="inline-flex items-center px-3 py-2 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Export
-                </button>
-                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg z-10 hidden group-hover:block">
-                  <div className="py-1">
-                    {exportOptions.map((format) => (
-                      <button
-                        key={format}
-                        onClick={() => handleExport(format)}
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        Export as {format.toUpperCase()}
-                      </button>
-                    ))}
+      {(searchable || filterable || exportable || refreshable || selectable) && (
+        <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-1 items-center space-x-2">
+              {searchable && (
+                <div className="relative flex-1 max-w-md">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Search className="h-4 w-4 text-gray-400" />
                   </div>
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearch}
+                    placeholder={searchPlaceholder}
+                    className="block w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                  />
+                  {searchTerm && (
+                    <button
+                      onClick={clearSearch}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                    >
+                      <X className="h-4 w-4 text-gray-400 hover:text-gray-500" />
+                    </button>
+                  )}
                 </div>
-              </div>
+              )}
+              
+              {filterable && filters.length > 0 && (
+                <div className="relative">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    leftIcon={Filter}
+                    onClick={() => setShowFilters(!showFilters)}
+                    className={showFilters ? 'bg-gray-100 dark:bg-gray-700' : ''}
+                  >
+                    Filters
+                    {Object.keys(activeFilters).length > 0 && (
+                      <span className="ml-1 bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                        {Object.keys(activeFilters).length}
+                      </span>
+                    )}
+                  </Button>
+                  
+                  <AnimatePresence>
+                    {showFilters && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg z-10 border border-gray-200 dark:border-gray-700"
+                      >
+                        <div className="p-3 space-y-3">
+                          <div className="flex items-center justify-between">
+                            <h3 className="text-sm font-medium text-gray-900 dark:text-white">Filters</h3>
+                            {Object.keys(activeFilters).length > 0 && (
+                              <button
+                                onClick={() => {
+                                  setActiveFilters({});
+                                  if (onFilter) onFilter({});
+                                }}
+                                className="text-xs text-emerald-600 hover:text-emerald-500 dark:text-emerald-500 dark:hover:text-emerald-400"
+                              >
+                                Clear all
+                              </button>
+                            )}
+                          </div>
+                          
+                          <div className="space-y-2">
+                            {filters.map((filter) => (
+                              <div key={filter.id} className="space-y-1">
+                                <label className="block text-xs font-medium text-gray-700 dark:text-gray-300">
+                                  {filter.label}
+                                </label>
+                                <select
+                                  value={activeFilters[filter.id] || ''}
+                                  onChange={(e) => handleFilterChange(filter.id, e.target.value)}
+                                  className="block w-full text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                                >
+                                  <option value="">All</option>
+                                  {filter.options.map((option) => (
+                                    <option key={option.value} value={option.value}>
+                                      {option.label}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )}
             </div>
-          )}
+            
+            <div className="flex items-center space-x-2">
+              {/* Column visibility toggle */}
+              <div className="relative">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  leftIcon={showColumnSelector ? EyeOff : Eye}
+                  onClick={() => setShowColumnSelector(!showColumnSelector)}
+                  className={showColumnSelector ? 'bg-gray-100 dark:bg-gray-700' : ''}
+                >
+                  Columns
+                </Button>
+                
+                <AnimatePresence>
+                  {showColumnSelector && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-md shadow-lg z-10 border border-gray-200 dark:border-gray-700"
+                    >
+                      <div className="p-3 space-y-3">
+                        <h3 className="text-sm font-medium text-gray-900 dark:text-white">Toggle Columns</h3>
+                        <div className="space-y-2">
+                          {columns.map((column) => (
+                            <div key={column.key} className="flex items-center">
+                              <input
+                                type="checkbox"
+                                id={`column-${column.key}`}
+                                checked={columnVisibility[column.key] !== false}
+                                onChange={() => toggleColumnVisibility(column.key)}
+                                className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+                                disabled={column.required}
+                              />
+                              <label
+                                htmlFor={`column-${column.key}`}
+                                className="ml-2 block text-sm text-gray-900 dark:text-gray-100"
+                              >
+                                {column.header}
+                              </label>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              
+              {/* Export button */}
+              {exportable && (
+                <div className="relative">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    leftIcon={Download}
+                    onClick={() => setIsExportMenuOpen(!isExportMenuOpen)}
+                    className={isExportMenuOpen ? 'bg-gray-100 dark:bg-gray-700' : ''}
+                  >
+                    Export
+                  </Button>
+                  
+                  <AnimatePresence>
+                    {isExportMenuOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg z-10 border border-gray-200 dark:border-gray-700"
+                      >
+                        <div className="py-1">
+                          {exportOptions.map((format) => (
+                            <button
+                              key={format}
+                              onClick={() => handleExport(format)}
+                              className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            >
+                              Export as {format.toUpperCase()}
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )}
+              
+              {/* Refresh button */}
+              {refreshable && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleRefresh}
+                  aria-label="Refresh data"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </Button>
+              )}
+            </div>
+          </div>
         </div>
       )}
       
@@ -240,7 +458,22 @@ export default function DataTable({
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-900">
             <tr>
-              {columns.map((column) => (
+              {/* Selection checkbox column */}
+              {selectable && (
+                <th scope="col" className="px-6 py-3 w-10">
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={isAllSelected}
+                      onChange={handleSelectAll}
+                      className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+                    />
+                  </div>
+                </th>
+              )}
+              
+              {/* Data columns */}
+              {visibleColumns.map((column) => (
                 <th
                   key={column.key}
                   scope="col"
@@ -281,7 +514,7 @@ export default function DataTable({
           <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
             {isLoading ? (
               <tr>
-                <td colSpan={columns.length} className="px-6 py-4 text-center">
+                <td colSpan={visibleColumns.length + (selectable ? 1 : 0)} className="px-6 py-4 text-center">
                   <div className="flex justify-center items-center">
                     <Loader2 className="h-6 w-6 text-emerald-500 animate-spin mr-2" />
                     <span>Loading...</span>
@@ -290,26 +523,51 @@ export default function DataTable({
               </tr>
             ) : currentData.length === 0 ? (
               <tr>
-                <td colSpan={columns.length} className="px-6 py-4 text-center text-gray-500 dark:text-gray-400">
+                <td colSpan={visibleColumns.length + (selectable ? 1 : 0)} className="px-6 py-4 text-center text-gray-500 dark:text-gray-400">
                   {emptyMessage}
                 </td>
               </tr>
             ) : (
-              currentData.map((row, rowIndex) => (
-                <tr 
-                  key={row.id || rowIndex} 
-                  className="hover:bg-gray-50 dark:hover:bg-gray-750"
-                >
-                  {columns.map((column) => (
-                    <td 
-                      key={`${row.id || rowIndex}-${column.key}`} 
-                      className={cn("px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100", column.cellClassName)}
-                    >
-                      {column.render ? column.render(row) : row[column.key]}
-                    </td>
-                  ))}
-                </tr>
-              ))
+              currentData.map((row, rowIndex) => {
+                const rowId = row.id || row._id || rowIndex;
+                const isSelected = selectedRows.includes(rowId);
+                
+                return (
+                  <tr 
+                    key={rowId} 
+                    className={cn(
+                      "hover:bg-gray-50 dark:hover:bg-gray-750",
+                      isSelected ? "bg-emerald-50 dark:bg-emerald-900/20" : ""
+                    )}
+                    onClick={() => selectable && handleRowSelection(rowId)}
+                  >
+                    {/* Selection checkbox */}
+                    {selectable && (
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex items-center">
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={() => handleRowSelection(rowId)}
+                            onClick={(e) => e.stopPropagation()}
+                            className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+                          />
+                        </div>
+                      </td>
+                    )}
+                    
+                    {/* Data cells */}
+                    {visibleColumns.map((column) => (
+                      <td 
+                        key={`${rowId}-${column.key}`} 
+                        className={cn("px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100", column.cellClassName)}
+                      >
+                        {column.render ? column.render(row) : row[column.key]}
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>
@@ -319,20 +577,22 @@ export default function DataTable({
       {pagination && totalPages > 0 && (
         <div className="px-4 py-3 flex items-center justify-between border-t border-gray-200 dark:border-gray-700 sm:px-6">
           <div className="flex-1 flex justify-between sm:hidden">
-            <button
+            <Button
+              variant="outline"
+              size="sm"
               onClick={() => handlePageChange(effectiveCurrentPage - 1)}
               disabled={effectiveCurrentPage === 1}
-              className="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Previous
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
               onClick={() => handlePageChange(effectiveCurrentPage + 1)}
               disabled={effectiveCurrentPage === totalPages}
-              className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Next
-            </button>
+            </Button>
           </div>
           <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
