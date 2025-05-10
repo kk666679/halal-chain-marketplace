@@ -27,6 +27,12 @@ jobs:
       run: |
         echo "NEXT_PUBLIC_SITE_URL=https://halal-chain.com" > .env
         echo "NEXT_PUBLIC_API_URL=https://api.halal-chain.com" >> .env
+
+    # Add Testcontainers Cloud setup
+    - name: Setup Testcontainers Cloud Client
+      uses: atomicjar/testcontainers-cloud-setup-action@v1
+      with:
+        token: ${{ secrets.TC_CLOUD_TOKEN }}
       
     - name: Build
       run: npm run build
