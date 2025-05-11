@@ -4,6 +4,7 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './halal-chain-marketplace/src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -105,8 +106,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-inter)"],
-        poppins: ["var(--font-poppins)"],
-        inter: ["var(--font-inter)"],
+        mono: ["var(--font-jetbrains-mono)"],
       },
       borderRadius: {
         lg: "var(--radius)",
