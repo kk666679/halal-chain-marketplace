@@ -5,7 +5,15 @@ All notable changes to the HalalChain Marketplace project will be documented in 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.4.0] - 2025-05-11
+## [0.4.2] - 2025-05-11
+
+### Fixed
+- Fixed 'use client' directive placement in components
+- Updated Tailwind configuration with proper border color definitions
+- Resolved build issues with client components
+- Fixed SWC dependencies
+
+## [0.4.1] - 2025-05-11
 
 ### Added
 - Supply chain tracking with QR code integration
@@ -13,6 +21,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Neural interface integration for advanced product verification
 - Quantum computing module for secure certification
 - Multi-agent AI system for supply chain optimization
+
+### Fixed
+- Build process for CI/CD pipeline
+- Module resolution for browser compatibility
+
+## [0.4.0] - 2025-05-11
+
+### Added
 - Dark mode support with next-themes
 - Improved authentication with NextAuth.js
 - Data fetching with React Query
@@ -32,8 +48,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - QR code generation with proper imports
 - Suspense boundaries for client components
 - Next.js configuration for better compatibility
-- Build process for CI/CD pipeline
-- Module resolution for browser compatibility
 
 ## [0.3.0] - 2025-03-15
 
@@ -74,25 +88,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Basic landing page
 - Core features outline
 - Project documentation
-
-## [0.5.0] - 2024-07-15
-
-### Updated
-- Upgraded Next.js from 13.5.4 to 14.2.0
-- Updated React Icons to v5.0.1
-- Updated Framer Motion to v11.0.8
-- Updated Lucide React to v0.350.0
-- Updated Tailwind Merge to v2.2.1
-- Updated Recharts to v2.12.2
-- Updated ESLint to v8.57.0
-- Updated Tailwind CSS to v3.4.1
-- Updated OpenAI SDK to v4.36.0
-- Updated Ethers.js to v6.11.1
-
-### Added
-- Improved image optimization configuration
-- Enhanced server component support for external packages
-- Increased large page data bytes limit to 256KB
-
-### Fixed
-- Resolved duplicate experimental configuration in next.config.js
