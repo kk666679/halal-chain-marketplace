@@ -5,6 +5,24 @@ All notable changes to the HalalChain Marketplace project will be documented in 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2025-05-10
+
+### Added
+- Enhanced Portal section with interactive extension features
+- New Extensions Marketplace page with search and filtering
+- Portal-specific extensions with detailed information
+- Neural Interface extensions for Government and Developer portals
+- Quantum Security extensions for verification and research
+- AI Agent extensions for vendor management and compliance
+- AR/VR extensions for training and visualization
+
+### Changed
+- Improved Portal section UI with animations and interactive elements
+- Enhanced deployment workflow with better versioning and notifications
+- Updated Docker build process with version tagging
+- Added Slack and email notifications for deployments
+- Improved error handling in deployment pipeline
+
 ## [0.5.0] - 2025-05-10
 
 ### Added
