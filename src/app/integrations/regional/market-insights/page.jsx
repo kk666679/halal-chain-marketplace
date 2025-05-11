@@ -1,12 +1,25 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Globe, Download } from 'lucide-react';
 import MarketInsights from '@/components/integrations/regional/MarketInsights';
 
-export default function MarketInsightsPage() {
+// Loading component for Suspense
+function MarketInsightsLoading() {
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+        <p className="mt-4 text-lg text-gray-600">Loading market insights...</p>
+      </div>
+    </div>
+  );
+}
+
+// Client component that uses useSearchParams
+function MarketInsightsContent() {
   const searchParams = useSearchParams();
   const [region, setRegion] = useState('asean');
   
@@ -182,5 +195,14 @@ export default function MarketInsightsPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+// Main page component that wraps the client component with Suspense
+export default function MarketInsightsPage() {
+  return (
+    <Suspense fallback={<MarketInsightsLoading />}>
+      <MarketInsightsContent />
+    </Suspense>
   );
 }

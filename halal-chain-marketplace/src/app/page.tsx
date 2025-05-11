@@ -101,3 +101,8 @@ export default function Home() {
     </div>
   );
 }
+  104 |
+> 105 | export function NextAuthHandler(req, res) {
+      |                                 ^
+  106 |   res.status(200).json({ message: "NextAuth dynamic route handler" });
+  107 | }

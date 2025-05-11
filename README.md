@@ -1,95 +1,114 @@
 # HalalChain Marketplace
 
-A blockchain-based marketplace for halal-certified products with transparent supply chain tracking, focusing on ASEAN, China, Russia, Australia, UAE/Dubai, and GCC markets.
+![HalalChain Logo](public/images/logo/halal-chain-logo.png)
+
+[![Deploy HalalChain Marketplace](https://github.com/halal-chain/marketplace/actions/workflows/deploy.yml/badge.svg)](https://github.com/halal-chain/marketplace/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](https://github.com/halal-chain/marketplace)
+
+A blockchain-powered halal certification and supply chain platform with AI-powered multi-agent system for transparent and authentic halal products.
 
 ## Features
 
-### Regional Integration Hub
-- Certification bodies from ASEAN, China, Russia, Australia, UAE/Dubai, and GCC countries
-- Region-specific e-commerce platform integrations
-- Product categories tailored to each region
-- Regional compliance guides and market insights
+- **Blockchain Certification**: Immutable halal certification records on blockchain
+- **Supply Chain Tracking**: End-to-end tracking of halal products
+- **QR Code Verification**: Instant verification of product authenticity
+- **Multi-Agent AI System**: Intelligent supply chain optimization
+- **Neural Interface**: Advanced product verification technology
+- **Quantum Computing**: Secure certification with quantum cryptography
+- **Regional Compliance**: Support for multiple regional halal standards
+- **Vendor Marketplace**: Platform for halal product vendors
 
-### Supply Chain Tracking
-- QR code generation and scanning for product verification
-- Detailed supply chain journey visualization
-- Interactive supply chain maps
-- Blockchain verification of each supply chain step
-- Document verification and traceability
+## Technology Stack
 
-### Compliance Tools
-- Halal certification verification
-- Product compliance checker
-- Regional standards compliance
-- Region-specific QR templates
-
-### Market Insights
-- Market size and growth trends
-- Category distribution analysis
-- Regional market opportunities
-- Export potential assessment
+- **Frontend**: Next.js 13.5.4, React 18, Tailwind CSS
+- **Backend**: Node.js, Express, MongoDB
+- **Blockchain**: Ethereum, Solidity Smart Contracts
+- **Authentication**: NextAuth.js
+- **State Management**: React Query
+- **Styling**: Tailwind CSS, CSS Modules
+- **Deployment**: Docker, GitHub Actions
 
 ## Getting Started
 
-1. Install dependencies:
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm 10.x or higher
+- Git
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/halal-chain/marketplace.git
+   cd halal-chain-marketplace
    ```
+
+2. Install dependencies:
+   ```bash
    npm install
    ```
 
-2. Run the development server:
+3. Create a `.env.local` file based on `.env.example`:
+   ```bash
+   cp .env.example .env.local
    ```
+
+4. Start the development server:
+   ```bash
    npm run dev
    ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Key Components
+## Project Structure
 
-### Regional Integration
-- `/src/app/integrations/regional` - Regional integration hub
-- `/src/app/integrations/regional/market-insights` - Market insights by region
-- `/src/app/integrations/regional/compliance` - Regional compliance checker
+```
+halal-chain-marketplace/
+├── public/                 # Static assets
+├── src/
+│   ├── app/                # Next.js App Router
+│   ├── components/         # React components
+│   ├── contracts/          # Blockchain contracts
+│   └── lib/                # Utility functions
+├── .github/                # GitHub Actions workflows
+├── .next/                  # Next.js build output
+├── .env.example            # Example environment variables
+└── README.md               # Project documentation
+```
 
-### Supply Chain & Verification
-- `/src/components/supply-chain/SupplyChainTracker.jsx` - Supply chain visualization
-- `/src/components/supply-chain/SupplyChainMap.jsx` - Interactive supply chain map
-- `/src/components/supply-chain/qr-tracking` - QR code generation and scanning
-- `/src/app/verify/[productId]` - Product verification page
-- `/src/app/supply-chain/verify` - Supply chain verification page
+## Deployment
 
-### Marketplace
-- `/src/app/marketplace` - Main marketplace with regional filtering
+The project is configured for deployment using GitHub Actions. The workflow is defined in `.github/workflows/deploy.yml`.
 
-## Technologies Used
+To deploy:
 
-- Next.js for the frontend framework
-- Tailwind CSS for styling
-- Recharts for data visualization
-- QR code generation and scanning libraries
-- Blockchain integration for verification
+1. Push changes to the `main` branch
+2. GitHub Actions will automatically build and deploy the application
 
-## Regional Coverage
+## Contributing
 
-### ASEAN
-- Certification bodies: MUI (Indonesia), JAKIM (Malaysia), CICOT (Thailand), MUIS (Singapore), IDCP (Philippines), MUIB (Brunei)
-- E-commerce platforms: Lazada Halal Hub, Shopee Halal, Tokopedia
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
-### China
-- Certification bodies: China Islamic Association, Ningxia Halal Certification Center, Xinjiang Halal Certification Center
-- E-commerce platforms: Alibaba.com, JD.com, Tmall Global
+## License
 
-### Russia
-- Certification bodies: Halal Standard Committee (HSC), International Center for Halal Standardization and Certification
-- E-commerce platforms: Wildberries, Ozon, Yandex.Market
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Australia
-- Certification bodies: Australian Federation of Islamic Councils (AFIC), Halal Certification Authority Australia (HCAA), Islamic Co-ordinating Council of Victoria (ICCV)
-- E-commerce platforms: Integration with major Australian retailers
+## Acknowledgments
 
-### UAE/Dubai
-- Certification bodies: Emirates Authority for Standardization and Metrology (ESMA), Dubai Municipality - Food Safety Department
-- E-commerce platforms: Integration with UAE e-commerce platforms
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Ethereum](https://ethereum.org/)
+- [OpenAI](https://openai.com/)
 
-### GCC Countries
-- Certification bodies: Saudi Food and Drug Authority (SFDA), Qatar Halal Authority, Kuwait Municipality, Bahrain Standards and Metrology Directorate, Oman Ministry of Endowments and Religious Affairs
-- E-commerce platforms: Integration with regional GCC platforms
+## Contact
+
+HalalChain Team - info@halal-chain.com
+
+Project Link: [https://github.com/halal-chain/marketplace](https://github.com/halal-chain/marketplace)

@@ -1,137 +1,50 @@
-# HalalChain Marketplace Frontend
+# HalalChain Marketplace App Directory
 
-This directory contains the frontend application for the HalalChain Marketplace platform.
+This directory contains the main application code for the HalalChain Marketplace, built with Next.js App Router.
 
 ## Directory Structure
 
-```
-src/
-├── app/                  # Next.js app directory
-│   ├── api/              # API routes
-│   │   └── auth/         # Authentication API routes
-│   ├── dashboard/        # Dashboard pages
-│   ├── login/            # Authentication pages
-│   ├── marketplace/      # Marketplace pages
-│   ├── certification/    # Certification pages
-│   ├── about/            # About pages
-│   ├── blog/             # Blog pages
-│   ├── contact/          # Contact pages
-│   ├── globals.css       # Global styles
-│   ├── layout.js         # Root layout
-│   ├── page.js           # Home page
-│   └── providers.js      # Context providers
-├── components/           # React components
-│   ├── ui/               # UI components
-│   ├── layout/           # Layout components
-│   ├── blockchain/       # Blockchain components
-│   ├── theme/            # Theme components
-│   ├── auth/             # Authentication components
-│   ├── product/          # Product components
-│   ├── certification/    # Certification components
-│   ├── dashboard/        # Dashboard components
-│   ├── common/           # Common components
-│   └── icons/            # Icon components
-├── contracts/            # Smart contract ABIs
-│   └── abis/             # Contract ABI JSON files
-└── lib/                  # Utility functions and API clients
-```
+- `app/` - Main application directory using Next.js App Router
+  - `api/` - API routes for server-side functionality
+  - `(auth)/` - Authentication-related pages (login, register, etc.)
+  - `dashboard/` - Dashboard pages for users, vendors, and admins
+  - `marketplace/` - Marketplace-related pages
+  - `certification/` - Certification-related pages
+  - `supply-chain/` - Supply chain tracking and verification pages
+  - `layout.js` - Root layout component
+  - `page.js` - Homepage component
+  - `providers.js` - Context providers for the application
+  - `globals.css` - Global CSS styles
+  - `not-found.js` - 404 page
+  - `error.js` - Error handling page
+  - `loading.js` - Loading state component
+  - `sitemap.js` - Dynamic sitemap generation
+  - `robots.js` - Robots.txt configuration
 
 ## Key Features
 
-### Authentication
-- Email/password authentication
-- Social login (Google, GitHub)
-- JWT-based authentication
-- Protected routes
+- **App Router**: Utilizes Next.js App Router for file-based routing
+- **Server Components**: Leverages React Server Components for improved performance
+- **API Routes**: Implements API routes for server-side functionality
+- **Authentication**: Includes authentication with NextAuth.js
+- **Data Fetching**: Uses React Query for efficient data fetching and caching
+- **Theming**: Supports light and dark mode with next-themes
+- **SEO**: Includes metadata, sitemap, and robots.txt for improved SEO
 
-### Blockchain Integration
-- Wallet connection (MetaMask, etc.)
-- Smart contract interaction
-- Transaction management
-- Blockchain event listening
+## Best Practices
 
-### Product Management
-- Product listing
-- Product details
-- Product creation and editing
-- Product search and filtering
+- Use Server Components by default for better performance
+- Add 'use client' directive only when client-side interactivity is needed
+- Implement proper error boundaries and loading states
+- Follow the naming conventions for special files (layout, page, loading, error, etc.)
+- Use metadata exports for SEO optimization
+- Implement proper caching strategies with revalidation
 
-### Certification
-- Certification requests
-- Certification approval workflow
-- Certificate verification
-- Blockchain certification
+## Development Guidelines
 
-### Supply Chain Tracking
-- Supply chain event recording
-- Product journey visualization
-- QR code generation
-- Traceability features
-
-### Dashboard
-- Analytics and statistics
-- User management
-- Product management
-- Certification management
-
-## Technologies Used
-
-- **Next.js 14**: React framework with app router
-- **React**: UI library
-- **Tailwind CSS**: Utility-first CSS framework
-- **Ethers.js**: Ethereum library
-- **NextAuth.js**: Authentication library
-- **React Query**: Data fetching and caching
-- **Lucide React**: Icon library
-
-## Getting Started
-
-1. Install dependencies:
-   ```
-   npm install
-   ```
-
-2. Create a `.env.local` file with the following variables:
-   ```
-   NEXT_PUBLIC_API_URL=http://localhost:3002
-   NEXT_PUBLIC_SITE_URL=http://localhost:3001
-   NEXT_PUBLIC_HALAL_CERTIFICATION_CONTRACT=0x...
-   NEXT_PUBLIC_SUPPLY_CHAIN_CONTRACT=0x...
-   NEXTAUTH_SECRET=your-nextauth-secret
-   NEXTAUTH_URL=http://localhost:3001
-   GOOGLE_CLIENT_ID=your-google-client-id
-   GOOGLE_CLIENT_SECRET=your-google-client-secret
-   GITHUB_ID=your-github-id
-   GITHUB_SECRET=your-github-secret
-   ```
-
-3. Start the development server:
-   ```
-   npm run dev
-   ```
-
-4. Build for production:
-   ```
-   npm run build
-   ```
-
-5. Start the production server:
-   ```
-   npm start
-   ```
-
-## Deployment
-
-The application can be deployed to various platforms:
-
-- **Vercel**: Recommended for Next.js applications
-- **AWS Amplify**: For AWS integration
-- **Netlify**: For simple deployments
-- **Docker**: For containerized deployments
-
-## Contributing
-
-1. Create a feature branch
-2. Make your changes
-3. Run tests
-4. Submit a pull request
+1. Create new routes by adding directories with `page.js` files
+2. Use layouts for shared UI across multiple pages
+3. Implement error handling with `error.js` files
+4. Add loading states with `loading.js` files
+5. Use server actions for form submissions when possible
+6. Leverage route groups with parentheses for organizational purposes

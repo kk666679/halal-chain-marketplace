@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { 
@@ -16,7 +16,24 @@ import {
 import QRGenerator from '@/components/supply-chain/qr-tracking/QRGenerator';
 import SupplyChainTracker from '@/components/supply-chain/SupplyChainTracker';
 
-export default function VerifyProductPage() {
+// Loading component for Suspense
+function VerifyProductLoading() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6">
+          <h1 className="text-2xl font-bold mb-6">Verifying Product...</h1>
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-600"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Client component that uses useSearchParams
+function VerifyProductContent() {
   const params = useParams();
   const searchParams = useSearchParams();
   const [productData, setProductData] = useState(null);
@@ -384,6 +401,15 @@ export default function VerifyProductPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Main page component that wraps the client component with Suspense
+export default function VerifyProductPage() {
+  return (
+    <Suspense fallback={<VerifyProductLoading />}>
+      <VerifyProductContent />
+    </Suspense>
   );
 }
 

@@ -4,6 +4,7 @@ import { FaAtom, FaLock, FaSearch, FaChartLine, FaGlobe, FaShieldAlt } from 'rea
 export default function QuantumComputingSection() {
   const [animatedCount, setAnimatedCount] = useState(0);
   const [activeFeature, setActiveFeature] = useState(0);
+  const [isClient, setIsClient] = useState(false);
   
   // Animate the quantum processing power count
   useEffect(() => {
@@ -35,6 +36,11 @@ export default function QuantumComputingSection() {
     return () => clearInterval(interval);
   }, []);
   
+  // Client-specific effect
+  useEffect(() => {
+    setIsClient(true); // Ensures client-only logic runs after hydration
+  }, []);
+
   const quantumFeatures = [
     {
       icon: <FaLock className="text-blue-400 text-2xl" />,

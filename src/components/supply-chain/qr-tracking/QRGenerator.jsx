@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import QRCode from 'qrcode.react';
+import { QRCodeSVG } from 'qrcode.react'; // Using named import from qrcode.react
 import { Download, Share2, Settings, Check } from 'lucide-react';
 
 /**
@@ -103,7 +103,7 @@ export default function QRGenerator({
             className="border border-gray-200 rounded-lg p-4 bg-white flex items-center justify-center"
             style={{ width: size + 32, height: size + 32 }}
           >
-            <QRCode
+            <QRCodeSVG
               value={trackingUrl}
               size={size}
               bgColor={qrOptions.bgColor}
