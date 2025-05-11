@@ -106,6 +106,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)"],
         poppins: ["var(--font-poppins)"],
+        inter: ["var(--font-inter)"],
       },
       borderRadius: {
         lg: "var(--radius)",

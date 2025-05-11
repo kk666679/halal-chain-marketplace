@@ -3,6 +3,8 @@ name: Deploy HalalChain Marketplace
 on:
   push:
     branches: [ main ]
+    tags:
+      - 'v*.*.*'
   pull_request:
     branches: [ main ]
 
@@ -16,6 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -28,11 +32,15 @@ jobs:
     
     - name: Build
       run: |
-        # Fix for QR code import issue
-        npm install qrcode.react@latest --save
+        # Install required dependencies
+        npm install qrcode.react@latest react-syntax-highlighter@latest --save
+        
+        # Run the build
         npm run build
       env:
         CI: false # Prevents build from failing on warnings
+        NEXT_PUBLIC_APP_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || 'development' }}
+        NEXT_PUBLIC_COMMIT_SHA: ${{ github.sha }}
     
     - name: Run tests
       run: |
@@ -47,11 +55,12 @@ jobs:
       with:
         name: build-output
         path: .next/
+        retention-days: 7
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'main' }}
+    if: ${{ github.ref_name == 'main' || startsWith(github.ref, 'refs/tags/v') }}
     
     steps:
     - uses: actions/checkout@v3
@@ -71,6 +80,17 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
     
+    - name: Extract version
+      id: extract_version
+      run: |
+        if [[ $GITHUB_REF == refs/tags/* ]]; then
+          VERSION=${GITHUB_REF#refs/tags/}
+        else
+          VERSION=latest
+        fi
+        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+        echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_OUTPUT
+    
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
@@ -78,30 +98,136 @@ jobs:
         push: true
         tags: |
           halalchain/marketplace:latest
+          halalchain/marketplace:${{ steps.extract_version.outputs.VERSION }}
           halalchain/marketplace:${{ github.sha }}
+        build-args: |
+          APP_VERSION=${{ steps.extract_version.outputs.VERSION }}
+          BUILD_TIMESTAMP=${{ steps.extract_version.outputs.TIMESTAMP }}
         cache-from: type=registry,ref=halalchain/marketplace:latest
         cache-to: type=inline
     
     - name: Deploy to production
       run: |
-        echo "Deploying to production server..."
-        # Replace with actual deployment commands
-        # ssh user@your-server "cd /path/to/app && docker-compose pull && docker-compose up -d"
+        echo "Deploying version ${{ steps.extract_version.outputs.VERSION }} to production server..."
+        
+        # Set up SSH for deployment
+        mkdir -p ~/.ssh
+        echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+        
+        # Deploy using SSH and Docker
+        ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "cd ${{ secrets.DEPLOY_PATH }} && \
+          docker-compose pull && \
+          docker-compose up -d && \
+          echo 'Deployment completed successfully!'"
+        
         echo "Deployment complete!"
+      if: ${{ github.ref_type == 'tag' || github.ref == 'refs/heads/main' }}
+      env:
+        DEPLOY_VERSION: ${{ steps.extract_version.outputs.VERSION }}
 
   notify:
     needs: deploy
     runs-on: ubuntu-latest
     
     steps:
-    - name: Send deployment notification
+    - name: Extract version info
+      id: version_info
       run: |
-        echo "Sending deployment notification..."
-        # Add notification commands here
-        echo "Notification sent!"
+        if [[ $GITHUB_REF == refs/tags/* ]]; then
+          VERSION=${GITHUB_REF#refs/tags/}
+          IS_RELEASE=true
+        else
+          VERSION="development build"
+          IS_RELEASE=false
+        fi
+        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+        echo "IS_RELEASE=$IS_RELEASE" >> $GITHUB_OUTPUT
+    
+    - name: Send Slack notification
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        payload: |
+          {
+            "text": "New deployment completed!",
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "✅ Deployment Successful",
+                  "emoji": true
+                }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Project:*\nHalalChain Marketplace"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Version:*\n${{ steps.version_info.outputs.VERSION }}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Deployed by:*\n${{ github.actor }}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Environment:*\nProduction"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "🚀 <https://halal-chain.com|View Live Site> | <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Workflow Run>"
+                }
+              }
+            ]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+      if: ${{ success() && secrets.SLACK_WEBHOOK_URL != '' }}
+    
+    - name: Send email notification for releases
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: ${{ secrets.MAIL_SERVER }}
+        server_port: ${{ secrets.MAIL_PORT }}
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
+        subject: "🚀 HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} Released"
+        body: |
+          HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} has been successfully deployed to production.
+          
+          Release Notes:
+          - Enhanced Portal Section with Extensions Marketplace
+          - Added Neural Interface and Quantum Security features
+          - Improved user experience with interactive components
+          - Updated deployment pipeline for better reliability
+          
+          Deployment Details:
+          - Version: ${{ steps.version_info.outputs.VERSION }}
+          - Commit: ${{ github.sha }}
+          - Deployed by: ${{ github.actor }}
+          - Deployment Time: ${{ steps.extract_version.outputs.TIMESTAMP }}
+          
+          Visit the site: https://halal-chain.com
+          
+          Thank you,
+          HalalChain DevOps Team
+        to: ${{ secrets.NOTIFICATION_EMAIL }}
+        from: HalalChain DevOps <${{ secrets.MAIL_FROM }}>
+      if: ${{ steps.version_info.outputs.IS_RELEASE == 'true' && secrets.MAIL_SERVER != '' }}
         
     - name: Update deployment status
       run: |
         echo "Updating deployment status..."
-        echo "HalalChain Marketplace v0.4.0 deployed successfully with supply chain tracking and expanded regional coverage."
-        echo "Regions: ASEAN, China, Russia, Australia, UAE/Dubai, GCC"
+        echo "HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} deployed successfully with Extensions Marketplace and Portal enhancements."
+        echo "Features: Neural Interfaces, Quantum Security, AR/VR Training, AI Agents"

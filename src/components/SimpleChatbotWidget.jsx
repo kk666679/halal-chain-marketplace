@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Send, X, Loader2 } from 'lucide-react';
-import { useToast } from './ui/toaster';
+import { useToast } from './ui/use-toast';
 
 export default function SimpleChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);

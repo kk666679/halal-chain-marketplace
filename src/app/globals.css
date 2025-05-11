@@ -61,7 +61,7 @@
     @apply font-poppins font-semibold;
   }
   p, span, li, a {
-    @apply font-inter;
+    @apply font-sans;
   }
 }
 
