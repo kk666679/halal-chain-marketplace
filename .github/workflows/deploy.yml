@@ -29,7 +29,12 @@ jobs:
       run: npm run build
     
     - name: Run tests
-      run: npm test || echo "No tests specified"
+      run: |
+        if [ -f package.json ] && grep -q '"test":' package.json; then
+          npm test
+        else
+          echo "No tests specified"
+        fi
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
@@ -40,7 +45,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: ${{ github.ref_name == 'main' }}
     
     steps:
     - uses: actions/checkout@v3
@@ -74,7 +79,8 @@ jobs:
     - name: Deploy to production
       run: |
         echo "Deploying to production server..."
-        # Add deployment commands here
+        # Replace with actual deployment commands
+        ssh user@your-server "cd /path/to/app && docker-compose pull && docker-compose up -d"
         echo "Deployment complete!"
 
   notify:
