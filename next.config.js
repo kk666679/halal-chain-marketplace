@@ -1,15 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    typedRoutes: true,
-  },
   // Configure output for better deployment
   output: 'standalone',
   // Increase memory limit for large builds
   experimental: {
     typedRoutes: true,
-    largePageDataBytes: 128 * 1000, // 128KB
+    largePageDataBytes: 256 * 1000, // 256KB
+    serverComponentsExternalPackages: ['ethers'],
   },
   // Configure webpack for polyfills and compatibility
   webpack: (config, { isServer }) => {
@@ -24,6 +22,16 @@ const nextConfig = {
     }
     
     return config;
+  },
+  // Improved image optimization
+  images: {
+    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
 };
 
