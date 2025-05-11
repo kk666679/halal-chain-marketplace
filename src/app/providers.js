@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from '@/components/ui/toaster';
+import { ToastProvider } from '@/components/ui/use-toast';
 import { SessionProvider } from 'next-auth/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
@@ -26,8 +27,10 @@ export function Providers({ children }) {
           enableSystem 
           disableTransitionOnChange
         >
-          {children}
-          <Toaster />
+          <ToastProvider>
+            {children}
+            <Toaster />
+          </ToastProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </SessionProvider>
