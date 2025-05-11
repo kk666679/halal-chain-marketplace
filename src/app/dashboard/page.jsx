@@ -1,15 +1,34 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { 
   Globe, TrendingUp, Users, ShoppingBag, 
   PieChart as PieChartIcon, BarChart as BarChartIcon, 
   Map, Download, Filter
 } from 'lucide-react';
-import MarketOverview from '@/components/dashboard/MarketOverview';
-import TrendsDrivers from '@/components/dashboard/TrendsDrivers';
-import ConsumerBehavior from '@/components/dashboard/ConsumerBehavior';
-import CompetitiveLandscape from '@/components/dashboard/CompetitiveLandscape';
+
+// Use dynamic imports to prevent build issues
+import dynamic from 'next/dynamic';
+
+const MarketOverview = dynamic(() => import('@/components/dashboard/MarketOverview'), {
+  ssr: false,
+  loading: () => <div className="p-6 bg-white rounded-lg shadow-md">Loading market overview data...</div>
+});
+
+const TrendsDrivers = dynamic(() => import('@/components/dashboard/TrendsDrivers'), {
+  ssr: false,
+  loading: () => <div className="p-6 bg-white rounded-lg shadow-md">Loading trends and drivers data...</div>
+});
+
+const ConsumerBehavior = dynamic(() => import('@/components/dashboard/ConsumerBehavior'), {
+  ssr: false,
+  loading: () => <div className="p-6 bg-white rounded-lg shadow-md">Loading consumer behavior data...</div>
+});
+
+const CompetitiveLandscape = dynamic(() => import('@/components/dashboard/CompetitiveLandscape'), {
+  ssr: false,
+  loading: () => <div className="p-6 bg-white rounded-lg shadow-md">Loading competitive landscape data...</div>
+});
 
 export default function DashboardPage() {
   const [activeRegion, setActiveRegion] = useState('global');
@@ -165,10 +184,12 @@ export default function DashboardPage() {
       
       {/* Dashboard Content */}
       <div>
-        {activeView === 'overview' && <MarketOverview region={activeRegion} />}
-        {activeView === 'trends' && <TrendsDrivers region={activeRegion} />}
-        {activeView === 'consumer' && <ConsumerBehavior region={activeRegion} />}
-        {activeView === 'competitive' && <CompetitiveLandscape region={activeRegion} />}
+        <Suspense fallback={<div className="p-6 bg-white rounded-lg shadow-md">Loading data...</div>}>
+          {activeView === 'overview' && <MarketOverview region={activeRegion} />}
+          {activeView === 'trends' && <TrendsDrivers region={activeRegion} />}
+          {activeView === 'consumer' && <ConsumerBehavior region={activeRegion} />}
+          {activeView === 'competitive' && <CompetitiveLandscape region={activeRegion} />}
+        </Suspense>
       </div>
       
       {/* Footer */}
