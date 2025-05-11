@@ -5,6 +5,23 @@ All notable changes to the HalalChain Marketplace project will be documented in 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2025-05-10
+
+### Added
+- Enhanced API integration components with modern features
+- New API Playground for interactive API testing
+- Advanced code syntax highlighting with react-syntax-highlighter
+- Toast notification system for better user feedback
+- Quantum Verification API integration
+- Motion animations for improved user experience
+- Dark mode support for all new components
+
+### Changed
+- Updated API documentation with latest endpoints and features
+- Improved UI/UX for API integration cards
+- Enhanced code snippets with latest API syntax
+- Modernized component architecture with React best practices
+
 ## [0.4.2] - 2025-05-11
 
 ### Fixed
