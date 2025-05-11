@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaSearch, FaFilter, FaStar, FaShoppingCart, FaCheckCircle } from 'react-icons/fa';
+import { FaSearch, FaFilter, FaStar, FaShoppingCart, FaCheckCircle, FaGlobe } from 'react-icons/fa';
 
 export default function Marketplace() {
   const [products, setProducts] = useState([]);
@@ -13,11 +13,13 @@ export default function Marketplace() {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('popularity');
   const [showFilters, setShowFilters] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState('all');
   
   // Mock data for demonstration
   useEffect(() => {
     // This would be replaced with an actual API call
     const mockProducts = [
+      // Original products
       {
         id: 1,
         name: 'Premium Halal Beef',
@@ -29,6 +31,9 @@ export default function Marketplace() {
         reviewCount: 124,
         image: '/images/products/beef.png',
         isCertified: true,
+        certifiedBy: 'JAKIM',
+        region: 'asean',
+        country: 'Malaysia',
         stock: 50
       },
       {
@@ -42,6 +47,9 @@ export default function Marketplace() {
         reviewCount: 89,
         image: '/images/products/chicken.png',
         isCertified: true,
+        certifiedBy: 'MUI',
+        region: 'asean',
+        country: 'Indonesia',
         stock: 75
       },
       {
@@ -55,6 +63,9 @@ export default function Marketplace() {
         reviewCount: 56,
         image: '/images/products/lamb.png',
         isCertified: true,
+        certifiedBy: 'MUIS',
+        region: 'asean',
+        country: 'Singapore',
         stock: 30
       },
       {
@@ -68,6 +79,9 @@ export default function Marketplace() {
         reviewCount: 203,
         image: '/images/products/dates.png',
         isCertified: true,
+        certifiedBy: 'JAKIM',
+        region: 'asean',
+        country: 'Malaysia',
         stock: 100
       },
       {
@@ -81,6 +95,9 @@ export default function Marketplace() {
         reviewCount: 78,
         image: '/images/products/gummies.png',
         isCertified: true,
+        certifiedBy: 'MUI',
+        region: 'asean',
+        country: 'Indonesia',
         stock: 200
       },
       {
@@ -94,7 +111,144 @@ export default function Marketplace() {
         reviewCount: 112,
         image: '/images/products/honey.png',
         isCertified: true,
+        certifiedBy: 'CICOT',
+        region: 'asean',
+        country: 'Thailand',
         stock: 60
+      },
+      
+      // New products from China
+      {
+        id: 7,
+        name: 'Sufex Frozen Halal Meals',
+        description: 'Ready-to-eat halal frozen meals with authentic Chinese flavors',
+        price: 6.99,
+        category: 'prepared',
+        vendor: 'Sufex Food Co.',
+        rating: 4.3,
+        reviewCount: 67,
+        image: '/images/products/frozen-meal.png',
+        isCertified: true,
+        certifiedBy: 'CIA',
+        region: 'china',
+        country: 'China',
+        stock: 120
+      },
+      {
+        id: 8,
+        name: 'Ningxia Wolfberry (Goji) Products',
+        description: 'Organic halal-certified superfood from Ningxia region',
+        price: 14.99,
+        category: 'health',
+        vendor: 'Ningxia Superfood Co.',
+        rating: 4.7,
+        reviewCount: 92,
+        image: '/images/products/goji.png',
+        isCertified: true,
+        certifiedBy: 'Ningxia HCC',
+        region: 'china',
+        country: 'China',
+        stock: 85
+      },
+      {
+        id: 9,
+        name: 'Halal Chinese Herbal Supplements',
+        description: 'Traditional Chinese medicine supplements with halal certification',
+        price: 24.99,
+        category: 'health',
+        vendor: 'Beijing TCM Group',
+        rating: 4.5,
+        reviewCount: 43,
+        image: '/images/products/herbs.png',
+        isCertified: true,
+        certifiedBy: 'CIA',
+        region: 'china',
+        country: 'China',
+        stock: 30
+      },
+      
+      // New products from Russia
+      {
+        id: 10,
+        name: 'Miratorg Halal Beef',
+        description: 'Premium halal beef from Russia\'s leading meat producer',
+        price: 17.99,
+        category: 'meat',
+        vendor: 'Miratorg',
+        rating: 4.6,
+        reviewCount: 38,
+        image: '/images/products/russian-beef.png',
+        isCertified: true,
+        certifiedBy: 'HSC Russia',
+        region: 'russia',
+        country: 'Russia',
+        stock: 45
+      },
+      {
+        id: 11,
+        name: 'Al-Rayah Modest Fashion Collection',
+        description: 'Elegant modest fashion pieces designed in Russia',
+        price: 49.99,
+        category: 'fashion',
+        vendor: 'Al-Rayah',
+        rating: 4.8,
+        reviewCount: 72,
+        image: '/images/products/modest-fashion.png',
+        isCertified: true,
+        certifiedBy: 'HSC Russia',
+        region: 'russia',
+        country: 'Russia',
+        stock: 25
+      },
+      {
+        id: 12,
+        name: 'Natura Siberica Halal Skincare',
+        description: 'Organic halal-certified skincare products with Siberian herbs',
+        price: 29.99,
+        category: 'cosmetics',
+        vendor: 'Natura Siberica',
+        rating: 4.7,
+        reviewCount: 54,
+        image: '/images/products/skincare.png',
+        isCertified: true,
+        certifiedBy: 'HSC Russia',
+        region: 'russia',
+        country: 'Russia',
+        stock: 40
+      },
+      
+      // Additional ASEAN products
+      {
+        id: 13,
+        name: 'Wardah Halal Cosmetics Set',
+        description: 'Complete set of halal-certified cosmetics from Indonesia\'s leading brand',
+        price: 39.99,
+        category: 'cosmetics',
+        vendor: 'Wardah Cosmetics',
+        rating: 4.9,
+        reviewCount: 187,
+        image: '/images/products/cosmetics.png',
+        isCertified: true,
+        certifiedBy: 'MUI',
+        region: 'asean',
+        country: 'Indonesia',
+        stock: 60
+      },
+      {
+        id: 14,
+        name: 'Sappe Fruit Juice Variety Pack',
+        description: 'Assorted halal fruit juices from Thailand\'s popular brand',
+        price: 12.99,
+        category: 'beverages',
+        vendor: 'Sappe',
+        rating: 4.4,
+        reviewCount: 63,
+        image: '/images/products/juice.png',
+        isCertified: true,
+        certifiedBy: 'CICOT',
+        region: 'asean',
+        country: 'Thailand',
+        stock: 100
       }
     ];
     
@@ -105,7 +259,11 @@ export default function Marketplace() {
       { id: 'fruits', name: 'Fruits & Vegetables' },
       { id: 'snacks', name: 'Snacks & Confectionery' },
       { id: 'condiments', name: 'Condiments & Spices' },
-      { id: 'beverages', name: 'Beverages' }
+      { id: 'beverages', name: 'Beverages' },
+      { id: 'prepared', name: 'Prepared Meals' },
+      { id: 'health', name: 'Health & Supplements' },
+      { id: 'cosmetics', name: 'Cosmetics & Personal Care' },
+      { id: 'fashion', name: 'Modest Fashion' }
     ];
     
     setProducts(mockProducts);
@@ -113,13 +271,14 @@ export default function Marketplace() {
     setLoading(false);
   }, []);
   
-  // Filter products based on category and search term
+  // Filter products based on category, search term, and region
   const filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           product.vendor.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
+    const matchesRegion = selectedRegion === 'all' || product.region === selectedRegion;
+    return matchesCategory && matchesSearch && matchesRegion;
   });
   
   // Sort products
@@ -142,7 +301,7 @@ export default function Marketplace() {
       <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">HalalChain Marketplace</h1>
-          <p className="text-lg mb-6">Discover authentic halal products with blockchain-verified certification</p>
+          <p className="text-lg mb-6">Discover authentic halal products with blockchain-verified certification from ASEAN, China, and Russia</p>
           
           {/* Search Bar */}
           <div className="flex items-center bg-white rounded-full overflow-hidden p-1 max-w-2xl">
@@ -166,6 +325,41 @@ export default function Marketplace() {
           {/* Filters - Desktop */}
           <div className="hidden md:block w-64 bg-white p-4 rounded-lg shadow-md h-fit">
             <h2 className="text-xl font-semibold mb-4">Filters</h2>
+            
+            {/* Region Filter */}
+            <div className="mb-6">
+              <h3 className="font-medium mb-2">Region</h3>
+              <div className="space-y-2">
+                <button
+                  className={`w-full text-left px-2 py-1 rounded flex items-center ${selectedRegion === 'all' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}
+                  onClick={() => setSelectedRegion('all')}
+                >
+                  <FaGlobe className="mr-2" size={14} />
+                  All Regions
+                </button>
+                <button
+                  className={`w-full text-left px-2 py-1 rounded flex items-center ${selectedRegion === 'asean' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}
+                  onClick={() => setSelectedRegion('asean')}
+                >
+                  <FaGlobe className="mr-2" size={14} />
+                  ASEAN
+                </button>
+                <button
+                  className={`w-full text-left px-2 py-1 rounded flex items-center ${selectedRegion === 'china' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}
+                  onClick={() => setSelectedRegion('china')}
+                >
+                  <FaGlobe className="mr-2" size={14} />
+                  China
+                </button>
+                <button
+                  className={`w-full text-left px-2 py-1 rounded flex items-center ${selectedRegion === 'russia' ? 'bg-green-100 text-green-700' : 'hover:bg-gray-100'}`}
+                  onClick={() => setSelectedRegion('russia')}
+                >
+                  <FaGlobe className="mr-2" size={14} />
+                  Russia
+                </button>
+              </div>
+            </div>
             
             {/* Categories */}
             <div className="mb-6">
@@ -222,6 +416,21 @@ export default function Marketplace() {
             {/* Mobile Filters Panel */}
             {showFilters && (
               <div className="bg-white p-4 rounded-lg shadow-md mt-2">
+                {/* Region Filter - Mobile */}
+                <div className="mb-4">
+                  <h3 className="font-medium mb-2">Region</h3>
+                  <select
+                    className="w-full p-2 border rounded"
+                    value={selectedRegion}
+                    onChange={(e) => setSelectedRegion(e.target.value)}
+                  >
+                    <option value="all">All Regions</option>
+                    <option value="asean">ASEAN</option>
+                    <option value="china">China</option>
+                    <option value="russia">Russia</option>
+                  </select>
+                </div>
+                
                 {/* Categories */}
                 <div className="mb-4">
                   <h3 className="font-medium mb-2">Categories</h3>
@@ -282,6 +491,9 @@ export default function Marketplace() {
               <>
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="text-xl font-semibold">
+                    {selectedRegion !== 'all' && (
+                      <span className="capitalize">{selectedRegion} - </span>
+                    )}
                     {selectedCategory === 'all' ? 'All Products' : categories.find(c => c.id === selectedCategory)?.name}
                   </h2>
                   <p className="text-gray-600">{sortedProducts.length} products</p>
@@ -300,9 +512,12 @@ export default function Marketplace() {
                         {product.isCertified && (
                           <div className="absolute top-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full flex items-center">
                             <FaCheckCircle className="mr-1" />
-                            Certified
+                            {product.certifiedBy}
                           </div>
                         )}
+                        <div className="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                          {product.country}
+                        </div>
                       </div>
                       
                       <div className="p-4">
@@ -333,9 +548,38 @@ export default function Marketplace() {
                     </div>
                   ))}
                 </div>
+                
+                {sortedProducts.length === 0 && (
+                  <div className="bg-white rounded-lg shadow-md p-8 text-center">
+                    <p className="text-gray-500 mb-4">No products found matching your criteria.</p>
+                    <button 
+                      onClick={() => {
+                        setSelectedCategory('all');
+                        setSelectedRegion('all');
+                        setSearchTerm('');
+                      }}
+                      className="text-green-600 hover:text-green-800"
+                    >
+                      Clear all filters
+                    </button>
+                  </div>
+                )}
               </>
             )}
           </div>
+        </div>
+      </div>
+      
+      {/* Regional Integration Banner */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-8 mt-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold mb-4">Explore Regional Halal Markets</h2>
+          <p className="mb-6 max-w-2xl mx-auto">
+            Connect with certification bodies, e-commerce platforms, and suppliers across ASEAN, China, and Russia.
+          </p>
+          <Link href="/integrations/regional" className="inline-block bg-white text-indigo-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
+            View Regional Integration Hub
+          </Link>
         </div>
       </div>
     </main>

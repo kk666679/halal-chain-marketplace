@@ -15,7 +15,8 @@ import {
   Search,
   Filter,
   Download,
-  Check
+  Check,
+  Globe
 } from 'lucide-react';
 import IntegrationCard from '@/components/integrations/IntegrationCard';
 import PlatformTabs from '@/components/integrations/PlatformTabs';
@@ -37,10 +38,23 @@ export default function IntegrationsPage() {
   
   // E-commerce platforms
   const ecommercePlatforms = [
+    // Global platforms
     { id: 'shopify', name: 'Shopify', icon: '/images/integrations/shopify-logo.svg' },
     { id: 'woocommerce', name: 'WooCommerce', icon: '/images/integrations/woocommerce-logo.svg' },
     { id: 'amazon', name: 'Amazon', icon: '/images/integrations/amazon-logo.svg' },
     { id: 'ebay', name: 'eBay', icon: '/images/integrations/ebay-logo.svg' },
+    
+    // ASEAN platforms
+    { id: 'lazada', name: 'Lazada Halal Hub', icon: '/images/integrations/lazada-logo.svg', region: 'asean' },
+    { id: 'shopee', name: 'Shopee Halal', icon: '/images/integrations/shopee-logo.svg', region: 'asean' },
+    { id: 'tokopedia', name: 'Tokopedia', icon: '/images/integrations/tokopedia-logo.svg', region: 'asean' },
+    
+    // China platforms
+    { id: 'alibaba', name: 'Alibaba.com', icon: '/images/integrations/alibaba-logo.svg', region: 'china' },
+    { id: 'jd', name: 'JD.com', icon: '/images/integrations/jd-logo.svg', region: 'china' },
+    { id: 'tmall', name: 'Tmall Global', icon: '/images/integrations/tmall-logo.svg', region: 'china' },
+    
+    // Other platforms
     { id: 'tiktok-shop', name: 'TikTok Shop', icon: '/images/integrations/tiktok-shop-logo.svg' },
     { id: 'facebook-marketplace', name: 'Facebook Marketplace', icon: '/images/integrations/facebook-marketplace-logo.svg' },
     { id: 'instagram-marketplace', name: 'Instagram Marketplace', icon: '/images/integrations/instagram-marketplace-logo.svg' }
@@ -65,6 +79,24 @@ export default function IntegrationsPage() {
             <a href="#social-media" className="px-6 py-3 bg-white text-emerald-600 rounded-lg font-medium hover:bg-gray-100 transition">Social Media Integrations</a>
             <a href="#e-commerce" className="px-6 py-3 bg-transparent border-2 border-white rounded-lg font-medium hover:bg-white/10 transition">E-commerce Platforms</a>
             <a href="#developer-api" className="px-6 py-3 bg-transparent border-2 border-white rounded-lg font-medium hover:bg-white/10 transition">Developer API</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Regional Integration Banner */}
+      <section className="py-8 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-6 md:mb-0">
+              <h2 className="text-2xl font-bold mb-2">Regional Halal Market Integration</h2>
+              <p className="max-w-2xl">
+                Connect with certification bodies, e-commerce platforms, and suppliers across ASEAN, China, and Russia.
+              </p>
+            </div>
+            <Link href="/integrations/regional" className="px-6 py-3 bg-white text-indigo-700 rounded-lg font-medium hover:bg-gray-100 transition flex items-center">
+              <Globe className="mr-2 h-5 w-5" />
+              Explore Regional Hub
+            </Link>
           </div>
         </div>
       </section>
@@ -101,15 +133,50 @@ export default function IntegrationsPage() {
           {/* E-commerce Platforms */}
           <div id="e-commerce">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">E-commerce Platforms</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-              {ecommercePlatforms.map((platform) => (
-                <IntegrationCard
-                  key={platform.id}
-                  platform={platform}
-                  isActive={activePlatform === platform.id}
-                  onClick={() => setActivePlatform(platform.id)}
-                />
-              ))}
+            
+            {/* Global Platforms */}
+            <h4 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-4">Global Platforms</h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-8">
+              {ecommercePlatforms
+                .filter(platform => !platform.region)
+                .map((platform) => (
+                  <IntegrationCard
+                    key={platform.id}
+                    platform={platform}
+                    isActive={activePlatform === platform.id}
+                    onClick={() => setActivePlatform(platform.id)}
+                  />
+                ))}
+            </div>
+            
+            {/* ASEAN Platforms */}
+            <h4 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-4">ASEAN Platforms</h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-8">
+              {ecommercePlatforms
+                .filter(platform => platform.region === 'asean')
+                .map((platform) => (
+                  <IntegrationCard
+                    key={platform.id}
+                    platform={platform}
+                    isActive={activePlatform === platform.id}
+                    onClick={() => setActivePlatform(platform.id)}
+                  />
+                ))}
+            </div>
+            
+            {/* China Platforms */}
+            <h4 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-4">China Platforms</h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-8">
+              {ecommercePlatforms
+                .filter(platform => platform.region === 'china')
+                .map((platform) => (
+                  <IntegrationCard
+                    key={platform.id}
+                    platform={platform}
+                    isActive={activePlatform === platform.id}
+                    onClick={() => setActivePlatform(platform.id)}
+                  />
+                ))}
             </div>
           </div>
         </div>
