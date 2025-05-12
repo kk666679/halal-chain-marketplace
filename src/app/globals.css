@@ -4,48 +4,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* 2025 Modern Color Palette - Light Mode */
+    --background: 180 20% 99%;
+    --foreground: 220 40% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 40% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 5.9% 10%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --popover-foreground: 220 40% 12%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 160 100% 97%;
+    --secondary: 250 30% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 180 10% 94%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 250 30% 96%;
+    --accent-foreground: 250 40% 40%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
-    --radius: 0.5rem;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 160 84% 39%;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* 2025 Modern Color Palette - Dark Mode */
+    --background: 220 40% 10%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 220 40% 12%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 220 40% 12%;
     --popover-foreground: 210 40% 98%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --primary: 160 80% 40%;
+    --primary-foreground: 160 100% 10%;
+    --secondary: 250 50% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 250 30% 20%;
+    --accent-foreground: 250 60% 80%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142.4 71.8% 29.2%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 160 80% 40%;
   }
 }
 
@@ -53,15 +55,59 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold;
+  
+  /* Modern 2025 Typography */
+  h1 {
+    @apply font-sans font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6;
+    letter-spacing: -0.02em;
   }
-  p, span, li, a {
+  
+  h2 {
+    @apply font-sans font-bold text-3xl md:text-4xl tracking-tight mb-4;
+    letter-spacing: -0.01em;
+  }
+  
+  h3 {
+    @apply font-sans font-semibold text-2xl md:text-3xl tracking-tight mb-3;
+  }
+  
+  h4 {
+    @apply font-sans font-semibold text-xl md:text-2xl mb-2;
+  }
+  
+  h5 {
+    @apply font-sans font-semibold text-lg md:text-xl mb-2;
+  }
+  
+  h6 {
+    @apply font-sans font-semibold text-base md:text-lg mb-2;
+  }
+  
+  p {
+    @apply font-sans text-base leading-relaxed mb-4;
+  }
+  
+  a {
+    @apply font-sans text-primary hover:text-primary/80 transition-colors duration-200;
+  }
+  
+  span, li {
     @apply font-sans;
+  }
+  
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
   }
 }
 
@@ -70,44 +116,61 @@
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
   
+  /* Modern 2025 Button Styles */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-md border border-emerald-600 bg-transparent px-4 py-2 text-sm font-medium text-emerald-600 shadow-sm transition-colors hover:bg-emerald-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:hover:bg-emerald-950;
+    @apply inline-flex items-center justify-center rounded-xl border border-secondary bg-transparent px-5 py-2.5 text-sm font-medium text-secondary shadow-lg transition-all duration-300 hover:bg-secondary hover:text-secondary-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
   
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-md border border-gray-300 bg-transparent px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800;
+    @apply inline-flex items-center justify-center rounded-xl border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground shadow-sm transition-all duration-300 hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
   
+  /* Modern 2025 Card Style */
   .card {
-    @apply rounded-lg border bg-card p-6 shadow-sm;
+    @apply rounded-2xl border bg-card p-6 shadow-md transition-all duration-300 hover:shadow-lg;
   }
   
+  /* Modern 2025 Input Style */
   .input {
-    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply flex h-12 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm ring-offset-background transition-all duration-200 file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
   }
   
+  /* Modern 2025 Badge Styles */
   .badge {
-    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
   }
   
   .badge-primary {
-    @apply border-transparent bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300;
+    @apply border-transparent bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary-foreground;
   }
   
   .badge-secondary {
-    @apply border-transparent bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300;
+    @apply border-transparent bg-secondary/20 text-secondary dark:bg-secondary/30 dark:text-secondary-foreground;
   }
   
   .badge-outline {
     @apply border-current text-current;
   }
+  
+  /* New 2025 Component Styles */
+  .glass-card {
+    @apply rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-lg transition-all duration-300 hover:bg-white/20 dark:border-white/5 dark:bg-black/20 dark:hover:bg-black/30;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    @apply relative before:absolute before:-inset-[1px] before:-z-10 before:rounded-[inherit] before:bg-gradient-to-r before:from-primary before:to-secondary;
+  }
 }
 
-/* Custom animations */
+/* 2025 Modern Animations */
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -120,13 +183,59 @@
   }
 }
 
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(var(--primary-rgb), 0.3);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Scrollbar styling */
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+/* Modern Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -135,9 +244,45 @@
 
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--muted));
-  border-radius: 5px;
+  border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground));
+}
+
+/* 2025 Modern Utility Classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+/* CSS Variables for RGB values to use in rgba() */
+:root {
+  --primary-rgb: 0, 179, 149;
+  --secondary-rgb: 130, 106, 249;
+  --background-rgb: 245, 248, 250;
+  --foreground-rgb: 26, 32, 44;
+}
+
+.dark {
+  --primary-rgb: 0, 204, 170;
+  --secondary-rgb: 149, 130, 255;
+  --background-rgb: 17, 25, 40;
+  --foreground-rgb: 237, 242, 247;
 }

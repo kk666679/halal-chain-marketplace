@@ -112,3 +112,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 HalalChain Team - info@halal-chain.com
 
 Project Link: [https://github.com/halal-chain/marketplace](https://github.com/halal-chain/marketplace)
+
+## ASEAN Members
+
+The HalalChain Marketplace supports regional compliance for the following ASEAN member countries:
+
+1. Brunei Darussalam
+2. Cambodia
+3. Indonesia
+4. Laos
+5. Malaysia
+6. Myanmar
+7. Philippines
+8. Singapore
+9. Thailand
+10. Vietnam

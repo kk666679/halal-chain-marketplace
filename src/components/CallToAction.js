@@ -16,24 +16,24 @@ export default function CallToAction() {
   };
 
   return (
-    <section className="bg-emerald-700 text-white py-16">
+    <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Halal Business?</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">Ready to Transform Your Halal Business?</h2>
           <p className="text-lg mb-8">
             Join the HalalChain ecosystem and revolutionize how you certify, track, and sell halal products.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link 
               href="/register/vendor" 
-              className="bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-3 rounded-lg font-medium transition-colors duration-200"
+              className="bg-white text-primary hover:bg-white/90 px-8 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
             >
               Register as Vendor
             </Link>
             <Link 
               href="/certification" 
-              className="bg-emerald-600 text-white hover:bg-emerald-800 px-8 py-3 rounded-lg font-medium transition-colors duration-200 border border-emerald-500"
+              className="bg-secondary/90 text-white hover:bg-secondary px-8 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
             >
               Get Certified
             </Link>
@@ -47,12 +47,12 @@ export default function CallToAction() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+                className="flex-grow px-5 py-3 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-white/50 shadow-inner border-0"
                 required
               />
               <button
                 type="submit"
-                className="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                className="bg-white text-primary hover:bg-white/90 px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Subscribe
               </button>

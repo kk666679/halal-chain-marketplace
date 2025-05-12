@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaGlobeAsia, FaCheck } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaGlobeAsia, FaCheck, FaWhatsapp } from 'react-icons/fa';
+import { ClickToCallButton, ContactCard, CallbackRequestForm } from '@/components/contact';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -48,33 +50,78 @@ export default function Contact() {
       address: 'Dubai Digital Park, Dubai Silicon Oasis',
       country: 'United Arab Emirates',
       phone: '+971 4 123 4567',
-      email: 'dubai@halal-chain.com'
+      whatsapp: '+971501234567',
+      email: 'dubai@halal-chain.com',
+      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c'
     },
     {
       city: 'Kuala Lumpur',
       address: 'Level 30, Menara Prestige, 1 Jalan Pinang',
       country: 'Malaysia',
       phone: '+60 3 2168 9999',
-      email: 'kl@halal-chain.com'
+      whatsapp: '+60123456789',
+      email: 'kl@halal-chain.com',
+      image: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07'
     },
     {
       city: 'Jakarta',
       address: 'Menara Astra, Jl. Jend. Sudirman Kav. 5-6',
       country: 'Indonesia',
       phone: '+62 21 5082 0800',
-      email: 'jakarta@halal-chain.com'
+      whatsapp: '+6281234567890',
+      email: 'jakarta@halal-chain.com',
+      image: 'https://images.unsplash.com/photo-1555899434-94d1368aa7af'
+    },
+    {
+      city: 'Sydney',
+      address: '1 O\'Connell Street, Sydney CBD',
+      country: 'Australia',
+      phone: '+61 2 8123 4567',
+      whatsapp: '+61412345678',
+      email: 'sydney@halal-chain.com',
+      image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9'
+    },
+    {
+      city: 'Riyadh',
+      address: 'King Fahd Road, Al Olaya District',
+      country: 'Saudi Arabia',
+      phone: '+966 11 123 4567',
+      whatsapp: '+966501234567',
+      email: 'riyadh@halal-chain.com',
+      image: 'https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6'
+    },
+    {
+      city: 'London',
+      address: '30 St Mary Axe, London EC3A 8BF',
+      country: 'United Kingdom',
+      phone: '+44 20 7123 4567',
+      whatsapp: '+447123456789',
+      email: 'london@halal-chain.com',
+      image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad'
     }
   ];
 
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
+      <section className="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-16">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl max-w-3xl mx-auto">
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            Contact Us
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl max-w-3xl mx-auto"
+          >
             Have questions about HalalChain? Our team is here to help you with any inquiries about our platform, services, or partnership opportunities.
-          </p>
+          </motion.p>
         </div>
       </section>
       
@@ -82,38 +129,83 @@ export default function Contact() {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
-              <div className="bg-green-100 p-4 rounded-full mb-4">
-                <FaPhone className="text-green-600 text-2xl" />
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center"
+            >
+              <div className="bg-emerald-100 p-4 rounded-full mb-4">
+                <FaPhone className="text-emerald-600 text-2xl" />
               </div>
               <h3 className="text-xl font-bold mb-2">Call Us</h3>
               <p className="text-gray-600 mb-4">Our customer support team is available 24/7</p>
-              <a href="tel:+97141234567" className="text-green-600 font-medium">+971 4 123 4567</a>
-            </div>
+              <a href="tel:+97141234567" className="text-emerald-600 font-medium hover:underline transition-colors">+971 4 123 4567</a>
+            </motion.div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
-              <div className="bg-green-100 p-4 rounded-full mb-4">
-                <FaEnvelope className="text-green-600 text-2xl" />
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center"
+            >
+              <div className="bg-emerald-100 p-4 rounded-full mb-4">
+                <FaEnvelope className="text-emerald-600 text-2xl" />
               </div>
               <h3 className="text-xl font-bold mb-2">Email Us</h3>
               <p className="text-gray-600 mb-4">Send us an email and we'll get back to you</p>
-              <a href="mailto:info@halal-chain.com" className="text-green-600 font-medium">info@halal-chain.com</a>
-            </div>
+              <a href="mailto:info@halal-chain.com" className="text-emerald-600 font-medium hover:underline transition-colors">info@halal-chain.com</a>
+            </motion.div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
-              <div className="bg-green-100 p-4 rounded-full mb-4">
-                <FaGlobeAsia className="text-green-600 text-2xl" />
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+              className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center"
+            >
+              <div className="bg-emerald-100 p-4 rounded-full mb-4">
+                <FaWhatsapp className="text-emerald-600 text-2xl" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Global Offices</h3>
-              <p className="text-gray-600 mb-4">We have offices in 3 countries</p>
-              <span className="text-green-600 font-medium">Dubai, Kuala Lumpur, Jakarta</span>
-            </div>
+              <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
+              <p className="text-gray-600 mb-4">Chat with us on WhatsApp for quick support</p>
+              <a href="https://wa.me/971501234567" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-medium hover:underline transition-colors">+971 50 123 4567</a>
+            </motion.div>
           </div>
         </div>
       </section>
       
-      {/* Contact Form and Map */}
+      {/* Global Offices Section */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Our Global Offices</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              With offices across the globe, we're ready to assist you wherever you are. 
+              Contact our regional teams for localized support and services.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {offices.map((office, index) => (
+              <ContactCard
+                key={index}
+                name={office.city}
+                title={`${office.address}, ${office.country}`}
+                phoneNumber={office.phone}
+                whatsappNumber={office.whatsapp}
+                email={office.email}
+                location={office.country}
+                imageUrl={office.image}
+                theme={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'accent'}
+                variant={index % 2 === 0 ? 'default' : 'elevated'}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Contact Form and Callback Request */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -124,7 +216,7 @@ export default function Contact() {
               </p>
               
               {submitted ? (
-                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-6">
+                <div className="bg-emerald-100 border border-emerald-400 text-emerald-700 px-4 py-3 rounded-lg mb-6">
                   <div className="flex items-center">
                     <FaCheck className="mr-2" />
                     <span className="font-medium">Thank you for your message!</span>
@@ -144,7 +236,7 @@ export default function Contact() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                         required
                       />
                     </div>
@@ -159,7 +251,7 @@ export default function Contact() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                         required
                       />
                     </div>
@@ -176,7 +268,7 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       />
                     </div>
                     
@@ -190,7 +282,7 @@ export default function Contact() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -204,7 +296,7 @@ export default function Contact() {
                       name="userType"
                       value={formData.userType}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       required
                     >
                       <option value="consumer">Consumer</option>
@@ -226,7 +318,7 @@ export default function Contact() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       required
                     />
                   </div>
@@ -241,7 +333,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       rows="5"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       required
                     ></textarea>
                   </div>
@@ -249,7 +341,7 @@ export default function Contact() {
                   <div>
                     <button
                       type="submit"
-                      className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
                     >
                       Send Message
                     </button>
@@ -258,77 +350,85 @@ export default function Contact() {
               )}
             </div>
             
-            {/* Map */}
+            {/* Callback Request Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-6">Our Global Offices</h2>
-              <div className="bg-gray-200 rounded-xl overflow-hidden h-64 mb-8">
-                {/* This would be replaced with an actual map component in a real app */}
-                <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                  <span className="text-gray-600">Interactive Map</span>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {offices.map((office, index) => (
-                  <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                    <h3 className="font-bold text-lg mb-2">{office.city}</h3>
-                    <p className="text-gray-600 text-sm mb-3">
-                      {office.address}, {office.country}
-                    </p>
-                    <div className="text-sm">
-                      <p className="flex items-center mb-1">
-                        <FaPhone className="mr-2 text-green-600" />
-                        <span>{office.phone}</span>
-                      </p>
-                      <p className="flex items-center">
-                        <FaEnvelope className="mr-2 text-green-600" />
-                        <span>{office.email}</span>
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <CallbackRequestForm 
+                theme="primary"
+                variant="elevated"
+                onSubmit={(data) => console.log('Callback requested:', data)}
+              />
             </div>
           </div>
         </div>
       </section>
       
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+            >
               <h3 className="text-xl font-bold mb-3">How can I verify a halal certificate?</h3>
               <p className="text-gray-600">
                 You can verify any halal certificate by scanning the QR code on the product or by entering the certificate ID on our verification portal. Our blockchain technology ensures that all certificates are authentic and tamper-proof.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+            >
               <h3 className="text-xl font-bold mb-3">How do I become a vendor on HalalChain?</h3>
               <p className="text-gray-600">
                 To become a vendor, you need to register on our vendor portal, submit the required documentation, and complete the verification process. Our team will guide you through the certification process if your products are not yet certified.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+            >
               <h3 className="text-xl font-bold mb-3">What technologies do you use for verification?</h3>
               <p className="text-gray-600">
                 We use a combination of blockchain, AI, quantum computing, and neural interface technologies to ensure the highest level of verification and transparency in the halal supply chain.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+              className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+            >
               <h3 className="text-xl font-bold mb-3">How can I integrate with HalalChain?</h3>
               <p className="text-gray-600">
                 We offer various integration options including REST APIs, SDKs, webhooks, and neural interface connections. Visit our integrations page or contact our developer support team for more information.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
+      
+      {/* Floating Click-to-Call Button */}
+      <ClickToCallButton 
+        phoneNumber="+97141234567"
+        whatsappNumber="+971501234567"
+        position="bottom-right"
+        text="Need Help?"
+        theme="primary"
+        size="medium"
+        pulsate={true}
+      />
     </main>
   );
 }

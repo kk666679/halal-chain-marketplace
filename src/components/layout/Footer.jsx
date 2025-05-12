@@ -47,7 +47,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo and description */}
           <div className="lg:col-span-2">
@@ -59,7 +59,7 @@ export default function Footer() {
                 height={40} 
                 className="mr-2"
               />
-              <span className="text-xl font-bold text-emerald-600 dark:text-emerald-500">
+              <span className="text-xl font-bold gradient-text">
                 HalalChain
               </span>
             </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-500"
+                    className="text-gray-500 hover:text-primary p-2 rounded-full hover:bg-primary/10 transition-all duration-300 dark:text-gray-400 dark:hover:text-primary-300"
                   >
                     <span className="sr-only">{item.name}</span>
                     <Icon className="h-5 w-5" />
@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-primary after:mt-1">
               Product
             </h3>
             <ul className="mt-4 space-y-2">
@@ -106,7 +106,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-primary after:mt-1">
               Company
             </h3>
             <ul className="mt-4 space-y-2">
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider relative inline-block after:content-[''] after:block after:w-10 after:h-0.5 after:bg-primary after:mt-1">
               Resources
             </h3>
             <ul className="mt-4 space-y-2">

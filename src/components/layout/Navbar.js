@@ -71,7 +71,7 @@ export default function Navbar() {
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-soft py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-6">
@@ -95,36 +95,37 @@ export default function Navbar() {
               <div key={index} className="relative group">
                 {link.dropdown ? (
                   <button
-                    className={`px-4 py-2 rounded-lg flex items-center ${
+                    className={`px-4 py-2 rounded-lg flex items-center transition-all duration-300 ${
                       isActive(link.href) 
-                        ? 'text-green-600 font-medium' 
-                        : scrolled ? 'text-gray-700 hover:text-green-600' : 'text-white hover:text-green-200'
+                        ? 'text-primary font-medium' 
+                        : scrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary-100'
                     }`}
                     onClick={() => setDropdownOpen(dropdownOpen === index ? null : index)}
                     onMouseEnter={() => setDropdownOpen(index)}
                     onMouseLeave={() => setDropdownOpen(null)}
                   >
                     {link.name}
-                    <FaChevronDown className="ml-1 h-3 w-3" />
+                    <FaChevronDown className="ml-1 h-3 w-3 transition-transform duration-300 group-hover:rotate-180" />
                   </button>
                 ) : (
                   <Link
                     href={link.href}
-                    className={`px-4 py-2 rounded-lg ${
+                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                       isActive(link.href) 
-                        ? 'text-green-600 font-medium' 
-                        : scrolled ? 'text-gray-700 hover:text-green-600' : 'text-white hover:text-green-200'
+                        ? 'text-primary font-medium' 
+                        : scrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary-100'
                     }`}
                   >
                     {link.name}
+                    <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary"></span>
                   </Link>
                 )}
                 
                 {/* Dropdown */}
                 {link.dropdown && (
                   <div
-                    className={`absolute left-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-300 ${
-                      dropdownOpen === index ? 'opacity-100 visible' : 'opacity-0 invisible'
+                    className={`absolute left-0 mt-2 w-56 rounded-xl shadow-soft bg-white/95 backdrop-blur-md border border-gray-100 transition-all duration-300 ${
+                      dropdownOpen === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                     }`}
                     onMouseEnter={() => setDropdownOpen(index)}
                     onMouseLeave={() => setDropdownOpen(null)}
@@ -134,7 +135,7 @@ export default function Navbar() {
                         <Link
                           key={idx}
                           href={item.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-green-600"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors duration-200 rounded-lg mx-1 my-0.5"
                         >
                           {item.name}
                         </Link>
@@ -163,7 +164,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/vendor/register"
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300"
+              className="btn-primary"
             >
               Get Started
             </Link>
@@ -184,8 +185,8 @@ export default function Navbar() {
       </div>
       
       {/* Mobile menu */}
-      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg">
+      <div className={`lg:hidden ${isOpen ? 'block animate-slide-down' : 'hidden'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md shadow-soft rounded-b-2xl">
           {navLinks.map((link, index) => (
             <div key={index}>
               {link.dropdown ? (
@@ -236,7 +237,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/vendor/register"
-              className="block px-3 py-2 mt-1 rounded-lg bg-green-600 text-white hover:bg-green-700"
+              className="block px-3 py-2 mt-1 rounded-xl bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Get Started
             </Link>
