@@ -206,7 +206,7 @@ jobs:
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-      if: ${{ success() && secrets.SLACK_WEBHOOK_URL != '' }}
+      if: ${{ success() && vars.SLACK_WEBHOOK_URL != '' }}
     
     - name: Send email notification for releases
       uses: dawidd6/action-send-mail@v3
@@ -238,7 +238,7 @@ jobs:
           HalalChain DevOps Team
         to: ${{ secrets.NOTIFICATION_EMAIL }}
         from: HalalChain DevOps <${{ secrets.MAIL_FROM }}>
-      if: ${{ steps.version_info.outputs.IS_RELEASE == 'true' && secrets.MAIL_SERVER != '' }}
+      if: ${{ steps.version_info.outputs.IS_RELEASE == 'true' && vars.MAIL_SERVER != '' }}
         
     - name: Update deployment status
       run: |
