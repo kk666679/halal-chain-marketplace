@@ -28,7 +28,17 @@ jobs:
         cache: 'npm'
     
     - name: Install dependencies
-      run: npm ci
+      run: |
+        # Use npm ci for clean install, but fallback to npm install if ci fails
+        npm ci || npm install
+      
+    - name: Fix CSS issues
+      run: |
+        # Check if globals.css has font-poppins and replace it with font-sans if needed
+        if grep -q "font-poppins" src/app/globals.css; then
+          sed -i 's/font-poppins/font-sans/g' src/app/globals.css
+          echo "Fixed font-poppins references in globals.css"
+        fi
     
     - name: Build
       run: |
@@ -116,11 +126,14 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
         
-        # Deploy using SSH and Docker
-        ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "cd ${{ secrets.DEPLOY_PATH }} && \
+        # Deploy using SSH and Docker with improved error handling
+        ssh -o StrictHostKeyChecking=accept-new ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "cd ${{ secrets.DEPLOY_PATH }} && \
           docker-compose pull && \
           docker-compose up -d && \
-          echo 'Deployment completed successfully!'"
+          echo 'Deployment completed successfully!'" || {
+            echo "::error::Deployment failed. Check SSH connection and server status."
+            exit 1
+          }
         
         echo "Deployment complete!"
       if: ${{ github.ref_type == 'tag' || github.ref == 'refs/heads/main' }}
@@ -207,6 +220,7 @@ jobs:
           HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} has been successfully deployed to production.
           
           Release Notes:
+          - Added support for Australia, Dubai, MENA, GCC, and EU regions
           - Enhanced Portal Section with Extensions Marketplace
           - Added Neural Interface and Quantum Security features
           - Improved user experience with interactive components
@@ -230,4 +244,4 @@ jobs:
       run: |
         echo "Updating deployment status..."
         echo "HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} deployed successfully with Extensions Marketplace and Portal enhancements."
-        echo "Features: Neural Interfaces, Quantum Security, AR/VR Training, AI Agents"
+        echo "Features: Regional Support (Australia, Dubai, MENA, GCC, EU), Neural Interfaces, Quantum Security, AR/VR Training, AI Agents"

@@ -27,6 +27,111 @@ export default function RegionalGuides({ region }) {
       ],
       keyMarkets: ['Indonesia', 'Malaysia', 'Singapore', 'Thailand', 'Philippines', 'Brunei']
     },
+    australia: {
+      title: 'Australian Halal Market Entry Guide',
+      description: 'Essential information for entering the Australian halal market and meeting certification requirements.',
+      steps: [
+        'Understand Australian halal certification standards and requirements',
+        'Connect with recognized Australian halal certification bodies',
+        'Prepare documentation for Australian market compliance',
+        'Implement halal-compliant production and supply chain processes',
+        'Obtain certification and register with Australian halal directories',
+        'Connect with Australian retailers and distribution networks'
+      ],
+      requirements: [
+        { name: 'Australian Halal Certification', required: true },
+        { name: 'Food Standards Australia New Zealand (FSANZ) Compliance', required: true },
+        { name: 'Import License', required: true },
+        { name: 'Australian Labeling Requirements', required: true },
+        { name: 'Nutritional Information Panel', required: true },
+        { name: 'Blockchain Verification', required: false }
+      ],
+      keyMarkets: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Gold Coast']
+    },
+    dubai: {
+      title: 'Dubai Halal Certification Guide',
+      description: 'A comprehensive guide to obtaining halal certification and entering the Dubai market.',
+      steps: [
+        'Understand UAE halal standards (ESMA) and Dubai Municipality requirements',
+        'Connect with Emirates Authority for Standardization and Metrology (ESMA)',
+        'Prepare documentation for halal certification application',
+        'Implement halal-compliant production and logistics processes',
+        'Obtain certification and register with UAE halal directories',
+        'Connect with Dubai retailers and distribution networks'
+      ],
+      requirements: [
+        { name: 'ESMA Halal Certification', required: true },
+        { name: 'Dubai Municipality Approval', required: true },
+        { name: 'Import License', required: true },
+        { name: 'Arabic Labeling', required: true },
+        { name: 'Gulf Standards Organization (GSO) Compliance', required: true },
+        { name: 'Blockchain Verification', required: false }
+      ],
+      keyMarkets: ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'Fujairah']
+    },
+    gcc: {
+      title: 'GCC Halal Market Entry Guide',
+      description: 'Essential information for entering the Gulf Cooperation Council halal markets.',
+      steps: [
+        'Understand GCC unified halal standards and requirements',
+        'Connect with Gulf Standards Organization (GSO)',
+        'Prepare documentation for GCC market compliance',
+        'Implement halal-compliant production and supply chain processes',
+        'Obtain certification and register with GCC halal directories',
+        'Connect with GCC retailers and distribution networks'
+      ],
+      requirements: [
+        { name: 'GCC Halal Certification', required: true },
+        { name: 'Gulf Standards Organization (GSO) Compliance', required: true },
+        { name: 'Import License', required: true },
+        { name: 'Arabic Labeling', required: true },
+        { name: 'Technical Documentation', required: true },
+        { name: 'Blockchain Verification', required: false }
+      ],
+      keyMarkets: ['Saudi Arabia', 'UAE', 'Qatar', 'Kuwait', 'Bahrain', 'Oman']
+    },
+    mena: {
+      title: 'MENA Region Halal Compliance Guide',
+      description: 'A guide to navigating halal certification and market entry across the Middle East and North Africa.',
+      steps: [
+        'Understand country-specific halal certification requirements',
+        'Identify appropriate certification bodies for your product category',
+        'Prepare documentation for halal certification application',
+        'Implement halal-compliant supply chain processes',
+        'Obtain certification and maintain compliance records',
+        'Register with local halal directories and marketplaces'
+      ],
+      requirements: [
+        { name: 'Country-specific Halal Certification', required: true },
+        { name: 'Product Registration', required: true },
+        { name: 'Import License', required: true },
+        { name: 'Arabic Labeling', required: true },
+        { name: 'Technical Documentation', required: true },
+        { name: 'Blockchain Verification', required: false }
+      ],
+      keyMarkets: ['Egypt', 'Morocco', 'Tunisia', 'Jordan', 'Lebanon', 'Algeria']
+    },
+    eu: {
+      title: 'European Union Halal Market Guide',
+      description: 'Essential information for entering the EU halal market and meeting certification requirements.',
+      steps: [
+        'Understand EU food safety regulations and halal certification standards',
+        'Connect with recognized European halal certification bodies',
+        'Prepare documentation for EU market compliance',
+        'Implement halal-compliant production and supply chain processes',
+        'Obtain certification and register with European halal directories',
+        'Connect with EU retailers and distribution networks'
+      ],
+      requirements: [
+        { name: 'European Halal Certification', required: true },
+        { name: 'EU Food Safety Compliance', required: true },
+        { name: 'Import License', required: true },
+        { name: 'EU Labeling Requirements', required: true },
+        { name: 'Nutritional Information', required: true },
+        { name: 'Blockchain Verification', required: false }
+      ],
+      keyMarkets: ['Germany', 'France', 'UK', 'Netherlands', 'Spain', 'Italy']
+    },
     china: {
       title: 'How to Source Halal Products in China',
       description: 'A guide to finding and verifying authentic halal-certified products and suppliers in China.',
@@ -72,7 +177,21 @@ export default function RegionalGuides({ region }) {
   };
 
   const regionGuide = guides[region] || {};
-  const regionTitle = region === 'asean' ? 'ASEAN' : region === 'china' ? 'China' : 'Russia';
+  const getRegionTitle = (region) => {
+    switch(region) {
+      case 'asean': return 'ASEAN';
+      case 'china': return 'China';
+      case 'russia': return 'Russia';
+      case 'australia': return 'Australia';
+      case 'dubai': return 'Dubai';
+      case 'mena': return 'MENA';
+      case 'gcc': return 'GCC';
+      case 'eu': return 'European Union';
+      default: return region.toUpperCase();
+    }
+  };
+  
+  const regionTitle = getRegionTitle(region);
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6">

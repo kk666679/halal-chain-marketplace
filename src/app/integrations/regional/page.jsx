@@ -30,7 +30,7 @@ export default function RegionalIntegrationsPage() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Regional Halal Marketplace Integration</h1>
           <p className="text-xl mb-8 max-w-3xl">
-            Connect with halal certification bodies, e-commerce platforms, and suppliers across ASEAN, China, and Russia.
+            Connect with halal certification bodies, e-commerce platforms, and suppliers across ASEAN, Australia, Dubai, GCC, MENA, EU, China, and Russia.
           </p>
           
           <div className="flex flex-wrap gap-4 mb-8">
@@ -55,6 +55,56 @@ export default function RegionalIntegrationsPage() {
               }`}
             >
               ASEAN
+            </button>
+            <button 
+              onClick={() => setActiveRegion('australia')}
+              className={`px-6 py-3 rounded-lg font-medium transition ${
+                activeRegion === 'australia' 
+                  ? 'bg-emerald-600 text-white' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Australia
+            </button>
+            <button 
+              onClick={() => setActiveRegion('dubai')}
+              className={`px-6 py-3 rounded-lg font-medium transition ${
+                activeRegion === 'dubai' 
+                  ? 'bg-emerald-600 text-white' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              Dubai
+            </button>
+            <button 
+              onClick={() => setActiveRegion('gcc')}
+              className={`px-6 py-3 rounded-lg font-medium transition ${
+                activeRegion === 'gcc' 
+                  ? 'bg-emerald-600 text-white' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              GCC
+            </button>
+            <button 
+              onClick={() => setActiveRegion('mena')}
+              className={`px-6 py-3 rounded-lg font-medium transition ${
+                activeRegion === 'mena' 
+                  ? 'bg-emerald-600 text-white' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              MENA
+            </button>
+            <button 
+              onClick={() => setActiveRegion('eu')}
+              className={`px-6 py-3 rounded-lg font-medium transition ${
+                activeRegion === 'eu' 
+                  ? 'bg-emerald-600 text-white' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              EU
             </button>
             <button 
               onClick={() => setActiveRegion('china')}

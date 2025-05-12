@@ -15,6 +15,17 @@ export default function Footer() {
     { name: 'Quantum Security', href: '/quantum-security' }
   ];
   
+  const regions = [
+    { name: 'ASEAN', href: '/integrations/regional?region=asean' },
+    { name: 'Australia', href: '/integrations/regional?region=australia' },
+    { name: 'Dubai', href: '/integrations/regional?region=dubai' },
+    { name: 'GCC', href: '/integrations/regional?region=gcc' },
+    { name: 'MENA', href: '/integrations/regional?region=mena' },
+    { name: 'EU', href: '/integrations/regional?region=eu' },
+    { name: 'China', href: '/integrations/regional?region=china' },
+    { name: 'Russia', href: '/integrations/regional?region=russia' }
+  ];
+  
   const portals = [
     { name: 'Government', href: '/portals/government' },
     { name: 'Developer', href: '/portals/developer' },
@@ -42,7 +53,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
@@ -86,6 +97,20 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
               {solutions.map((item, index) => (
+                <li key={index}>
+                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors duration-300">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Regions */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Regions</h3>
+            <ul className="space-y-2">
+              {regions.map((item, index) => (
                 <li key={index}>
                   <Link href={item.href} className="text-gray-400 hover:text-white transition-colors duration-300">
                     {item.name}
