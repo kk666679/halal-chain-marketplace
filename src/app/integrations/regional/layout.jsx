@@ -63,6 +63,4 @@ export default function RegionalIntegrationsLayout({ children }) {
       </main>
     </>
   );
-    </div>
-  );
 }
