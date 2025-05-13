@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import IntegrationCard from './IntegrationCard';
 import { useTheme } from 'next-themes';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { atomDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useToast } from '@/components/ui/use-toast';
 
 export default function ApiSection() {

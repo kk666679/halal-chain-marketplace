@@ -5,7 +5,7 @@ import { FaPlay, FaCode, FaDownload, FaSave, FaTrash, FaCloudUploadAlt } from 'r
 import { motion } from 'framer-motion';
 import { useToast } from '@/components/ui/use-toast';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function ApiPlayground() {
   const [code, setCode] = useState(`// Welcome to the HalalChain API Playground

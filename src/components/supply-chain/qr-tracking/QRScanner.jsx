@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Html5Qrcode } from 'html5-qrcode';
+import { Html5QrcodeScanner } from 'html5-qrcode';
 import { Camera, StopCircle, RefreshCw, ExternalLink } from 'lucide-react';
 
 /**
@@ -20,11 +20,15 @@ export default function QRScanner({ onScanSuccess, onScanError }) {
   
   // Initialize scanner on component mount
   useEffect(() => {
-    const qrCodeScanner = new Html5Qrcode('qr-reader');
+    const qrCodeScanner = new Html5QrcodeScanner('qr-reader', { 
+      fps: 10, 
+      qrbox: { width: 250, height: 250 },
+      aspectRatio: 1.0
+    });
     setHtml5QrCode(qrCodeScanner);
     
     // Get available cameras
-    Html5Qrcode.getCameras()
+    Html5QrcodeScanner.getCameras()
       .then(devices => {
         if (devices && devices.length) {
           setCameras(devices);
@@ -53,15 +57,8 @@ export default function QRScanner({ onScanSuccess, onScanError }) {
     setScanResult(null);
     setError(null);
     
-    const config = {
-      fps: 10,
-      qrbox: { width: 250, height: 250 },
-      aspectRatio: 1.0
-    };
-    
     html5QrCode.start(
       selectedCamera,
-      config,
       handleScanSuccess,
       handleScanError
     ).catch(err => {
