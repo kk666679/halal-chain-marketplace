@@ -343,6 +343,26 @@ export default function RegionalIntegrationsPage() {
           )}
         </div>
       </section>
+
+      {/* Additional Information Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h2 className="text-2xl font-bold mb-4">Additional Information</h2>
+            <p className="text-gray-700 mb-4">
+              For more information about halal certification standards across ASEAN member countries, you can download the ASEAN Halal Standards Guide.
+            </p>
+            <Link 
+              href="/download/asean-halal-standards-guide.pdf"
+              download
+              className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold shadow-md hover:bg-emerald-700 transition-all duration-300"
+            >
+              <Download className="mr-2 h-5 w-5 inline-block" />
+              Download ASEAN Halal Standards Guide
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
