@@ -286,3 +286,11 @@
   --background-rgb: 17, 25, 40;
   --foreground-rgb: 237, 242, 247;
 }
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins/pxiByp8kv8JHgFVrLEj6Z1x1Fd2JQEk.woff2') format('woff2'),
+       url('/fonts/poppins/pxiByp8kv8JHgFVrLCz7Z1x1Fd2JQEk.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
