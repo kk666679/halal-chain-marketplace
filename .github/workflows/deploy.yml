@@ -21,6 +21,10 @@ jobs:
       with:
         fetch-depth: 0
     
+    - name: Update and upgrade system
+      run: |
+        sudo apt update && sudo apt upgrade -y
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
@@ -29,12 +33,10 @@ jobs:
     
     - name: Install dependencies
       run: |
-        # Use npm ci for clean install, but fallback to npm install if ci fails
         npm ci || npm install
       
     - name: Fix CSS issues
       run: |
-        # Check if globals.css has font-poppins and replace it with font-sans if needed
         if grep -q "font-poppins" src/app/globals.css; then
           sed -i 's/font-poppins/font-sans/g' src/app/globals.css
           echo "Fixed font-poppins references in globals.css"
@@ -42,13 +44,10 @@ jobs:
     
     - name: Build
       run: |
-        # Install required dependencies
         npm install qrcode.react@latest react-syntax-highlighter@latest --save
-        
-        # Run the build
         npm run build
       env:
-        CI: false # Prevents build from failing on warnings
+        CI: false
         NEXT_PUBLIC_APP_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || 'development' }}
         NEXT_PUBLIC_COMMIT_SHA: ${{ github.sha }}
     
@@ -119,24 +118,17 @@ jobs:
     - name: Deploy to production
       run: |
         echo "Deploying version ${{ steps.extract_version.outputs.VERSION }} to production server..."
-        
-        # Set up SSH for deployment
         mkdir -p ~/.ssh
         echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-        
-        # Deploy using SSH and Docker with improved error handling
         ssh -o StrictHostKeyChecking=accept-new ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "cd ${{ secrets.DEPLOY_PATH }} && \
           docker-compose pull && \
-          docker-compose up -d && \
-          echo 'Deployment completed successfully!'" || {
+          docker-compose up -d" || {
             echo "::error::Deployment failed. Check SSH connection and server status."
             exit 1
           }
-        
         echo "Deployment complete!"
-      if: ${{ github.ref_type == 'tag' || github.ref == 'refs/heads/main' }}
       env:
         DEPLOY_VERSION: ${{ steps.extract_version.outputs.VERSION }}
 
@@ -205,43 +197,4 @@ jobs:
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
       if: ${{ success() && vars.SLACK_WEBHOOK_URL != '' }}
-    
-    - name: Send email notification for releases
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: ${{ secrets.MAIL_SERVER }}
-        server_port: ${{ secrets.MAIL_PORT }}
-        username: ${{ secrets.MAIL_USERNAME }}
-        password: ${{ secrets.MAIL_PASSWORD }}
-        subject: "🚀 HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} Released"
-        body: |
-          HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} has been successfully deployed to production.
-          
-          Release Notes:
-          - Added support for Australia, Dubai, MENA, GCC, and EU regions
-          - Enhanced Portal Section with Extensions Marketplace
-          - Added Neural Interface and Quantum Security features
-          - Improved user experience with interactive components
-          - Updated deployment pipeline for better reliability
-          
-          Deployment Details:
-          - Version: ${{ steps.version_info.outputs.VERSION }}
-          - Commit: ${{ github.sha }}
-          - Deployed by: ${{ github.actor }}
-          - Deployment Time: ${{ steps.extract_version.outputs.TIMESTAMP }}
-          
-          Visit the site: https://halal-chain.com
-          
-          Thank you,
-          HalalChain DevOps Team
-        to: ${{ secrets.NOTIFICATION_EMAIL }}
-        from: HalalChain DevOps <${{ secrets.MAIL_FROM }}>
-      if: ${{ steps.version_info.outputs.IS_RELEASE == 'true' && vars.MAIL_SERVER != '' }}
-        
-    - name: Update deployment status
-      run: |
-        echo "Updating deployment status..."
-        echo "HalalChain Marketplace ${{ steps.version_info.outputs.VERSION }} deployed successfully with Extensions Marketplace and Portal enhancements."
-        echo "Features: Regional Support (Australia, Dubai, MENA, GCC, EU), Neural Interfaces, Quantum Security, AR/VR Training, AI Agents"
